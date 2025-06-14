@@ -1,0 +1,51 @@
+/* src/Views/HomePage.css */
+.cafe-homepage {
+    text-align: center;
+    padding: 50px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.cafe-homepage h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cafe-homepage p {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.cafe-color-box {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    transition: background-color 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.cafe-color-box.cafe-red {
+    background-color: #ff4444;
+}
+
+.cafe-color-box.cafe-blue {
+    background-color: #4444ff;
+}
+
+.cafe-button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cafe-button:hover {
+    background-color: #45a049;
+}
