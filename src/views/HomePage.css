@@ -1,51 +1,329 @@
-/* src/Views/HomePage.css */
-.cafe-homepage {
+/* Reset layout and ensure full width from root */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: #fff;
+  }
+  
+  /* Force container to start below sticky navbar */
+  .hero-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    margin-top: 80px; /* Adjust to match sticky-header height */
+  }
+  
+  .hero-image-carousel-container {
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+  
+  .carousel-image {
+    width: 100vw;
+    height: 90vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  .carousel-image.active {
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  .hero-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.5vw;
+    font-weight: 700;
     text-align: center;
-    padding: 50px;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+    z-index: 10;
+    width: 90vw;
+    max-width: 1000px;
+    pointer-events: none;
+  }
+  
+  /* Optional: Content section style */
+  .cafe-homepage {
+    padding: 50px 0;
     background-color: #f5f5f5;
-    border-radius: 10px;
-    margin: 20px;
+    width: 100vw;
+    margin: 0;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .hero-image-carousel-container,
+    .carousel-image {
+      height: 50vh;
+    }
+  
+    .hero-overlay-text {
+      font-size: 6vw;
+      width: 95vw;
+      padding: 0 2vw;
+    }
+  }
+
+/* New About Section Styles */
+.about-section {
+  padding: 80px 0;
+  background-color: #fff;
+  width: 100vw;
+  margin: 0;
 }
 
-.cafe-homepage h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #333;
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  width: 100vw;
+  margin: 0;
+  padding: 0 8vw;
+  box-sizing: border-box;
 }
 
-.cafe-homepage p {
-    font-size: 1.5rem;
-    color: #666;
-    margin-bottom: 30px;
+.about-image-column {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.cafe-color-box {
-    width: 300px;
-    height: 300px;
-    margin: 20px auto;
-    transition: background-color 0.5s ease-in-out;
-    border-radius: 10px;
+.about-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cafe-color-box.cafe-red {
-    background-color: #ff4444;
+.about-image-bg {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 100%;
+  height: 100%;
+  background: #0d3b2e;
+  opacity: 0.9;
+  border-radius: 12px;
+  z-index: 1;
 }
 
-.cafe-color-box.cafe-blue {
-    background-color: #4444ff;
+.about-image {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  max-height: 360px;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 2;
+  object-fit: contain;
+  display: block;
 }
 
-.cafe-button {
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.about-content-column {
+  flex: 1 1 0;
+  max-width: 520px;
 }
 
-.cafe-button:hover {
-    background-color: #45a049;
+.about-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #223;
+  line-height: 1.2;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.services-section {
+  margin-top: 32px;
+}
+
+.services-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #223;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 12px 0;
+}
+
+.service-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Mobile responsiveness for about section */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    gap: 48px;
+    padding: 0 4vw;
+  }
+  
+  .about-image-frame {
+    max-width: 100%;
+  }
+  
+  .about-content-column {
+    max-width: 100%;
+  }
+  
+  .about-title {
+    font-size: 2.2rem;
+  }
+  
+  .about-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 60px 0;
+  }
+  
+  .about-container {
+    gap: 32px;
+    padding: 0 2vw;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .service-item {
+    gap: 12px;
+  }
+  
+  .service-text {
+    font-size: 1rem;
+  }
+}
+
+.welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  width: 100vw;
+  margin: 0;
+  padding: 40px 8vw;
+  box-sizing: border-box;
+}
+
+.welcome-text {
+  flex: 1 1 0;
+  max-width: 480px;
+}
+
+.welcome-text h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #223;
+}
+
+.welcome-text p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.welcome-image-frame {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 320px;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-image-bg {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: 100%;
+  height: 100%;
+  background: #0d3b2e;
+  opacity: 0.9;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.welcome-image {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  z-index: 2;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .welcome-section {
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 4vw;
+  }
+  .welcome-image-frame {
+    min-width: 0;
+    max-width: 100%;
+  }
 }
