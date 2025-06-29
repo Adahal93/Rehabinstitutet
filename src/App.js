@@ -1,11 +1,12 @@
 import React from 'react';
+import IntroSection from './components/IntroSection';
 import './App.css';
-import HomePage from './views/HomePage';
 
 function App() {
-  console.log('App component is rendering'); // Debug log
   return (
-    <HomePage />
+    <div className="App">
+      <IntroSection />
+    </div>
   );
 }
 
