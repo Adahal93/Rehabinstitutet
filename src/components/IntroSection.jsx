@@ -60,7 +60,7 @@ const IntroSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
-    }, 6000);
+    }, 8000);
     return () => clearInterval(interval);
   }, [heroImages.length]);
 

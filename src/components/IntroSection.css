@@ -428,4 +428,8 @@ section > div {
   object-fit: cover;
   z-index: -20;
   pointer-events: none;
-} 
+}
+
+.opacity-0 { opacity: 0; }
+.opacity-100 { opacity: 1; }
+.z-neg-20 { z-index: -20; } 
