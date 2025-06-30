@@ -6,8 +6,15 @@ import { Link, useNavigate } from 'react-router-dom';
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [omOssDropdownOpen, setOmOssDropdownOpen] = useState(false);
+  const [tjansterDropdownOpen, setTjansterDropdownOpen] = useState(false);
   let dropdownCloseTimeout = null;
   const navigate = useNavigate();
+
+  // Helper to close all dropdowns
+  const closeAllDropdowns = () => {
+    setOmOssDropdownOpen(false);
+    setTjansterDropdownOpen(false);
+  };
 
   return (
     <header className="w-full bg-white backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100 animate-fade-in-down">
@@ -32,6 +39,7 @@ const Header = () => {
               onMouseEnter={() => {
                 if (dropdownCloseTimeout) clearTimeout(dropdownCloseTimeout);
                 setOmOssDropdownOpen(true);
+                setTjansterDropdownOpen(false);
               }}
               onMouseLeave={() => {
                 dropdownCloseTimeout = setTimeout(() => setOmOssDropdownOpen(false), 150);
@@ -46,10 +54,32 @@ const Header = () => {
                 </div>
               )}
             </div>
+            <div
+              className="dropdown-container"
+              onMouseEnter={() => {
+                if (dropdownCloseTimeout) clearTimeout(dropdownCloseTimeout);
+                setTjansterDropdownOpen(true);
+                setOmOssDropdownOpen(false);
+              }}
+              onMouseLeave={() => {
+                dropdownCloseTimeout = setTimeout(() => setTjansterDropdownOpen(false), 150);
+              }}
+            >
+              <Link to="/tjanster" className="nav-link relative hover-text-green transition text-sm font-medium text-black tracking-wider dropdown-trigger" onClick={() => setTjansterDropdownOpen(!tjansterDropdownOpen)}>
+                Tjänster <span className="dropdown-arrow">▼</span>
+              </Link>
+              {tjansterDropdownOpen && (
+                <div className="dropdown-menu" style={{marginTop: 16}}>
+                  <Link to="/tjanster#onlinebesok">Onlinebesök</Link>
+                  <Link to="/tjanster#ergonomiforelasning">Ergonomiföreläsning</Link>
+                  <Link to="/tjanster#hemrehab">Hemrehab</Link>
+                  <Link to="/tjanster#traningsprogram">Tränings- & rehabiliteringsprogram</Link>
+                </div>
+              )}
+            </div>
             <Link to="/program" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Program</Link>
             <Link to="/ovningar" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Övningar</Link>
             <Link to="/kompetens" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Kompetens</Link>
-            <Link to="/tjanster" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Tjänster</Link>
             <a href="#contact" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans" onClick={e => {
               e.preventDefault();
               if (window.location.pathname === "/") {
