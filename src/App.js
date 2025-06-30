@@ -7,6 +7,7 @@ import Header from './views/Header';
 import TeamPage from './views/TeamPage';
 import AdamProfile from './views/AdamProfile';
 import AntonProfile from './views/AntonProfile';
+import TjansterPage from './views/TjansterPage';
 
 // Om Oss page with provided design
 function OmOssPage() {
@@ -83,6 +84,7 @@ function App() {
           <Route path="/team" element={<TeamPage />} />
           <Route path="/team/adam" element={<AdamProfile />} />
           <Route path="/team/anton" element={<AntonProfile />} />
+          <Route path="/tjanster" element={<TjansterPage />} />
         </Routes>
       </div>
     </Router>

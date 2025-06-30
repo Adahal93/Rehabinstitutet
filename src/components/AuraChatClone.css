@@ -1,0 +1,42 @@
+/* AuraChatClone Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  color: #18181b;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px) scale(.98);
+  filter: blur(5px);
+  animation: fadeInUp 0.7s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+.fade-in-1 { animation-delay: 0.1s; }
+.fade-in-2 { animation-delay: 0.25s; }
+.fade-in-3 { animation-delay: 0.4s; }
+.fade-in-4 { animation-delay: 0.55s; }
+.fade-in-5 { animation-delay: 0.7s; }
+.fade-in-6 { animation-delay: 0.85s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.service-hover {
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.2s;
+}
+
+.service-hover:hover {
+  box-shadow: 0 8px 32px 0 rgba(59,130,246,.10), 0 1.5px 8px 0 rgba(0,0,0,.06);
+  border-color: #6366f1;
+  transform: translateY(-4px) scale(1.025);
+}
+
+.icon-gradient {
+  background: linear-gradient(90deg, #6366f1 0%, #38bdf8 100%);
+} 
