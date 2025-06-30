@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './IntroSection.css';
-import strengthTrainMan from '../assets/images/strength_train_man.png';
+import styrketraningForLopare from '../assets/images/styrketräning_för_löpare.png';
 import runningWoman from '../assets/images/running_woman.png';
 import skiingWoman from '../assets/images/skiing_woman.png';
 import stretchingWoman from '../assets/images/stretching_woman.png';
 import walkingWoman from '../assets/images/walking_woman.png';
+import strengthTrainMan from '../assets/images/strength_train_man.png';
 import { Link } from 'react-router-dom';
 
 const IntroSection = () => {
@@ -64,6 +65,17 @@ const IntroSection = () => {
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
+  // Scroll to contact section if flag is set (for cross-page smooth scroll)
+  useEffect(() => {
+    if (window.sessionStorage.getItem('scrollToContact')) {
+      window.sessionStorage.removeItem('scrollToContact');
+      setTimeout(() => {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 200);
+    }
+  }, []);
+
   return (
     <div className="bg-white text-black min-h-screen transition duration-500">
       {/* Hero Section */}
@@ -94,7 +106,16 @@ const IntroSection = () => {
               <a href="/tjanster" className="px-8 py-3 bg-green text-white hover-bg-black border border-green rounded-lg font-semibold tracking-wider text-lg shadow-xl transition duration-300 outline-none focus-ring-2 focus-ring-green-40 font-sans" style={{textDecoration: 'underline'}}>
                 Utforska våra tjänster
               </a>
-              <a href="/kontakt" className="px-8 py-3 bg-white text-green hover-bg-green hover-text-white border border-green rounded-lg font-semibold tracking-wider text-lg shadow-xl transition duration-300 outline-none focus-ring-2 focus-ring-green-40 font-sans">
+              <a href="#contact" className="px-8 py-3 bg-white text-green hover-bg-green hover-text-white border border-green rounded-lg font-semibold tracking-wider text-lg shadow-xl transition duration-300 outline-none focus-ring-2 focus-ring-green-40 font-sans" onClick={e => {
+                e.preventDefault();
+                if (window.location.pathname === "/") {
+                  const el = document.getElementById('contact');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.sessionStorage.setItem('scrollToContact', 'true');
+                  window.location.href = "/";
+                }
+              }}>
                 Kontakta oss
               </a>
             </div>
@@ -133,10 +154,10 @@ const IntroSection = () => {
                 <div className="w-80 h-80 rounded-3xl bg-gradient-tr from-light-green-60 to-green-10 blur-2xl opacity-60 shadow-2xl"></div>
               </div>
               <img 
-                src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&q=80" 
-                alt="Person som tränar med fysioterapeut" 
-                className="w-full max-w-md h-72 object-cover rounded-2xl shadow-2xl border border-gray-100 transition hover-scale-105 hover-shadow-3xl duration-300 outline-none" 
-                style={{zIndex: 1}}
+                src={styrketraningForLopare}
+                alt="Styrketräning för löpare" 
+                className="w-full max-w-md object-contain rounded-2xl shadow-2xl border border-gray-100 transition hover-scale-105 hover-shadow-3xl duration-300 outline-none bg-white" 
+                style={{zIndex: 1, background: '#fff'}}
               />
             </div>
           </div>
@@ -290,7 +311,7 @@ const IntroSection = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="w-full py-16 contact-section">
+      <section id="contact" className="w-full py-16 contact-section">
         <div className="container mx-auto px-6 flex flex-col md-flex-row items-center justify-between gap-10">
           {/* Logo */}
           <div className="flex-1 flex justify-center md-justify-start mb-8 md-mb-0">

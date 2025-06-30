@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './Header.css';
 import logo from '../assets/images/logo512.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [omOssDropdownOpen, setOmOssDropdownOpen] = useState(false);
   let dropdownCloseTimeout = null;
+  const navigate = useNavigate();
 
   return (
     <header className="w-full bg-white backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100 animate-fade-in-down">
@@ -49,7 +50,16 @@ const Header = () => {
             <Link to="/ovningar" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Övningar</Link>
             <Link to="/kompetens" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Kompetens</Link>
             <Link to="/tjanster" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Tjänster</Link>
-            <Link to="/kontakt" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Kontakt</Link>
+            <a href="#contact" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans" onClick={e => {
+              e.preventDefault();
+              if (window.location.pathname === "/") {
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.sessionStorage.setItem('scrollToContact', 'true');
+                navigate("/");
+              }
+            }}>Kontakt</a>
           </div>
         </nav>
       </div>
