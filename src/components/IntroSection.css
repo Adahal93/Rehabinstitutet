@@ -418,4 +418,14 @@ section > div {
 .center-abs-x {
   left: 50%;
   transform: translateX(-50%);
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -20;
+  pointer-events: none;
 } 

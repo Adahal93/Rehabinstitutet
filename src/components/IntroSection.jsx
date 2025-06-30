@@ -5,6 +5,7 @@ import runningWoman from '../assets/images/running_woman.png';
 import skiingWoman from '../assets/images/skiing_woman.png';
 import stretchingWoman from '../assets/images/stretching_woman.png';
 import walkingWoman from '../assets/images/walking_woman.png';
+import { Link } from 'react-router-dom';
 
 const IntroSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -65,58 +66,6 @@ const IntroSection = () => {
 
   return (
     <div className="bg-white text-black min-h-screen transition duration-500">
-      {/* Top Headline */}
-      <div className="w-full bg-white border-b border-gray-100 py-3 animate-fade-in-down">
-        <div className="container mx-auto px-6">
-          <span className="font-semibold headline tracking-tight text-black font-sans">
-            Träning, utbildning och rehabilitering
-          </span>
-        </div>
-      </div>
-
-      {/* Navigation */}
-      <header className="w-full bg-white backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100 animate-fade-in-down">
-        <div className="container mx-auto px-6">
-          <nav className="py-4 flex justify-between items-center relative">
-            <a href="/" className="text-xl font-bold tracking-wider text-green flex items-center gap-2 font-sans">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <circle cx="12" cy="12" r="10" strokeWidth="2"></circle>
-              </svg>
-              <span className="font-sans uppercase tracking-wider font-semibold text-green">REHABINSTITUTET</span>
-            </a>
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md-hidden text-green hover-text-black transition" 
-              aria-label="Öppna meny"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
-            <div className="hidden md-flex gap-8">
-              <a href="/om-oss" className="nav-link relative hover-text-green transition text-sm font-medium text-black tracking-wider">Om Oss</a>
-              <a href="/program" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Program</a>
-              <a href="/ovningar" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Övningar</a>
-              <a href="/kompetens" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Kompetens</a>
-              <a href="/tjanster" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Tjänster</a>
-              <a href="/kontakt" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Kontakt</a>
-            </div>
-          </nav>
-        </div>
-        {isMobileMenuOpen && (
-          <div className="md-hidden bg-white backdrop-blur-md border-t border-gray-100 animate-fade-in-down">
-            <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
-              <a href="/om-oss" className="text-sm tracking-wider py-2 border-b border-gray-100 text-black hover-text-green transition font-sans">Om Oss</a>
-              <a href="/program" className="text-sm tracking-wider py-2 border-b border-gray-100 text-black hover-text-green transition font-sans">Program</a>
-              <a href="/ovningar" className="text-sm tracking-wider py-2 border-b border-gray-100 text-black hover-text-green transition font-sans">Övningar</a>
-              <a href="/kompetens" className="text-sm tracking-wider py-2 border-b border-gray-100 text-black hover-text-green transition font-sans">Kompetens</a>
-              <a href="/tjanster" className="text-sm tracking-wider py-2 border-b border-gray-100 text-black hover-text-green transition font-sans">Tjänster</a>
-              <a href="/kontakt" className="text-sm tracking-wider py-2 text-black hover-text-green transition font-sans">Kontakt</a>
-            </div>
-          </div>
-        )}
-      </header>
-
       {/* Hero Section */}
       <section className="relative flex min-h-70vh sm-min-h-80vh sm-py-28 animate-fade-in-up pt-12 pb-12 items-center justify-center overflow-hidden">
         {/* Hero background image carousel */}

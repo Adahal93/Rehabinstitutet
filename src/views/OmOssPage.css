@@ -73,6 +73,11 @@
   transform: scale(1.03);
   border-color: #7ca966;
 }
+.omoss-card.no-hover:hover {
+  box-shadow: none;
+  transform: none;
+  border-color: #e5e7eb;
+}
 .omoss-btn {
   background: #7ca966;
   color: #fff;

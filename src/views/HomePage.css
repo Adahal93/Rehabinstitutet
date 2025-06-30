@@ -251,8 +251,8 @@ html, body {
   
   .service-text {
     font-size: 1rem;
+    }
   }
-}
 
 .welcome-section {
   display: flex;

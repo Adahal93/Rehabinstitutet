@@ -1,70 +1,70 @@
 import React, { useState } from 'react';
 import './Header.css';
 import logo from '../assets/images/logo512.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [tjänsterOpen, setTjänsterOpen] = useState(false);
-  const [programOpen, setProgramOpen] = useState(false);
-
-  const closeDropdowns = () => {
-    setTjänsterOpen(false);
-    setProgramOpen(false);
-  };
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [omOssDropdownOpen, setOmOssDropdownOpen] = useState(false);
+  let dropdownCloseTimeout = null;
 
   return (
-    <header className="sticky-header">
-      <div className="logo-nav">
-        <img src={logo} alt="Rehabinstitutet Logo" className="header-logo" />
-        <span className="header-title">REHABINSTITUTET</span>
+    <header className="w-full bg-white backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100 animate-fade-in-down">
+      <div className="container mx-auto px-6">
+        <nav className="py-4 flex justify-between items-center relative">
+          <Link to="/" className="text-xl font-bold tracking-wider text-green flex items-center gap-2 font-sans">
+            <img src={logo} alt="Rehabinstitutet logotyp" className="h-7 w-7 text-green" style={{borderRadius: 8}} />
+            <span className="font-sans uppercase tracking-wider font-semibold text-green">REHABINSTITUTET</span>
+          </Link>
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md-hidden text-green hover-text-black transition" 
+            aria-label="Öppna meny"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <div className="hidden md-flex gap-8">
+            <div
+              className="dropdown-container"
+              onMouseEnter={() => {
+                if (dropdownCloseTimeout) clearTimeout(dropdownCloseTimeout);
+                setOmOssDropdownOpen(true);
+              }}
+              onMouseLeave={() => {
+                dropdownCloseTimeout = setTimeout(() => setOmOssDropdownOpen(false), 150);
+              }}
+            >
+              <Link to="/om-oss" className="nav-link relative hover-text-green transition text-sm font-medium text-black tracking-wider dropdown-trigger" onClick={() => setOmOssDropdownOpen(!omOssDropdownOpen)}>
+                Om Oss <span className="dropdown-arrow">▼</span>
+              </Link>
+              {omOssDropdownOpen && (
+                <div className="dropdown-menu" style={{marginTop: 16}}>
+                  <Link to="/team">Teamet</Link>
+                </div>
+              )}
+            </div>
+            <Link to="/program" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Program</Link>
+            <Link to="/ovningar" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Övningar</Link>
+            <Link to="/kompetens" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Kompetens</Link>
+            <Link to="/tjanster" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Tjänster</Link>
+            <Link to="/kontakt" className="nav-link relative text-sm tracking-wider text-black hover-text-green font-medium transition font-sans">Kontakt</Link>
+          </div>
+        </nav>
       </div>
-      <nav className="header-nav">
-        <a href="#om">Om Oss</a>
-        <div 
-          className="dropdown-container"
-          onMouseEnter={() => setProgramOpen(true)}
-          onMouseLeave={closeDropdowns}
-        >
-          <a 
-            href="#program" 
-            className="dropdown-trigger"
-            onClick={e => { e.preventDefault(); setProgramOpen(!programOpen); setTjänsterOpen(false); }}
-          >
-            Program
-            <span className="dropdown-arrow">▼</span>
-          </a>
-          {programOpen && (
-            <div className="dropdown-menu">
-              <a href="#rehabprogram" onClick={closeDropdowns}>Rehabprogram</a>
-              <a href="#träningsprogram" onClick={closeDropdowns}>Träningsprogram</a>
-            </div>
-          )}
+      {isMobileMenuOpen && (
+        <div className="md-hidden bg-white backdrop-blur-md border-t border-gray-100 animate-fade-in-down">
+          <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
+            <Link to="/om-oss" className="text-sm tracking-wider py-2 border-b border-gray-100 text-black hover-text-green transition font-sans">Om Oss</Link>
+            <Link to="/program" className="text-sm tracking-wider py-2 border-b border-gray-100 text-black hover-text-green transition font-sans">Program</Link>
+            <Link to="/ovningar" className="text-sm tracking-wider py-2 border-b border-gray-100 text-black hover-text-green transition font-sans">Övningar</Link>
+            <Link to="/kompetens" className="text-sm tracking-wider py-2 border-b border-gray-100 text-black hover-text-green transition font-sans">Kompetens</Link>
+            <Link to="/tjanster" className="text-sm tracking-wider py-2 border-b border-gray-100 text-black hover-text-green transition font-sans">Tjänster</Link>
+            <Link to="/kontakt" className="text-sm tracking-wider py-2 text-black hover-text-green transition font-sans">Kontakt</Link>
+          </div>
         </div>
-        <a href="#övningar">Övningar</a>
-        <a href="#kompetens">Kompetens</a>
-        <div 
-          className="dropdown-container"
-          onMouseEnter={() => setTjänsterOpen(true)}
-          onMouseLeave={closeDropdowns}
-        >
-          <a 
-            href="#tjänster" 
-            className="dropdown-trigger"
-            onClick={e => { e.preventDefault(); setTjänsterOpen(!tjänsterOpen); setProgramOpen(false); }}
-          >
-            Tjänster
-            <span className="dropdown-arrow">▼</span>
-          </a>
-          {tjänsterOpen && (
-            <div className="dropdown-menu">
-              <a href="#ergonomi" onClick={closeDropdowns}>Ergonomi</a>
-              <a href="#onlinebesök" onClick={closeDropdowns}>Onlinebesök</a>
-              <a href="#varför-onlinebesök" onClick={closeDropdowns}>Varför onlinebesök</a>
-              <a href="#personlig-träning" onClick={closeDropdowns}>Personlig träning</a>
-            </div>
-          )}
-        </div>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+      )}
     </header>
   );
 };

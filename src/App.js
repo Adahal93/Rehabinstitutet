@@ -4,15 +4,18 @@ import IntroSection from './components/IntroSection';
 import './App.css';
 import './views/OmOssPage.css';
 import Header from './views/Header';
+import TeamPage from './views/TeamPage';
+import AdamProfile from './views/AdamProfile';
+import AntonProfile from './views/AntonProfile';
 
 // Om Oss page with provided design
 function OmOssPage() {
   return (
     <div className="omoss-root">
       <div className="omoss-container">
-        <h1 className="omoss-title">Om oss</h1>
+        <h1 className="omoss-title">Om Rehabinstitutet</h1>
         <p className="omoss-intro">
-          Vi är två legitimerade fysioterapeuter med en gemensam vision: att skapa den bästa möjliga upplevelsen för patienter och företag. Vårt mål är att göra rehabilitering enkel, tillgänglig och engagerande – både online och på plats.
+          Vi är två legitimerade fysioterapeuter med en gemensam vision: att skapa den bästa möjliga upplevelsen för patienter och företag. Vårt mål är att göra rehabilitering enkel, tillgänglig och engagerande – utan att kompromissa med kvalitet.
         </p>
         <div className="omoss-grid">
           <div className="omoss-card omoss-card-vision">
@@ -77,6 +80,9 @@ function App() {
         <Routes>
           <Route path="/" element={<IntroSection />} />
           <Route path="/om-oss" element={<OmOssPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/team/adam" element={<AdamProfile />} />
+          <Route path="/team/anton" element={<AntonProfile />} />
         </Routes>
       </div>
     </Router>
