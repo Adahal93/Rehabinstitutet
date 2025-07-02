@@ -243,6 +243,7 @@ const IntroSection = () => {
                   </svg>
                 </a>
               </div>
+              {/* Hemrehab */}
               <div className="rounded-xl bg-white hover-bg-light-green transition border border-gray-100 shadow-sm p-7 flex flex-col items-start h-full">
                 <div className="mb-4 flex items-center justify-center h-11 w-11 rounded-lg bg-light-green">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -251,12 +252,12 @@ const IntroSection = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold tracking-tight text-black mb-2 font-sans">
-                  Onlinebesök
+                  Hemrehab
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-base font-normal mb-5">
-                  Få professionell hjälp från våra legitimerade fysioterapeuter via video. Perfekt för dig som vill få hjälp hemifrån eller har begränsad tid.
+                  Rehabilitering i hemmet – professionell hjälp där du är. Vi erbjuder privat hemrehab inom Stockholms stad och skapar ett skräddarsytt träningsprogram för att förbättra rörlighet, styrka och funktion.
                 </p>
-                <a href="/onlinebesok" className="mt-auto inline-flex items-center gap-1 px-5 py-2 border border-green text-green bg-white rounded-lg font-medium text-sm transition duration-200 hover-bg-green hover-text-white focus-outline-none focus-ring-2 focus-ring-green-40 shadow-sm">
+                <a href="/hemrehab" className="mt-auto inline-flex items-center gap-1 px-5 py-2 border border-green text-green bg-white rounded-lg font-medium text-sm transition duration-200 hover-bg-green hover-text-white focus-outline-none focus-ring-2 focus-ring-green-40 shadow-sm">
                   Läs mer
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
@@ -277,7 +278,7 @@ const IntroSection = () => {
                 <p className="text-gray-700 leading-relaxed text-base font-normal mb-5">
                   Personlig coaching och rehabilitering online – anpassade tränings- och rehabupplägg med kontinuerlig uppföljning av fysioterapeut.
                 </p>
-                <a href="/online-coaching" className="mt-auto inline-flex items-center gap-1 px-5 py-2 border border-green text-green bg-white rounded-lg font-medium text-sm transition duration-200 hover-bg-green hover-text-white focus-outline-none focus-ring-2 focus-ring-green-40 shadow-sm">
+                <a href="/onlinebesok" className="mt-auto inline-flex items-center gap-1 px-5 py-2 border border-green text-green bg-white rounded-lg font-medium text-sm transition duration-200 hover-bg-green hover-text-white focus-outline-none focus-ring-2 focus-ring-green-40 shadow-sm">
                   Läs mer
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
