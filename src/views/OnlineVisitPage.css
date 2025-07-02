@@ -1,0 +1,211 @@
+.onlinevisit-root {
+  background: #fafbfa;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.onlinevisit-hero {
+  padding: 60px 0 30px 0;
+  text-align: center;
+}
+
+.onlinevisit-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.onlinevisit-hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.onlinevisit-hero-imgwrap {
+  flex: 1 1 350px;
+  min-width: 320px;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.onlinevisit-hero-imgwrap img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(60, 60, 60, 0.10);
+}
+
+.onlinevisit-hero-text {
+  flex: 1 1 350px;
+  min-width: 320px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.onlinevisit-hero-text h2 {
+  font-size: 1.5rem;
+  color: #8DBB7A;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.onlinevisit-hero-text p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.onlinevisit-benefits {
+  margin: 40px auto 0 auto;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(60, 60, 60, 0.08);
+  padding: 36px 32px;
+}
+
+.onlinevisit-benefits h3 {
+  color: #8DBB7A;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.onlinevisit-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.onlinevisit-benefits li {
+  font-size: 1.08rem;
+  color: #444;
+  margin-bottom: 14px;
+  padding-left: 0.5em;
+  position: relative;
+}
+
+.onlinevisit-benefits li:before {
+  content: '•';
+  color: #8DBB7A;
+  font-size: 1.3em;
+  position: absolute;
+  left: -0.7em;
+  top: 0.1em;
+}
+
+.onlinevisit-booking {
+  margin: 60px auto 0 auto;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.onlinevisit-booking h3 {
+  font-size: 1.4rem;
+  color: #222;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.onlinevisit-booking-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  justify-content: center;
+}
+
+.booking-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(60, 60, 60, 0.10);
+  border: 1px solid #e5e7eb;
+  min-width: 320px;
+  max-width: 400px;
+  flex: 1 1 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.booking-card-content {
+  padding: 36px 32px 32px 32px;
+  width: 100%;
+}
+
+.booking-card-content h4 {
+  font-size: 1.18rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 18px;
+}
+
+.booking-card-content hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin-bottom: 18px;
+}
+
+.booking-info-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 32px;
+  font-size: 1.08rem;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+.booking-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 32px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.13s;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.08);
+}
+
+.booking-btn:hover, .booking-btn:focus {
+  background: #444;
+  transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .onlinevisit-hero-content {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .onlinevisit-booking-cards {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .onlinevisit-hero {
+    padding: 32px 0 16px 0;
+  }
+  .onlinevisit-title {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+  .onlinevisit-benefits {
+    padding: 18px 8px;
+  }
+  .booking-card-content {
+    padding: 18px 8px 18px 8px;
+  }
+} 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './AuraChatClone.css';
 
 export default function AuraChatClone() {
@@ -24,14 +25,14 @@ export default function AuraChatClone() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Onlinebesök</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Online coaching av fysioterapeut</h3>
               <p className="text-gray-500 mb-6 flex-grow">Få professionell rådgivning och individanpassade rekommendationer oavsett var du befinner dig. Våra onlinekonsultationer är tillgängliga för alla – från kontorsarbetare med stel nacke till idrottare och motionärer med skador eller belastningsproblem. Genom videosamtal får du snabb hjälp av erfarna experter som kan ge vägledning kring smärta, rehabilitering, träning och förebyggande åtgärder. Boka en tid och ta första steget mot en smärtfri och starkare vardag!</p>
-              <div className="flex items-center text-green-700 font-medium hover:underline cursor-pointer group">
-                <span>Boka nu</span>
+              <Link to="/onlinebesok" className="flex items-center text-green-700 font-medium hover:underline cursor-pointer group">
+                <span>Läs mer och Boka nu</span>
                 <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
-              </div>
+              </Link>
             </div>
             
             {/* Service 2: Ergonomiföreläsning */}
@@ -44,12 +45,12 @@ export default function AuraChatClone() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Ergonomiföreläsning</h3>
               <p className="text-gray-500 mb-6 flex-grow">Vi erbjuder professionella ergonomikonsultationer för både företag och privatpersoner som vill skapa en hälsosam arbetsmiljö. Våra fysioterapeuter gör en noggrann genomgång av din arbetsplats och justerar den enligt ergonomiska riktlinjer. Vi erbjuder också en inspirerande ergonomiföreläsning som inkluderar råd baserade på aktuell forskning om hållning, träning, pauser i arbetet och deras koppling till vanliga besvär i kontorsmiljöer som ryggont, nackproblem, tennisarmbåge, musarm, axelbesvär och muskelspänningar.</p>
               <p className="text-gray-500 mb-6 flex-grow">Konsultationerna sker i Stockholmsområdet och leds av våra erfarna fysioterapeuter. Kontakta oss idag för att förbättra din arbetsmiljö, minska risken för skador och öka din produktivitet!</p>
-              <div className="flex items-center text-green-700 font-medium hover:underline cursor-pointer group">
+              <Link to="/ergonomi" className="flex items-center text-green-700 font-medium hover:underline cursor-pointer group">
                 <span>Läs mer</span>
                 <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
-              </div>
+              </Link>
             </div>
             
             {/* Service 3: Hemrehab */}

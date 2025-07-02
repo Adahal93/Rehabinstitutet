@@ -70,10 +70,10 @@ const Header = () => {
               </Link>
               {tjansterDropdownOpen && (
                 <div className="dropdown-menu" style={{marginTop: 16}}>
-                  <Link to="/tjanster#onlinebesok">Onlinebesök</Link>
-                  <Link to="/tjanster#ergonomiforelasning">Ergonomiföreläsning</Link>
-                  <Link to="/tjanster#hemrehab">Hemrehab</Link>
-                  <Link to="/tjanster#traningsprogram">Tränings- & rehabiliteringsprogram</Link>
+                  <Link to="/onlinebesok">Online Coaching</Link>
+                  <Link to="/ergonomi">Ergonomiföreläsning</Link>
+                  <Link to="/hemrehab">Hemrehab</Link>
+                  <Link to="/program">Tränings- & rehabiliteringsprogram</Link>
                 </div>
               )}
             </div>

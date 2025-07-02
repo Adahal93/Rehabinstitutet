@@ -7,6 +7,7 @@ import stretchingWoman from '../assets/images/stretching_woman.png';
 import walkingWoman from '../assets/images/walking_woman.png';
 import strengthTrainMan from '../assets/images/strength_train_man.png';
 import { Link } from 'react-router-dom';
+import ContactSection from '../views/ContactSection';
 
 const IntroSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -311,31 +312,8 @@ const IntroSection = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="w-full py-16 contact-section">
-        <div className="container mx-auto px-6 flex flex-col md-flex-row items-center justify-between gap-10">
-          {/* Logo */}
-          <div className="flex-1 flex justify-center md-justify-start mb-8 md-mb-0">
-            <img src={require('../assets/images/logo512.png')} alt="Rehabinstitutet logotyp" style={{width: 120, height: 120}} />
-          </div>
-          {/* Contact Info */}
-          <div className="flex-1 flex flex-col items-center md-items-start text-white">
-            <h2 className="text-3xl font-semibold mb-6 font-sans">Kontakta oss</h2>
-            <div className="mb-3 flex items-center gap-3">
-              <span className="font-semibold">T:</span>
-              <a href="tel:+46701234567" className="underline hover-text-light-green">070-123 45 67</a>
-            </div>
-            <div className="mb-3 flex items-center gap-3">
-              <span className="font-semibold">E:</span>
-              <a href="mailto:kontakt@rehabinstitutet.se" className="underline hover-text-light-green">kontakt@rehabinstitutet.se</a>
-            </div>
-            <div className="mb-3 flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 0v0Zm8.5 0v0ZM12 7.25A4.75 4.75 0 1 0 12 16.75A4.75 4.75 0 1 0 12 7.25Zm6.25-1.5a1.25 1.25 0 1 0 0 2.5a1.25 1.25 0 0 0 0-2.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <a href="https://instagram.com/rehabinstitutet" target="_blank" rel="noopener noreferrer" className="underline hover-text-light-green">Instagram</a>
-            </div>
-          </div>
-        </div>
+      <section id="contact" className="w-full p-0 m-0">
+        <ContactSection />
       </section>
     </div>
   );

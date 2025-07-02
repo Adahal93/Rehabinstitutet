@@ -1,0 +1,235 @@
+.ergonomi-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.ergonomi-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 6%;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.ergonomi-hero-content {
+  flex: 1;
+  max-width: 600px;
+  margin-right: 60px;
+}
+
+.ergonomi-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #8DBB7A;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ergonomi-subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  font-family: 'Arial', sans-serif;
+}
+
+.ergonomi-hero-image {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ergonomi-hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.ergonomi-content {
+  padding: 80px 6%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ergonomi-text-section {
+  background: white;
+  padding: 60px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ergonomi-intro {
+  font-size: 1.2rem;
+  color: #374151;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.ergonomi-highlight {
+  background: #8DBB7A;
+  color: white;
+  padding: 18px 38px 18px 32px;
+  border-radius: 15px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(141, 187, 122, 0.35), 0 1.5px 8px 0 rgba(60, 60, 60, 0.10);
+  cursor: pointer;
+  transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  gap: 12px;
+}
+
+.ergonomi-highlight:hover, .ergonomi-highlight:focus {
+  background: #7CA86B;
+  box-shadow: 0 12px 36px 0 rgba(141, 187, 122, 0.45), 0 2px 12px 0 rgba(60, 60, 60, 0.13);
+  transform: translateY(-2px) scale(1.03);
+  color: #fff;
+  text-decoration: underline;
+}
+
+.ergonomi-highlight p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.ergonomi-process {
+  margin: 40px 0;
+  padding: 30px;
+  background: #f8fafc;
+  border-radius: 15px;
+  border-left: 5px solid #059669;
+}
+
+.ergonomi-process h3 {
+  color: #059669;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-family: 'Arial', sans-serif;
+}
+
+.ergonomi-process p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.ergonomi-benefits {
+  margin-top: 50px;
+}
+
+.ergonomi-benefits h3 {
+  color: #059669;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  font-family: 'Arial', sans-serif;
+}
+
+.ergonomi-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ergonomi-benefits li {
+  padding: 15px 0;
+  padding-left: 30px;
+  position: relative;
+  font-size: 1.1rem;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ergonomi-benefits li:last-child {
+  border-bottom: none;
+}
+
+.ergonomi-benefits li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 15px;
+  color: #059669;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .ergonomi-hero {
+    flex-direction: column;
+    padding: 60px 4%;
+    text-align: center;
+  }
+  
+  .ergonomi-hero-content {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  
+  .ergonomi-title {
+    font-size: 2.5rem;
+  }
+  
+  .ergonomi-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .ergonomi-content {
+    padding: 40px 4%;
+  }
+  
+  .ergonomi-text-section {
+    padding: 40px 30px;
+  }
+  
+  .ergonomi-intro {
+    font-size: 1.1rem;
+  }
+  
+  .ergonomi-highlight p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ergonomi-hero {
+    padding: 40px 3%;
+  }
+  
+  .ergonomi-title {
+    font-size: 2rem;
+  }
+  
+  .ergonomi-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .ergonomi-content {
+    padding: 30px 3%;
+  }
+  
+  .ergonomi-text-section {
+    padding: 30px 20px;
+  }
+} 

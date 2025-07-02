@@ -8,6 +8,11 @@ import TeamPage from './views/TeamPage';
 import AdamProfile from './views/AdamProfile';
 import AntonProfile from './views/AntonProfile';
 import TjansterPage from './views/TjansterPage';
+import ErgonomiPage from './views/ErgonomiPage';
+import OnlineVisitPage from './views/OnlineVisitPage';
+import HemrehabPage from './views/HemrehabPage';
+import CodepenPriceTable from './views/CodepenPriceTable';
+import ProgramPage from './views/ProgramPage';
 
 // Om Oss page with provided design
 function OmOssPage() {
@@ -85,6 +90,11 @@ function App() {
           <Route path="/team/adam" element={<AdamProfile />} />
           <Route path="/team/anton" element={<AntonProfile />} />
           <Route path="/tjanster" element={<TjansterPage />} />
+          <Route path="/ergonomi" element={<ErgonomiPage />} />
+          <Route path="/onlinebesok" element={<OnlineVisitPage />} />
+          <Route path="/hemrehab" element={<HemrehabPage />} />
+          <Route path="/codepen" element={<CodepenPriceTable />} />
+          <Route path="/program" element={<ProgramPage />} />
         </Routes>
       </div>
     </Router>
