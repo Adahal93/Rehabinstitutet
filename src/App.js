@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import IntroSection from './components/IntroSection';
 import './App.css';
@@ -14,6 +14,7 @@ import HemrehabPage from './views/HemrehabPage';
 import CodepenPriceTable from './views/CodepenPriceTable';
 import ProgramPage from './views/ProgramPage';
 import KompetensPage from './views/KompetensPage';
+import ContactSection from './views/ContactSection';
 
 // Om Oss page with provided design
 function OmOssPage() {
@@ -80,6 +81,18 @@ function OmOssPage() {
 }
 
 function App() {
+  useEffect(() => {
+    function scrollToContact() {
+      if (window.location.hash === '#contact') {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    scrollToContact();
+    window.addEventListener('hashchange', scrollToContact);
+    return () => window.removeEventListener('hashchange', scrollToContact);
+  }, []);
+
   return (
     <Router>
       <div className="App">
@@ -98,6 +111,7 @@ function App() {
           <Route path="/program" element={<ProgramPage />} />
           <Route path="/kompetens" element={<KompetensPage />} />
         </Routes>
+        <ContactSection id="contact" />
       </div>
     </Router>
   );

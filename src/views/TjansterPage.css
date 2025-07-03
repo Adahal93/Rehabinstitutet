@@ -1,0 +1,387 @@
+/* Tjänster Page Styles */
+.tjanster-root {
+  background: #fff;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Inter', 'Manrope', Arial, sans-serif;
+  color: #181818;
+}
+
+/* Hero Section */
+.tjanster-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 48px;
+  z-index: 10;
+}
+
+.tjanster-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.tjanster-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tjanster-hero-content {
+  text-align: center;
+  color: white;
+  z-index: 3;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.tjanster-hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+.tjanster-hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  opacity: 0.95;
+  color: #fff;
+}
+
+/* Main Container */
+.tjanster-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+}
+
+.tjanster-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.tjanster-intro p {
+  font-size: 1.2rem;
+  color: #374151;
+  line-height: 1.7;
+}
+
+/* Grid Layout */
+.tjanster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* Modern tjänstekort-design inspirerad av programkorten */
+.tjanster-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 36px;
+  margin-top: 40px;
+}
+
+/* Card Styles */
+.tjanster-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f1f5f9;
+  position: relative;
+  overflow: hidden;
+}
+
+.tjanster-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tjanster-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tjanster-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Card Headers with Icons */
+.tjanster-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.tjanster-card-icon {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tjanster-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.tjanster-card p {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+/* Service-specific card colors */
+.tjanster-card-online {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.tjanster-card-ergonomi {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.tjanster-card-hemrehab {
+  background: linear-gradient(135deg, #fef3f2 0%, #fecaca 100%);
+}
+
+.tjanster-card-program {
+  background: linear-gradient(135deg, #faf5ff 0%, #e9d5ff 100%);
+}
+
+/* Button Styles */
+.tjanster-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.tjanster-btn-online {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+}
+
+.tjanster-btn-online:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.tjanster-btn-ergonomi {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.tjanster-btn-ergonomi:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.tjanster-btn-hemrehab {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.tjanster-btn-hemrehab:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.tjanster-btn-program {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+}
+
+.tjanster-btn-program:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* Modern Card Styles */
+.tjanster-modern-card {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(30,41,59,0.06);
+  padding: 40px 32px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.25s, transform 0.22s;
+  min-height: 320px;
+}
+
+.tjanster-modern-card:hover {
+  box-shadow: 0 8px 32px rgba(124, 169, 102, 0.18);
+  transform: translateY(-6px) scale(1.025);
+  border-color: #7ca966;
+  transition: box-shadow 0.22s, border-color 0.22s, transform 0.22s;
+}
+
+.tjanster-modern-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #181818;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.tjanster-modern-desc {
+  font-size: 1.08rem;
+  color: #374151;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.tjanster-modern-btn {
+  background: #8ab978;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.18s;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.06);
+  outline: none;
+  border: none;
+  margin-top: auto;
+  display: inline-block;
+}
+
+.tjanster-modern-btn:hover, .tjanster-modern-btn:focus {
+  background: #000;
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tjanster-hero {
+    height: 50vh;
+    min-height: 300px;
+    margin-bottom: 32px;
+  }
+  
+  .tjanster-hero-title {
+    font-size: 2.5rem;
+    color: #fff;
+  }
+  
+  .tjanster-hero-subtitle {
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  
+  .tjanster-container {
+    padding: 40px 16px;
+    margin-top: 0;
+  }
+  
+  .tjanster-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .tjanster-card {
+    padding: 32px 24px;
+  }
+  
+  .tjanster-card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .tjanster-card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tjanster-hero-title {
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  .tjanster-hero-subtitle {
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  .tjanster-card {
+    padding: 24px 20px;
+  }
+  
+  .tjanster-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .tjanster-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .tjanster-modern-card {
+    padding: 28px 12px 24px 12px;
+  }
+} 

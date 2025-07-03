@@ -143,11 +143,10 @@
 
 .tjanster-root {
   background: #fff;
-  min-height: 80vh;
+  min-height: 100vh;
   width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Inter', 'Manrope', Arial, sans-serif;
+  color: #181818;
 }
 .tjanster-title {
   font-size: 2.5rem;

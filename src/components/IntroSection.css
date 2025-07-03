@@ -432,4 +432,203 @@ section > div {
 
 .opacity-0 { opacity: 0; }
 .opacity-100 { opacity: 1; }
-.z-neg-20 { z-index: -20; } 
+.z-neg-20 { z-index: -20; }
+
+/* Testimonials modernisering */
+.testimonials-bg {
+  background: #f8fafc;
+  border-radius: 2rem;
+}
+.testimonials-divider {
+  border-top: 2px solid #e5e7eb !important;
+  margin-bottom: 2.5rem !important;
+}
+.testimonials-quote-icon {
+  font-size: 4rem;
+  color: #7ca966;
+  text-align: center;
+  margin-bottom: -1.5rem;
+  font-family: serif;
+  opacity: 0.18;
+  user-select: none;
+  pointer-events: none;
+}
+.testimonials-arrows-row {
+  margin-bottom: 2.5rem;
+}
+.testimonials-arrow-btn {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0.15rem 0.3rem;
+  cursor: pointer;
+  transition: color 0.18s, transform 0.18s;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  color: #181818;
+  z-index: 1;
+  margin: 0;
+  position: relative;
+}
+.testimonials-arrow-svg {
+  color: #181818;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  position: relative;
+  transition: color 0.18s, transform 0.18s;
+}
+.testimonials-arrow-btn:hover .testimonials-arrow-svg,
+.testimonials-arrow-btn:focus .testimonials-arrow-svg {
+  color: #7ca966;
+  transform: scale(1.13);
+}
+.testimonials-flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0;
+  min-height: 0;
+}
+.testimonials-quote-bg {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(124, 169, 102, 0.07);
+  padding: 1.7rem 1.5rem 1.5rem 1.5rem;
+  margin-top: 0;
+  height: 220px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.2s;
+}
+.testimonials-quote-text {
+  font-size: 1.13rem;
+  font-style: italic;
+  color: #374151;
+  margin-bottom: 1.1rem;
+  line-height: 1.6;
+}
+.testimonials-quote-author {
+  color: #7ca966;
+  font-weight: 600;
+  font-size: 1.08rem;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 600px) {
+  .testimonials-flex-row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .testimonials-quote-bg {
+    padding: 1rem 0.3rem 1rem 0.3rem;
+    min-height: 120px;
+    height: auto;
+  }
+  .testimonials-quote-text {
+    font-size: 0.98rem;
+  }
+  .testimonials-quote-icon {
+    font-size: 2.5rem;
+  }
+}
+
+.explore-bg {
+  background: #f8fafc;
+  border-radius: 2rem;
+}
+.explore-inner {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(124, 169, 102, 0.07);
+  border: 1.5px solid #e5e7eb;
+}
+.explore-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #7ca966 0%, #e5e7eb 100%);
+  border-radius: 2px;
+  margin: 0 auto 1.5rem auto;
+}
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.explore-card {
+  background: #f9fafb;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(30,41,59,0.06);
+  border: 1.5px solid #e5e7eb;
+  padding: 2.2rem 1.5rem 1.7rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.22s, border-color 0.22s, transform 0.22s;
+  min-width: 0;
+  min-height: 320px;
+}
+.explore-card:hover {
+  box-shadow: 0 8px 32px rgba(124, 169, 102, 0.13);
+  border-color: #7ca966;
+  transform: translateY(-4px) scale(1.025);
+}
+.explore-card-icon {
+  margin-bottom: 1.1rem;
+  color: #7ca966;
+  background: #f3f7f3;
+  border-radius: 0.7rem;
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(124, 169, 102, 0.07);
+}
+.explore-card-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #181818;
+  margin-bottom: 0.7rem;
+  letter-spacing: -0.5px;
+}
+.explore-card-desc {
+  font-size: 1.01rem;
+  color: #374151;
+  margin-bottom: 1.7rem;
+  line-height: 1.6;
+}
+.explore-card-btn {
+  background: #7ca966;
+  color: #fff;
+  border-radius: 0.7rem;
+  padding: 11px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.06);
+  outline: none;
+  border: none;
+  margin-top: auto;
+  display: inline-block;
+}
+.explore-card-btn:hover, .explore-card-btn:focus {
+  background: #181818;
+  color: #fff;
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .explore-card {
+    padding: 1.2rem 0.7rem 1.1rem 0.7rem;
+    min-height: 220px;
+  }
+} 

@@ -3,6 +3,7 @@ import './ErgonomiPage.css';
 import onlineImg from '../assets/images/online_coaching.png';
 import { useNavigate } from 'react-router-dom';
 import CodepenPriceTable from './CodepenPriceTable';
+import { scrollToContact } from '../utils/scrollToContact';
 
 const OnlineVisitPage = () => {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const OnlineVisitPage = () => {
             Onlinebesök är ett flexibelt och effektivt alternativ till traditionella rehabiliteringskonsultationer. Du kan få professionell hjälp direkt hemifrån, vilket sparar tid och eliminerar behovet av resor. Våra digitala möten gör det möjligt att anpassa rehabiliteringsplanen till dina unika behov, samtidigt som du får personlig kontakt med en fysioterapeut. Med hjälp av videoanalys och tydliga instruktioner kan vi guida dig i träning och återhämtning, oavsett var du befinner dig.<br/><br/>
             Enkelt, bekvämt och lika professionellt som ett fysiskt besök!
           </p>
-          <button className="ergonomi-highlight" onClick={handleContactClick}>
+          <button className="ergonomi-highlight" onClick={e => { e.preventDefault(); scrollToContact(); }}>
             Kontakta oss idag för diskussion kring upplägg och tidsbokning!
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13 5L20 12L13 19" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>

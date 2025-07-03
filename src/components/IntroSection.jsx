@@ -7,7 +7,7 @@ import stretchingWoman from '../assets/images/stretching_woman.png';
 import walkingWoman from '../assets/images/walking_woman.png';
 import strengthTrainMan from '../assets/images/strength_train_man.png';
 import { Link } from 'react-router-dom';
-import ContactSection from '../views/ContactSection';
+import { scrollToContact } from '../utils/scrollToContact';
 
 const IntroSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -109,13 +109,7 @@ const IntroSection = () => {
               </a>
               <a href="#contact" className="px-8 py-3 bg-white text-green hover-bg-green hover-text-white border border-green rounded-lg font-semibold tracking-wider text-lg shadow-xl transition duration-300 outline-none focus-ring-2 focus-ring-green-40 font-sans" onClick={e => {
                 e.preventDefault();
-                if (window.location.pathname === "/") {
-                  const el = document.getElementById('contact');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.sessionStorage.setItem('scrollToContact', 'true');
-                  window.location.href = "/";
-                }
+                scrollToContact();
               }}>
                 Kontakta oss
               </a>
@@ -166,155 +160,101 @@ const IntroSection = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section aria-labelledby="testimonials-title" className="w-full py-16">
+      <section aria-labelledby="testimonials-title" className="w-full py-10 testimonials-bg">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
-            <div className="w-full border-t border-gray-100 mb-10"></div>
+            <div className="w-full border-t border-gray-100 mb-8 testimonials-divider"></div>
             <h2 id="testimonials-title" className="text-3xl sm-text-4xl font-semibold tracking-tight text-black text-center mb-2 font-sans animate-fade-in-up">
               Vad våra klienter säger
             </h2>
-            <p className="text-green text-base sm-text-lg text-center mb-6 font-normal animate-fade-in-up">
-              Omdömen och berättelser från några av våra nöjda klienter
-            </p>
-            <div className="flex justify-center items-center gap-6 mb-10 animate-fade-in-up">
+            <div className="testimonials-quote-icon" aria-hidden="true">“</div>
+            <div className="testimonials-flex-row">
               <button 
                 onClick={prevTestimonial}
                 type="button" 
                 aria-label="Föregående omdöme" 
-                className="group rounded-lg border border-gray-200 bg-white shadow hover-border-green hover-bg-light-green focus-outline-none focus-visible-ring-2 focus-visible-ring-green-40 transition p-2 disabled-opacity-40"
+                className="testimonials-arrow-btn"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green group-hover-text-black transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M15 19l-7-7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 testimonials-arrow-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M15 19l-7-7 7-7" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path>
                 </svg>
               </button>
+              <div className="relative flex-1 flex justify-center items-center min-h-220px testimonials-quote-bg">
+                <div aria-live="polite" className="w-full text-center">
+                  <p className="testimonials-quote-text">
+                    "{testimonials[currentTestimonial].text}"
+                  </p>
+                  <p className="testimonials-quote-author">
+                    – {testimonials[currentTestimonial].author}
+                  </p>
+                </div>
+              </div>
               <button 
                 onClick={nextTestimonial}
                 type="button" 
                 aria-label="Nästa omdöme" 
-                className="group rounded-lg border border-gray-200 bg-white shadow hover-border-green hover-bg-light-green focus-outline-none focus-visible-ring-2 focus-visible-ring-green-40 transition p-2 disabled-opacity-40"
+                className="testimonials-arrow-btn"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green group-hover-text-black transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M9 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 testimonials-arrow-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M9 5l7 7-7 7" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path>
                 </svg>
               </button>
-            </div>
-            <div className="relative flex justify-center items-center min-h-280px">
-              <div aria-live="polite" className="w-full text-center">
-                <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                  "{testimonials[currentTestimonial].text}"
-                </p>
-                <p className="text-green font-semibold">
-                  - {testimonials[currentTestimonial].author}
-                </p>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Explore Section */}
-      <section aria-labelledby="explore-title" className="w-full py-16">
+      <section aria-labelledby="explore-title" className="w-full py-14 explore-bg">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto rounded-2xl shadow-xl bg-white border border-gray-100 p-10 md-p-14 transition-all duration-300">
+          <div className="max-w-5xl mx-auto rounded-2xl shadow-xl bg-white border border-gray-100 p-10 md-p-14 transition-all duration-300 explore-inner">
             <h2 id="explore-title" className="text-3xl sm-text-4xl font-semibold tracking-tight text-black text-center mb-2 font-sans">
               Utforska våra tjänster
             </h2>
+            <div className="explore-divider"></div>
             <p className="text-green text-base sm-text-lg text-center mb-8 font-normal">
               Vi erbjuder ett brett utbud av tjänster och program för att möta just dina behov.
             </p>
-            <div className="grid grid-cols-1 sm-grid-cols-2 lg:grid-cols-4 gap-6 md-gap-8">
-              <div className="rounded-xl bg-white hover-bg-light-green transition border border-gray-100 shadow-sm p-7 flex flex-col items-start h-full">
-                <div className="mb-4 flex items-center justify-center h-11 w-11 rounded-lg bg-light-green">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <rect x="3" y="4" width="18" height="12" rx="2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M8 20h8M12 16v4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+            <div className="explore-grid">
+              {/* Ergonomi */}
+              <div className="explore-card">
+                <div className="explore-card-icon" aria-hidden="true">
+                  <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
                 </div>
-                <h3 className="text-xl font-semibold tracking-tight text-black mb-2 font-sans">
-                  Ergonomiföreläsning
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-base font-normal mb-5">
-                  Föreläsningar & workshops inom ergonomi, arbetsmiljö och hälsa – för företag och organisationer som vill skapa bättre arbetsvanor och förebygga besvär.
-                </p>
-                <a href="/ergonomi" className="mt-auto inline-flex items-center gap-1 px-5 py-2 border border-green text-green bg-white rounded-lg font-medium text-sm transition duration-200 hover-bg-green hover-text-white focus-outline-none focus-ring-2 focus-ring-green-40 shadow-sm">
-                  Läs mer
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+                <h3 className="explore-card-title">Ergonomiföreläsning</h3>
+                <p className="explore-card-desc">Föreläsningar & workshops inom ergonomi, arbetsmiljö och hälsa – för företag och organisationer som vill skapa bättre arbetsvanor och förebygga besvär.</p>
+                <a href="/ergonomi" className="explore-card-btn">Läs mer</a>
               </div>
               {/* Hemrehab */}
-              <div className="rounded-xl bg-white hover-bg-light-green transition border border-gray-100 shadow-sm p-7 flex flex-col items-start h-full">
-                <div className="mb-4 flex items-center justify-center h-11 w-11 rounded-lg bg-light-green">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
-                    <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
-                  </svg>
+              <div className="explore-card">
+                <div className="explore-card-icon" aria-hidden="true">
+                  <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                 </div>
-                <h3 className="text-xl font-semibold tracking-tight text-black mb-2 font-sans">
-                  Hemrehab
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-base font-normal mb-5">
-                  Rehabilitering i hemmet – professionell hjälp där du är. Vi erbjuder privat hemrehab inom Stockholms stad och skapar ett skräddarsytt träningsprogram för att förbättra rörlighet, styrka och funktion.
-                </p>
-                <a href="/hemrehab" className="mt-auto inline-flex items-center gap-1 px-5 py-2 border border-green text-green bg-white rounded-lg font-medium text-sm transition duration-200 hover-bg-green hover-text-white focus-outline-none focus-ring-2 focus-ring-green-40 shadow-sm">
-                  Läs mer
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+                <h3 className="explore-card-title">Hemrehab</h3>
+                <p className="explore-card-desc">Rehabilitering i hemmet – professionell hjälp där du är. Vi erbjuder privat hemrehab inom Stockholms stad och skapar ett skräddarsytt träningsprogram för att förbättra rörlighet, styrka och funktion.</p>
+                <a href="/hemrehab" className="explore-card-btn">Läs mer</a>
               </div>
               {/* Online Coaching/Rehab */}
-              <div className="rounded-xl bg-white hover-bg-light-green transition border border-gray-100 shadow-sm p-7 flex flex-col items-start h-full">
-                <div className="mb-4 flex items-center justify-center h-11 w-11 rounded-lg bg-light-green">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <rect x="3" y="4" width="18" height="16" rx="2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M8 2v4M16 2v4M3 10h18" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+              <div className="explore-card">
+                <div className="explore-card-icon" aria-hidden="true">
+                  <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
                 </div>
-                <h3 className="text-xl font-semibold tracking-tight text-black mb-2 font-sans">
-                  Online Coaching/Rehab
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-base font-normal mb-5">
-                  Personlig coaching och rehabilitering online – anpassade tränings- och rehabupplägg med kontinuerlig uppföljning av fysioterapeut.
-                </p>
-                <a href="/onlinebesok" className="mt-auto inline-flex items-center gap-1 px-5 py-2 border border-green text-green bg-white rounded-lg font-medium text-sm transition duration-200 hover-bg-green hover-text-white focus-outline-none focus-ring-2 focus-ring-green-40 shadow-sm">
-                  Läs mer
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+                <h3 className="explore-card-title">Online Coaching/Rehab</h3>
+                <p className="explore-card-desc">Personlig coaching och rehabilitering online – anpassade tränings- och rehabupplägg med kontinuerlig uppföljning av fysioterapeut.</p>
+                <a href="/onlinebesok" className="explore-card-btn">Läs mer</a>
               </div>
               {/* Tränings- och rehabiliteringsprogram */}
-              <div className="rounded-xl bg-white hover-bg-light-green transition border border-gray-100 shadow-sm p-7 flex flex-col items-start h-full">
-                <div className="mb-4 flex items-center justify-center h-11 w-11 rounded-lg bg-light-green">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <rect x="2" y="9" width="4" height="6" rx="1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <rect x="18" y="9" width="4" height="6" rx="1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <rect x="7" y="11" width="10" height="2" rx="1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+              <div className="explore-card">
+                <div className="explore-card-icon" aria-hidden="true">
+                  <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="6" rx="1"/><rect x="18" y="9" width="4" height="6" rx="1"/><rect x="7" y="11" width="10" height="2" rx="1"/></svg>
                 </div>
-                <h3 className="text-xl font-semibold tracking-tight text-black mb-2 font-sans">
-                  Tränings- och rehabiliteringsprogram
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-base font-normal mb-5">
-                  Digitala program för styrka, rörlighet och rehabilitering – utvecklade av legitimerad fysioterapeut och anpassade efter dina behov och mål.
-                </p>
-                <a href="/program" className="mt-auto inline-flex items-center gap-1 px-5 py-2 border border-green text-green bg-white rounded-lg font-medium text-sm transition duration-200 hover-bg-green hover-text-white focus-outline-none focus-ring-2 focus-ring-green-40 shadow-sm">
-                  Läs mer
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+                <h3 className="explore-card-title">Tränings- och rehabiliteringsprogram</h3>
+                <p className="explore-card-desc">Digitala program för styrka, rörlighet och rehabilitering – utvecklade av legitimerad fysioterapeut och anpassade efter dina behov och mål.</p>
+                <a href="/program" className="explore-card-btn">Läs mer</a>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="w-full p-0 m-0">
-        <ContactSection />
       </section>
     </div>
   );

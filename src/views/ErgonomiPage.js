@@ -2,6 +2,7 @@ import React from 'react';
 import './ErgonomiPage.css';
 import ergonomiImage from '../assets/images/ergonomi.png';
 import { useNavigate } from 'react-router-dom';
+import { scrollToContact } from '../utils/scrollToContact';
 
 const ErgonomiPage = () => {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ const ErgonomiPage = () => {
             Förebygg överbelastningsbesvär och förbättra produktiviteten hos dina anställda med rätt verktyg. Våra fysioterapeuter ger praktiska råd om arbetsställning och ergonomiska lösningar samt råd om träning, pauser och stress för att minska smärta i nacke, rygg och axlar. Boka en arbetsplatsanalys och ergonomiföreläsning idag och investera i en hälsosam arbetsmiljö!
           </p>
           
-          <button className="ergonomi-highlight" onClick={handleContactClick}>
+          <button className="ergonomi-highlight" onClick={e => { e.preventDefault(); scrollToContact(); }}>
             Kontakta oss idag för diskussion kring upplägg och pris!
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13 5L20 12L13 19" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>

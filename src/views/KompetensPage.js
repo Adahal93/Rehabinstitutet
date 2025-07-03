@@ -3,6 +3,7 @@ import './KompetensPage.css';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import kompetensImg from '../assets/images/kompetens.png';
+import { scrollToContact } from '../utils/scrollToContact';
 
 const KompetensPage = () => {
   const navigate = useNavigate();
@@ -66,7 +67,7 @@ const KompetensPage = () => {
             <p>
               Med vidareutbildning inom idrottsmedicin och ett stort intresse av idrott och prestation behandlar våra terapeuter skador hos högpresterande idrottare. Behandlingen är utformad för att patienten ska återgå till full prestation efter en skada. Besöket inkludera bedömning av led- och muskelfunktion samt träning av styrka, funktion, rörlighet och koordination efter behov.
             </p>
-            <button className="kompetens-highlight" onClick={handleContactClick}>
+            <button className="kompetens-highlight" onClick={e => { e.preventDefault(); scrollToContact(); }}>
               Läs mer om idrottsskador här
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 5L20 12L13 19" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>

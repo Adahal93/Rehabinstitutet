@@ -68,7 +68,6 @@ const HomePage = () => {
         {/* Your homepage content here */}
       </div>
       <ReviewCarousel />
-      <ContactSection />
     </>
   );
 };

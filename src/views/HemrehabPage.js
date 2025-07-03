@@ -4,6 +4,7 @@ import './HemrehabPage.css';
 import hemrehab3 from '../assets/images/hemrehab3.png';
 import hemrehab4 from '../assets/images/hemrehab4.png';
 import { useNavigate } from 'react-router-dom';
+import { scrollToContact } from '../utils/scrollToContact';
 
 const HemrehabPage = () => {
   const navigate = useNavigate();
@@ -93,7 +94,7 @@ const HemrehabPage = () => {
             Tjänsten är helt privat och täcks inte av högkostnadsskyddet.
           </p>
           
-          <button className="ergonomi-highlight" onClick={handleContactClick}>
+          <button className="ergonomi-highlight" onClick={e => { e.preventDefault(); scrollToContact(); }}>
             Skicka en förfrågan över mejl så återkommer vi till dig inom kort med mer information.
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13 5L20 12L13 19" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>

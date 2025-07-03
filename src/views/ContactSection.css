@@ -174,4 +174,30 @@
   .footer-bottom {
     font-size: 0.85rem;
   }
+}
+
+.footer-instagram-section {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.footer-instagram-link {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.18s;
+  gap: 6px;
+}
+.footer-instagram-link:hover, .footer-instagram-link:focus {
+  color: #7ca966;
+  text-decoration: underline;
+}
+.footer-instagram-link svg {
+  color: #fff;
+  transition: color 0.18s;
+}
+.footer-instagram-link:hover svg, .footer-instagram-link:focus svg {
+  color: #7ca966;
 } 

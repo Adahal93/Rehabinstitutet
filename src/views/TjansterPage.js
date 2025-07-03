@@ -1,53 +1,68 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './OmOssPage.css';
+import './TjansterPage.css';
+import tjansterHero from '../assets/images/tjanster_hero.png';
+
+const services = [
+  {
+    title: 'Online Coaching',
+    description: 'Få professionell hjälp av en av våra fysioterapeuter – var du än är. Flexibelt och effektivt alternativ till traditionella rehabiliteringskonsultationer.',
+    link: '/onlinebesok',
+    linkText: 'Läs mer om Online Coaching',
+  },
+  {
+    title: 'Ergonomiföreläsning',
+    description: 'Ergonomigenomgång för en bättre arbetsmiljö. Förebygg överbelastningsbesvär och förbättra produktiviteten hos dina anställda med rätt verktyg.',
+    link: '/ergonomi',
+    linkText: 'Läs mer om Ergonomi',
+  },
+  {
+    title: 'Hemrehab',
+    description: 'Rehabilitering i hemmet - professionell hjälp där du är. Vi kommer hem till dig och skapar ett skräddarsytt träningsprogram för att förbättra rörlighet, styrka och funktion.',
+    link: '/hemrehab',
+    linkText: 'Läs mer om Hemrehab',
+  },
+  {
+    title: 'Tränings- & rehabiliteringsprogram',
+    description: 'Våra digitala rehabiliteringsprogram är framtagna för dig som vill återfå eller förbättra styrka, rörlighet och funktion i en frisk eller skadad kroppsdel.',
+    link: '/program',
+    linkText: 'Läs mer om Program',
+  },
+];
 
 const TjansterPage = () => {
   return (
-    <div className="omoss-root">
-      <div className="omoss-container">
-        <h1 className="omoss-title">Våra Tjänster</h1>
-        <p className="omoss-intro">
-          Vi erbjuder ett brett utbud av rehabiliteringstjänster anpassade för både privatpersoner och företag. 
-          Alla våra tjänster bygger på evidensbaserad forskning och vår erfarenhet inom fysioterapi.
-        </p>
-        
-        <div className="omoss-grid" style={{gridTemplateColumns: '1fr 1fr', gap: '32px', maxWidth: '900px', margin: '0 auto'}}>
-          <div className="omoss-card">
-            <h3>Online Coaching</h3>
-            <p>
-              Få professionell hjälp av en av våra fysioterapeuter – var du än är. 
-              Flexibelt och effektivt alternativ till traditionella rehabiliteringskonsultationer.
+    <div className="tjanster-root">
+      {/* Hero Section */}
+      <div className="tjanster-hero">
+        <div className="tjanster-hero-overlay">
+          <div className="tjanster-hero-content">
+            <h1 className="tjanster-hero-title">Våra Tjänster</h1>
+            <p className="tjanster-hero-subtitle">
+              Professionell rehabilitering anpassad för dig - oavsett var du befinner dig i din återhämtningsresa
             </p>
-            <Link to="/onlinebesok" className="omoss-btn omoss-btn-small">Läs mer om Online Coaching</Link>
           </div>
-          
-          <div className="omoss-card">
-            <h3>Ergonomiföreläsning</h3>
-            <p>
-              Ergonomigenomgång för en bättre arbetsmiljö. Förebygg överbelastningsbesvär 
-              och förbättra produktiviteten hos dina anställda med rätt verktyg.
-            </p>
-            <Link to="/ergonomi" className="omoss-btn omoss-btn-small">Läs mer om Ergonomi</Link>
-          </div>
-          
-          <div className="omoss-card">
-            <h3>Hemrehab</h3>
-            <p>
-              Rehabilitering i hemmet - professionell hjälp där du är. Vi kommer hem till dig 
-              och skapar ett skräddarsytt träningsprogram för att förbättra rörlighet, styrka och funktion.
-            </p>
-            <Link to="/hemrehab" className="omoss-btn omoss-btn-small">Läs mer om Hemrehab</Link>
-          </div>
-          
-          <div className="omoss-card">
-            <h3>Tränings- & rehabiliteringsprogram</h3>
-            <p>
-              Våra digitala rehabiliteringsprogram är framtagna för dig som vill återfå eller förbättra 
-              styrka, rörlighet och funktion i en frisk eller skadad kroppsdel.
-            </p>
-            <Link to="/program" className="omoss-btn omoss-btn-small">Läs mer om Program</Link>
-          </div>
+        </div>
+        <img src={tjansterHero} alt="Rehabinstitutet tjänster" className="tjanster-hero-image" />
+      </div>
+
+      {/* Main Content */}
+      <div className="tjanster-container">
+        <div className="tjanster-intro">
+          <p>
+            Vi erbjuder ett brett utbud av rehabiliteringstjänster anpassade för både privatpersoner och företag. 
+            Alla våra tjänster bygger på evidensbaserad forskning och vår erfarenhet inom fysioterapi.
+          </p>
+        </div>
+        <div className="tjanster-grid tjanster-grid-modern">
+          {services.map((service, idx) => (
+            <div className="tjanster-modern-card" key={idx}>
+              <h3 className="tjanster-modern-title">{service.title}</h3>
+              <p className="tjanster-modern-desc">{service.description}</p>
+              <Link to={service.link} className="tjanster-modern-btn">{service.linkText}</Link>
+            </div>
+          ))}
         </div>
       </div>
     </div>
