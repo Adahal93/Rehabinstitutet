@@ -42,7 +42,7 @@ const ErgonomiPage = () => {
           <div className="ergonomi-process">
             <h3>Vårt upplägg</h3>
             <p>
-              Oftast inleds besöket med en föreläsning om ergonomi, stress, smärta och träning som sedan följs upp av en arbetsplatsanalys för varje anställd.
+              Oftast inleds besöket med en föreläsning om ergonomi, stress, smärta och träning som sedan följs upp av en arbetsplatsanalys för varje anställd. Men givetvis anpassar vi upplägget utifrån era behov och önskemål.
             </p>
           </div>
           

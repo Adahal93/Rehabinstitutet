@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ProgramPage.css';
-import { CheckCircle, Check, X, ChevronDown } from 'lucide-react';
+import { CheckCircle, Check, X, ChevronDown, Download } from 'lucide-react';
 import styrketraningForLopare from '../assets/images/styrketräning_för_löpare.png';
 import hamstringprogrammet from '../assets/images/hamstringprogrammet.png';
 import artrosprogramKna from '../assets/images/artrosprogram_knä.png';
@@ -78,6 +78,21 @@ const featureTable = [
   ['Personlig support', [false,false,true,false,false,true]],
 ];
 
+const freeDocuments = [
+  {
+    title: 'Starta löpning',
+    description: 'En guide för dig som vill börja löpa på ett säkert och lugnt sätt.',
+    filename: 'starta-lopning.pdf',
+    icon: '🏃‍♂️'
+  },
+  {
+    title: 'Träna med smärta',
+    description: 'Riktlinjer för dig som upplever smärta när du tränar.',
+    filename: 'trana-med-smarta.pdf',
+    icon: '💪'
+  }
+];
+
 export default function ProgramPage() {
   const [faqOpen, setFaqOpen] = useState(Array(faqList.length).fill(false));
 
@@ -92,6 +107,15 @@ export default function ProgramPage() {
 
   const toggleFaq = idx => {
     setFaqOpen(open => open.map((v, i) => i === idx ? !v : v));
+  };
+
+  const handleDownload = (filename) => {
+    const link = document.createElement('a');
+    link.href = `/documents/${filename}`;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -153,7 +177,7 @@ export default function ProgramPage() {
           </div>
         </div>
       </section>
-      <section className="px-8 pb-20 fade-in" style={{'--stagger':'600ms'}}>
+      <section className="px-8 pb-32 fade-in" style={{'--stagger':'600ms'}}>
         <div className="max-w-5xl mx-auto">
           <h2 className="font-display text-2xl font-semibold text-center mb-10 tracking-tight">Jämför våra program</h2>
           <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
@@ -186,6 +210,36 @@ export default function ProgramPage() {
           </div>
         </div>
       </section>
+      
+      {/* Gratisdokument sektion */}
+      <section className="px-8 pb-20 pt-12 fade-in" style={{'--stagger':'650ms'}}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-display text-2xl font-semibold text-center mb-4 tracking-tight">Gratis Dokument</h2>
+          <p className="text-center text-slate-600 mb-10 max-w-2xl mx-auto">
+            Ladda ner våra gratis PDF:er nedan för informativa och praktiska tips om träning, smärta och hälsa.
+            Alla dokument är utvecklade av våra legitimerade fysioterapeuter.
+          </p>
+          <div className="grid grid-cols-2 gap-6">
+            {freeDocuments.map((doc, i) => (
+              <div key={doc.title} className="bg-white border border-slate-200 rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <span className="text-2xl">{doc.icon}</span>
+                  <h3 className="font-display text-lg font-semibold tracking-tight">{doc.title}</h3>
+                </div>
+                <p className="text-slate-600 text-sm mb-4 leading-relaxed text-center">{doc.description}</p>
+                <button 
+                  onClick={() => handleDownload(doc.filename)}
+                  className="download-btn w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 text-sm"
+                >
+                  <Download className="w-4 h-4" />
+                  Ladda ner PDF
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       <section className="px-8 pb-24 fade-in" style={{'--stagger':'700ms'}}>
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display text-2xl font-semibold text-center mb-10 tracking-tight">Vanliga Frågor</h2>

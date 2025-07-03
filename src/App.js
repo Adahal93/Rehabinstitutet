@@ -13,6 +13,7 @@ import OnlineVisitPage from './views/OnlineVisitPage';
 import HemrehabPage from './views/HemrehabPage';
 import CodepenPriceTable from './views/CodepenPriceTable';
 import ProgramPage from './views/ProgramPage';
+import KompetensPage from './views/KompetensPage';
 
 // Om Oss page with provided design
 function OmOssPage() {
@@ -95,6 +96,7 @@ function App() {
           <Route path="/hemrehab" element={<HemrehabPage />} />
           <Route path="/codepen" element={<CodepenPriceTable />} />
           <Route path="/program" element={<ProgramPage />} />
+          <Route path="/kompetens" element={<KompetensPage />} />
         </Routes>
       </div>
     </Router>
