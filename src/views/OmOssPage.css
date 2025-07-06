@@ -151,4 +151,34 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-primary);
+}
+
+.omoss-hero {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(30,41,59,0.08);
+}
+.omoss-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 32px;
+  max-height: 340px;
+}
+@media (max-width: 900px) {
+  .omoss-hero {
+    max-width: 100%;
+    border-radius: 0;
+  }
+  .omoss-hero-img {
+    border-radius: 0;
+    max-height: 220px;
+  }
 } 

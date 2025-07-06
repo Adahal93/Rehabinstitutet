@@ -15,11 +15,15 @@ import CodepenPriceTable from './views/CodepenPriceTable';
 import ProgramPage from './views/ProgramPage';
 import KompetensPage from './views/KompetensPage';
 import ContactSection from './views/ContactSection';
+import teamImg from './assets/images/team.png';
 
 // Om Oss page with provided design
 function OmOssPage() {
   return (
     <div className="omoss-root">
+      <div className="omoss-hero">
+        <img src={teamImg} alt="Team Rehabinstitutet" className="omoss-hero-img" />
+      </div>
       <div className="omoss-container">
         <h1 className="omoss-title">Om Rehabinstitutet</h1>
         <p className="omoss-intro">
