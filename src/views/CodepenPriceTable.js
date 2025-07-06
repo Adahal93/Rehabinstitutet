@@ -42,4 +42,28 @@ const CodepenPriceTable = () => (
   </div>
 );
 
+export const PriceListMini = () => (
+  <div className="container price-mini" style={{maxWidth: 500, margin: '0 auto'}}>
+    <div className="row flex-items-xs-middle flex-items-xs-center">
+      {plans.map((plan, idx) => (
+        <div className="price-col mini" key={plan.title}>
+          <div className="card text-xs-center mini">
+            <div className="card-header mini">
+              <div className="price-row mini">
+                <span className="price-value mini">{plan.price}</span>
+                <span className="currency mini">{plan.currency}</span>
+              </div>
+              <div className="period-under mini">{plan.period}</div>
+            </div>
+            <div className="card-content mini">
+              <h4 className="plan-title mini">{plan.title}</h4>
+              <div className="plan-description mini">{plan.description}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 export default CodepenPriceTable;

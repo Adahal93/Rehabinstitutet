@@ -1,128 +1,131 @@
+/* === Allmänt layout och typsnitt === */
 .header {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    color: white;
-    font-family: 'Georgia', serif;
-  }
-  
-  .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-  
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 4rem;
-    z-index: 2;
-    position: relative;
-  }
-  
-  .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  
-  .brand-logo {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .brand-slogan {
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-  
-  .nav-links {
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      justify-content: flex-start; /* change from center */
-      margin-left: 2rem; /* or adjust this value to control offset */
-    }
-  }
-  
-  .nav-links li {
-    cursor: pointer;
-    font-size: 1rem;
-    transition: opacity 0.3s ease;
-  }
-  
-  .nav-links li:hover {
-    opacity: 0.7;
-  }
-  
-  .hero-content {
-    position: absolute;
-    bottom: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 3rem;
-    font-weight: 400;
-    letter-spacing: 1.5px;
-  }
-  
-  .scroll-indicator {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2rem;
-    height: 2rem;
-    border: 2px solid white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 8px solid white;
-  }
-  
-  .toggle-mode {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 0.5rem;
-    border-radius: 6px;
-  }
-  
-  .sun-icon {
-    font-size: 1.2rem;
-  }
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  font-family: 'Georgia', serif;
+}
 
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  z-index: 2;
+  position: relative;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.brand-slogan {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* === Navigationslänkar === */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  justify-content: flex-start;
+  margin-left: 2rem;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links li:hover {
+  opacity: 0.7;
+}
+
+/* === Hero / Intro-del === */
+.hero-content {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid white;
+}
+
+/* === Mörkt/ljust läge växlare === */
+.toggle-mode {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.sun-icon {
+  font-size: 1.2rem;
+}
+
+/* === Sticky header === */
 .sticky-header {
   position: sticky;
   top: 0;
   width: 100vw;
-  background: #fff;
+  background: var(--bg-primary, #ffffff);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0;
   height: 80px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(26, 61, 46, 0.08);
   z-index: 1000;
 }
 
@@ -145,54 +148,58 @@
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 2px;
-  color: #222;
-}
-
-.header-nav {
-  margin-right: 80px;
+  color: var(--text-primary, #1a202c);
+  text-decoration: none;
   display: flex;
   align-items: center;
 }
 
-.header-nav a {
-  position: relative;
-  margin-left: 32px;
-  text-decoration: none;
-  color: #222;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: color 0.2s;
+/* === Menylänkar med understrykning === */
+.header-nav {
+  margin-right: 80px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-.header-nav a::after {
+.header-nav a, .nav-link {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  color: #1a202c;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.header-nav a::after, .nav-link::after {
   content: '';
   position: absolute;
-  left: 0;
   bottom: -4px;
+  left: 0;
   width: 100%;
   height: 2px;
-  background: #007bff;
+  background: var(--primary-dark-green, #1a3d2c);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-  display: block;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+  display: block !important;
 }
 
-.header-nav a:hover {
-  color: #007bff;
-}
-
-.header-nav a:hover::after {
+.header-nav a:hover::after, .nav-link:hover::after {
   transform: scaleX(1);
-  transform-origin: left;
+  display: block !important;
 }
 
-.header-nav a:not(:hover)::after {
-  transform: scaleX(0);
-  transform-origin: right;
+.header-nav a:hover, .nav-link:hover {
+  color: var(--primary-dark-green, #1a3d2c);
+  text-decoration: none;
 }
 
-/* Dropdown Styles */
+/* === Dropdown meny === */
 .dropdown-container {
   position: relative;
   display: inline-block;
@@ -233,14 +240,14 @@
 .dropdown-menu::before {
   content: '';
   position: absolute;
-  top: -6px;
+  top: -8px;
   left: 20px;
   width: 0;
   height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #fff;
-  z-index: 1002;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 3px solid var(--transparent);
 }
 
 .dropdown-menu a {
@@ -251,28 +258,99 @@
   font-size: 1rem;
   font-weight: 500;
   transition: background-color 0.2s ease;
-  border: none;
-  margin: 0;
-  border-radius: 0;
-}
-
-.dropdown-menu a:first-child {
-  border-radius: 8px 8px 0 0;
-}
-
-.dropdown-menu a:last-child {
-  border-radius: 0 0 8px 8px;
 }
 
 .dropdown-menu a:hover {
-  background-color: #f8f9fa;
-  color: #007bff;
+  background: #f8f9fa;
+  color: var(--primary-dark-green, #1a3d2c);
 }
 
-.dropdown-menu a::after {
+/* === Mobil meny === */
+.mobile-menu-button {
   display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-dark-green, #1a3d2c);
+  transition: color 0.3s ease;
 }
 
+.mobile-menu-button:hover {
+  color: var(--primary-green, #2d5a3d);
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1001;
+  animation: dropdownFadeIn 0.2s ease-out;
+}
+
+.mobile-menu-content {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-nav-link {
+  padding: 0.75rem 0;
+  color: #1a202c;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  color: var(--primary-dark-green, #1a3d2c);
+}
+
+/* === Responsiv anpassning === */
+@media (max-width: 768px) {
+  .sticky-header {
+    flex-direction: row;
+    height: 80px;
+    padding: 0 1rem;
+    width: 100vw;
+    justify-content: space-between;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin-top: 0;
+    animation: none;
+  }
+
+  .dropdown-menu::before {
+    display: none;
+  }
+
+  .dropdown-menu a {
+    padding: 8px 16px;
+    border-left: 3px solid #007bff;
+    margin-left: 16px;
+  }
+}
+
+/* === Animering för dropdown === */
 @keyframes dropdownFadeIn {
   from {
     opacity: 0;
@@ -282,67 +360,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-@media (max-width: 600px) {
-  .sticky-header {
-    flex-direction: column;
-    height: auto;
-    padding: 0;
-    width: 100vw;
-  }
-  .header-nav {
-    margin-top: 10px;
-    margin-right: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-  }
-  .header-nav a {
-    margin-left: 16px;
-    font-size: 1rem;
-  }
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    border: none;
-    margin-top: 0;
-    animation: none;
-  }
-  .dropdown-menu::before {
-    display: none;
-  }
-  .dropdown-menu a {
-    padding: 8px 16px;
-    border-left: 3px solid #007bff;
-    margin-left: 16px;
-  }
-}
-
-.header-nav a, .nav-link, .header-title, .text-green, .font-sans.uppercase {
-  text-decoration: none;
-}
-.header-nav a::after, .nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 2px;
-  background: #007bff;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-  display: block;
-  }
-.header-nav a:hover, .nav-link:hover {
-  color: #007bff;
-}
-.header-nav a:hover::after, .nav-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-.header-nav a:not(:hover)::after, .nav-link:not(:hover)::after {
-  transform: scaleX(0);
-  transform-origin: right;
 }

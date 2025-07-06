@@ -24,8 +24,144 @@
   z-index: 2;
 }
 
+/* Modern Hemrehab Contact Section */
+.hemrehab-contact-section {
+  margin: 60px 0;
+  padding: 0;
+}
+
+.hemrehab-contact-container {
+  background: var(--bg-primary);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(26, 61, 46, 0.08);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.hemrehab-contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-dark-green);
+  margin: 0;
+  padding: 48px 48px 16px 48px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.hemrehab-contact-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin: 0 0 40px 0;
+  padding: 0 48px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.hemrehab-contact-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  padding: 0 48px 48px 48px;
+}
+
+.hemrehab-contact-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.hemrehab-contact-text p:last-child {
+  margin-bottom: 0;
+}
+
+.hemrehab-features {
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  align-self: start;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hemrehab-features h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-dark-green);
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+.hemrehab-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hemrehab-features li {
+  padding: 12px 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid #e5e7eb;
+  position: relative;
+  padding-left: 24px;
+}
+
+.hemrehab-features li:last-child {
+  border-bottom: none;
+}
+
+.hemrehab-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: var(--primary-dark-green);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .hemrehab-carousel {
     height: 300px;
+  }
+  
+  .hemrehab-contact-title {
+    font-size: 2rem;
+    padding: 32px 24px 12px 24px;
+  }
+  
+  .hemrehab-contact-subtitle {
+    padding: 0 24px 24px 24px;
+  }
+  
+  .hemrehab-contact-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 24px 32px 24px;
+  }
+  
+  .hemrehab-features {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hemrehab-contact-title {
+    font-size: 1.75rem;
+    padding: 24px 16px 8px 16px;
+  }
+  
+  .hemrehab-contact-subtitle {
+    padding: 0 16px 16px 16px;
+  }
+  
+  .hemrehab-contact-content {
+    padding: 0 16px 24px 16px;
+  }
+  
+  .hemrehab-features {
+    padding: 20px;
   }
 } 

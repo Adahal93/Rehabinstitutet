@@ -1,11 +1,11 @@
-/* Reset layout and ensure full width from root */
+  /* Reset layout and ensure full width from root */
 html, body {
     margin: 0 !important;
     padding: 0 !important;
     width: 100vw;
     box-sizing: border-box;
     overflow-x: hidden;
-    background: #fff;
+    background: var(--bg-secondary);
   }
   
   /* Force container to start below sticky navbar */
@@ -68,7 +68,7 @@ html, body {
   /* Optional: Content section style */
   .cafe-homepage {
     padding: 50px 0;
-    background-color: #f5f5f5;
+    background-color: var(--bg-accent);
     width: 100vw;
     margin: 0;
   }
@@ -90,7 +90,7 @@ html, body {
 /* New About Section Styles */
 .about-section {
   padding: 80px 0;
-  background-color: #fff;
+  background-color: var(--bg-primary);
   width: 100vw;
   margin: 0;
 }
@@ -128,7 +128,7 @@ html, body {
   left: 24px;
   width: 100%;
   height: 100%;
-  background: #0d3b2e;
+  background: var(--primary-dark-green);
   opacity: 0.9;
   border-radius: 12px;
   z-index: 1;
@@ -156,13 +156,13 @@ html, body {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 24px;
-  color: #223;
+  color: var(--text-primary);
   line-height: 1.2;
 }
 
 .about-description {
   font-size: 1.2rem;
-  color: #333;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 32px;
 }
@@ -176,7 +176,7 @@ html, body {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #223;
+  color: var(--text-primary);
 }
 
 .services-list {
@@ -197,13 +197,13 @@ html, body {
   font-size: 1.5rem;
   flex-shrink: 0;
   margin-top: 2px;
+  color: var(--light-green);
 }
 
 .service-text {
   font-size: 1.1rem;
-  color: #333;
-  line-height: 1.5;
-  font-weight: 500;
+  color: #4a5568;
+  line-height: 1.6;
 }
 
 /* Mobile responsiveness for about section */
@@ -255,40 +255,39 @@ html, body {
   }
 
 .welcome-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 48px;
+  padding: 80px 0;
+  background-color: #f8f9fa;
   width: 100vw;
   margin: 0;
-  padding: 40px 8vw;
-  box-sizing: border-box;
 }
 
 .welcome-text {
-  flex: 1 1 0;
-  max-width: 480px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
 }
 
 .welcome-text h2 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 24px;
-  color: #223;
+  color: #1a202c;
+  line-height: 1.2;
 }
 
 .welcome-text p {
   font-size: 1.2rem;
-  color: #333;
-  line-height: 1.6;
+  color: #4a5568;
+  line-height: 1.7;
 }
 
 .welcome-image-frame {
   position: relative;
-  flex: 1 1 0;
-  min-width: 320px;
-  max-width: 480px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -296,11 +295,11 @@ html, body {
 
 .welcome-image-bg {
   position: absolute;
-  top: 32px;
-  left: 32px;
+  top: 24px;
+  left: 24px;
   width: 100%;
   height: 100%;
-  background: #0d3b2e;
+  background: #8ab978;
   opacity: 0.9;
   border-radius: 12px;
   z-index: 1;
@@ -309,11 +308,13 @@ html, body {
 .welcome-image {
   position: relative;
   width: 100%;
-  max-width: 420px;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  max-width: 600px;
+  max-height: 360px;
+  border-radius: 0;
+  box-shadow: none;
   z-index: 2;
-  object-fit: cover;
+  object-fit: contain;
+  display: block;
 }
 
 @media (max-width: 900px) {

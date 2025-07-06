@@ -6,6 +6,10 @@ import skiingWoman from '../assets/images/skiing_woman.png';
 import stretchingWoman from '../assets/images/stretching_woman.png';
 import walkingWoman from '../assets/images/walking_woman.png';
 import strengthTrainMan from '../assets/images/strength_train_man.png';
+import hemrehab4 from '../assets/images/hemrehab4.png';
+import onlineCoaching from '../assets/images/online_coaching.png';
+import tjansterHero from '../assets/images/tjanster_hero.png';
+import ergonomi from '../assets/images/ergonomi.png';
 import { Link } from 'react-router-dom';
 import { scrollToContact } from '../utils/scrollToContact';
 
@@ -104,10 +108,10 @@ const IntroSection = () => {
               Vi erbjuder träningsprogram, utbildning och rehabilitering för både privatpersoner och företag. Vårt team av experter hjälper dig att nå dina mål, oavsett nivå eller bakgrund.
             </p>
             <div className="mt-6 flex flex-col sm-flex-row justify-center gap-4 animate-fade-in-up">
-              <a href="/tjanster" className="px-8 py-3 bg-green text-white hover-bg-black border border-green rounded-lg font-semibold tracking-wider text-lg shadow-xl transition duration-300 outline-none focus-ring-2 focus-ring-green-40 font-sans" style={{textDecoration: 'underline'}}>
+              <a href="/tjanster" className="px-8 py-3 bg-green text-white hover-bg-black border border-green rounded-lg font-semibold tracking-wider text-lg shadow-xl transition duration-300 outline-none focus-ring-2 focus-ring-green-40 font-sans hero-main-btn" style={{textDecoration: 'underline'}}>
                 Utforska våra tjänster
               </a>
-              <a href="#contact" className="px-8 py-3 bg-white text-green hover-bg-green hover-text-white border border-green rounded-lg font-semibold tracking-wider text-lg shadow-xl transition duration-300 outline-none focus-ring-2 focus-ring-green-40 font-sans" onClick={e => {
+              <a href="#contact" className="px-8 py-3 bg-white text-green hover-bg-green hover-text-white border border-green rounded-lg font-semibold tracking-wider text-lg shadow-xl transition duration-300 outline-none focus-ring-2 focus-ring-green-40 font-sans hero-secondary-btn" onClick={e => {
                 e.preventDefault();
                 scrollToContact();
               }}>
@@ -217,41 +221,41 @@ const IntroSection = () => {
             </p>
             <div className="explore-grid">
               {/* Ergonomi */}
-              <div className="explore-card">
-                <div className="explore-card-icon" aria-hidden="true">
-                  <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+              <a href="/ergonomi" className="explore-card ergonomi-bg explore-card-clickable">
+                <div className="explore-card-bg-image" style={{backgroundImage: `url(${ergonomi})`}}></div>
+                <div className="explore-card-content">
+                  <h3 className="explore-card-title">Ergonomiföreläsning</h3>
+                  <p className="explore-card-desc">Föreläsningar & workshops inom ergonomi, arbetsmiljö och hälsa – för företag och organisationer som vill skapa bättre arbetsvanor och förebygga besvär.</p>
+                  <div className="explore-card-btn">Läs mer</div>
                 </div>
-                <h3 className="explore-card-title">Ergonomiföreläsning</h3>
-                <p className="explore-card-desc">Föreläsningar & workshops inom ergonomi, arbetsmiljö och hälsa – för företag och organisationer som vill skapa bättre arbetsvanor och förebygga besvär.</p>
-                <a href="/ergonomi" className="explore-card-btn">Läs mer</a>
-              </div>
+              </a>
               {/* Hemrehab */}
-              <div className="explore-card">
-                <div className="explore-card-icon" aria-hidden="true">
-                  <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <a href="/hemrehab" className="explore-card hemrehab-bg explore-card-clickable">
+                <div className="explore-card-bg-image" style={{backgroundImage: `url(${hemrehab4})`}}></div>
+                <div className="explore-card-content">
+                  <h3 className="explore-card-title">Hemrehab</h3>
+                  <p className="explore-card-desc">Rehabilitering i hemmet – professionell hjälp där du är. Vi erbjuder privat hemrehab inom Stockholms stad och skapar ett skräddarsytt träningsprogram för att förbättra rörlighet, styrka och funktion.</p>
+                  <div className="explore-card-btn">Läs mer</div>
                 </div>
-                <h3 className="explore-card-title">Hemrehab</h3>
-                <p className="explore-card-desc">Rehabilitering i hemmet – professionell hjälp där du är. Vi erbjuder privat hemrehab inom Stockholms stad och skapar ett skräddarsytt träningsprogram för att förbättra rörlighet, styrka och funktion.</p>
-                <a href="/hemrehab" className="explore-card-btn">Läs mer</a>
-              </div>
+              </a>
               {/* Online Coaching/Rehab */}
-              <div className="explore-card">
-                <div className="explore-card-icon" aria-hidden="true">
-                  <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+              <a href="/onlinebesok" className="explore-card online-coaching-bg explore-card-clickable">
+                <div className="explore-card-bg-image" style={{backgroundImage: `url(${onlineCoaching})`}}></div>
+                <div className="explore-card-content">
+                  <h3 className="explore-card-title">Online Coaching/Rehab</h3>
+                  <p className="explore-card-desc">Personlig coaching och rehabilitering online – anpassade tränings- och rehabupplägg med kontinuerlig uppföljning av fysioterapeut.</p>
+                  <div className="explore-card-btn">Läs mer</div>
                 </div>
-                <h3 className="explore-card-title">Online Coaching/Rehab</h3>
-                <p className="explore-card-desc">Personlig coaching och rehabilitering online – anpassade tränings- och rehabupplägg med kontinuerlig uppföljning av fysioterapeut.</p>
-                <a href="/onlinebesok" className="explore-card-btn">Läs mer</a>
-              </div>
+              </a>
               {/* Tränings- och rehabiliteringsprogram */}
-              <div className="explore-card">
-                <div className="explore-card-icon" aria-hidden="true">
-                  <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="6" rx="1"/><rect x="18" y="9" width="4" height="6" rx="1"/><rect x="7" y="11" width="10" height="2" rx="1"/></svg>
+              <a href="/program" className="explore-card training-programs-bg explore-card-clickable">
+                <div className="explore-card-bg-image" style={{backgroundImage: `url(${tjansterHero})`}}></div>
+                <div className="explore-card-content">
+                  <h3 className="explore-card-title">Tränings- och rehabiliteringsprogram</h3>
+                  <p className="explore-card-desc">Digitala program för styrka, rörlighet och rehabilitering – utvecklade av legitimerad fysioterapeut och anpassade efter dina behov och mål.</p>
+                  <div className="explore-card-btn">Läs mer</div>
                 </div>
-                <h3 className="explore-card-title">Tränings- och rehabiliteringsprogram</h3>
-                <p className="explore-card-desc">Digitala program för styrka, rörlighet och rehabilitering – utvecklade av legitimerad fysioterapeut och anpassade efter dina behov och mål.</p>
-                <a href="/program" className="explore-card-btn">Läs mer</a>
-              </div>
+              </a>
             </div>
           </div>
         </div>

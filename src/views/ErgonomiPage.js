@@ -20,6 +20,9 @@ const ErgonomiPage = () => {
         <div className="ergonomi-hero-content">
           <h1 className="ergonomi-title">Ergonomi</h1>
           <h2 className="ergonomi-subtitle">Ergonomigenomgång för en bättre arbetsmiljö</h2>
+          <p className="ergonomi-hero-description">
+            Förebygg överbelastningsbesvär och förbättra produktiviteten hos dina anställda med rätt verktyg.
+          </p>
         </div>
         <div className="ergonomi-hero-image">
           <img src={ergonomiImage} alt="Ergonomi och arbetsmiljö" />
@@ -27,27 +30,34 @@ const ErgonomiPage = () => {
       </div>
       
       <div className="ergonomi-content">
-        <div className="ergonomi-text-section">
+        <div className="ergonomi-intro-section">
           <p className="ergonomi-intro">
-            Förebygg överbelastningsbesvär och förbättra produktiviteten hos dina anställda med rätt verktyg. Våra fysioterapeuter ger praktiska råd om arbetsställning och ergonomiska lösningar samt råd om träning, pauser och stress för att minska smärta i nacke, rygg och axlar. Boka en arbetsplatsanalys och ergonomiföreläsning idag och investera i en hälsosam arbetsmiljö!
+            Våra fysioterapeuter ger praktiska råd om arbetsställning och ergonomiska lösningar samt råd om träning, pauser och stress för att minska smärta i nacke, rygg och axlar. Boka en arbetsplatsanalys och ergonomiföreläsning idag och investera i en hälsosam arbetsmiljö!
           </p>
-          
-          <button className="ergonomi-highlight" onClick={e => { e.preventDefault(); scrollToContact(); }}>
-            Kontakta oss idag för diskussion kring upplägg och pris!
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13 5L20 12L13 19" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M4 12H20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          
-          <div className="ergonomi-process">
+        </div>
+
+        <div className="ergonomi-cards-section">
+          <div className="ergonomi-card ergonomi-process-card">
+            <div className="ergonomi-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
             <h3>Vårt upplägg</h3>
             <p>
               Oftast inleds besöket med en föreläsning om ergonomi, stress, smärta och träning som sedan följs upp av en arbetsplatsanalys för varje anställd. Men givetvis anpassar vi upplägget utifrån era behov och önskemål.
             </p>
           </div>
-          
-          <div className="ergonomi-benefits">
+
+          <div className="ergonomi-card ergonomi-benefits-card">
+            <div className="ergonomi-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2"/>
+              </svg>
+            </div>
             <h3>Fördelar med vår ergonomigenomgång</h3>
             <ul>
               <li>Baserat på senaste forskningen inom ergonomi och hälsa</li>
@@ -59,6 +69,16 @@ const ErgonomiPage = () => {
               <li>Minskad smärta i nacke, rygg och axlar</li>
             </ul>
           </div>
+        </div>
+
+        <div className="ergonomi-cta-section">
+          <button className="ergonomi-highlight" onClick={e => { e.preventDefault(); scrollToContact(); }}>
+            Kontakta oss idag för diskussion kring upplägg och pris!
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 5L20 12L13 19" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M4 12H20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>

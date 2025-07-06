@@ -102,28 +102,35 @@ const HemrehabPage = () => {
             </svg>
           </button>
           
-          <section className="ergonomi-process" aria-labelledby="hemrehab-kontakt">
-            <h2 id="hemrehab-kontakt" style={{fontSize: '1.8rem', fontWeight: '700', color: '#1f2937', marginBottom: '24px'}}>
-              Privat Hemrehab Stockholm - Kontakta Oss
-            </h2>
-            <div style={{backgroundColor: '#f8fafc', padding: '28px', borderRadius: '12px', border: '1px solid #e2e8f0'}}>
-              <p style={{fontSize: '1.1rem', lineHeight: '1.8', color: '#374151', marginBottom: '20px'}}>
-                Har du svårt att ta dig till rehabilitering eller föredrar att inte lämna hemmet? Vi på <strong>Rehabinstitutet</strong> erbjuder <strong>privat hemrehab i Stockholm City</strong> för personer som behöver stöd i sin återhämtning, oavsett om du genomgått en omfattande <strong>höftoperation</strong> eller <strong>knäoperation</strong> som <strong>knäplastik</strong> eller <strong>höftplastik</strong>, lider av långvariga besvär eller helt enkelt inte vill ta dig hemifrån för rehabiliteringen.
+          <section className="hemrehab-contact-section">
+            <div className="hemrehab-contact-container">
+              <h2 className="hemrehab-contact-title">
+                Privat Hemrehab Stockholm
+              </h2>
+              <p className="hemrehab-contact-subtitle">
+                Kontakta oss för professionell rehabilitering i hemmet
               </p>
-              <p style={{fontSize: '1.1rem', lineHeight: '1.8', color: '#374151', marginBottom: '20px'}}>
-                Våra erfarna <strong>fysioterapeuter</strong> kommer hem till dig och skapar ett <strong>skräddarsytt träningsprogram</strong> för att förbättra rörlighet, styrka och funktion. Vår <strong>hemrehab Stockholm</strong> service täcker hela Stockholms stad och ger dig professionell rehabilitering i din egen miljö.
-              </p>
-                              <div style={{backgroundColor: '#dbeafe', padding: '20px', borderRadius: '8px', borderLeft: '4px solid #3b82f6'}}>
-                  <h3 style={{fontSize: '1.3rem', fontWeight: '600', color: '#1e40af', marginBottom: '12px', textAlign: 'left'}}>
-                    Varför välja vår hemrehab?
-                  </h3>
-                  <ul style={{margin: '0', paddingLeft: '20px', textAlign: 'left'}}>
-                    <li style={{marginBottom: '8px', color: '#374151', textAlign: 'left'}}>Professionell fysioterapi i hemmet</li>
-                    <li style={{marginBottom: '8px', color: '#374151', textAlign: 'left'}}>Skräddarsytt rehabiliteringsprogram</li>
-                    <li style={{marginBottom: '8px', color: '#374151', textAlign: 'left'}}>Erfarna fysioterapeuter</li>
-                    <li style={{marginBottom: '8px', color: '#374151', textAlign: 'left'}}>Flexibel schemaläggning</li>
+              
+              <div className="hemrehab-contact-content">
+                <div className="hemrehab-contact-text">
+                  <p>
+                    Har du svårt att ta dig till rehabilitering eller föredrar att inte lämna hemmet? Vi på <strong>Rehabinstitutet</strong> erbjuder <strong>privat hemrehab i Stockholm City</strong> för personer som behöver stöd i sin återhämtning, oavsett om du genomgått en omfattande <strong>höftoperation</strong> eller <strong>knäoperation</strong> som <strong>knäplastik</strong> eller <strong>höftplastik</strong>, lider av långvariga besvär eller helt enkelt inte vill ta dig hemifrån för rehabiliteringen.
+                  </p>
+                  <p>
+                    Våra erfarna <strong>fysioterapeuter</strong> kommer hem till dig och skapar ett <strong>skräddarsytt träningsprogram</strong> för att förbättra rörlighet, styrka och funktion. Vår <strong>hemrehab Stockholm</strong> service täcker hela Stockholms stad och ger dig professionell rehabilitering i din egen miljö.
+                  </p>
+                </div>
+                
+                <div className="hemrehab-features">
+                  <h3>Varför välja vår hemrehab?</h3>
+                  <ul>
+                    <li>Professionell fysioterapi i hemmet</li>
+                    <li>Skräddarsytt rehabiliteringsprogram</li>
+                    <li>Erfarna fysioterapeuter</li>
+                    <li>Flexibel schemaläggning</li>
                   </ul>
                 </div>
+              </div>
             </div>
           </section>
           

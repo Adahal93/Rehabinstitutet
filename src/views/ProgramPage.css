@@ -1,6 +1,6 @@
 body {
   font-family: 'Inter', sans-serif;
-  background: #f8fafc;
+  background: var(--bg-secondary);    
 }
 
 .fade-in {
@@ -19,15 +19,15 @@ body {
 }
 .product-card:hover {
   box-shadow: 0 8px 32px rgba(16,30,54,.09), 0 1.5px 8px rgba(16,30,54,.05);
-  border-color: #06b6d4;
+  border-color: var(--light-green);
   transform: translateY(-2px) scale(1.015);
 }
 .product-card:focus-within {
-  outline: 2px solid #06b6d4;
+  outline: 2px solid var(--light-green);
   outline-offset: 2px;
 }
 .faq-toggle:focus {
-  outline: 2px solid #06b6d4;
+  outline: 2px solid var(--light-green);
   outline-offset: 2px;
 }
 .faq-content {
@@ -69,7 +69,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f1f5f9;
+  background: var(--light-gray);
 }
 .product-card-image img {
   width: 100%;
@@ -97,33 +97,33 @@ body {
 }
 
 .green-buy-btn {
-  background: #8ab978;
-  color: #fff;
+  background: var(--primary-dark-green);
+  color: var(--text-light);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0;
   font-weight: 600;
   font-family: 'Inter', sans-serif;
-  box-shadow: none;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: background 0.2s;
+  box-shadow: var(--button-shadow);
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 .green-buy-btn:hover, .green-buy-btn:focus {
-  background: #000;
-  color: #fff;
-  text-decoration: underline;
+  background: #f5f5f5;
+  color: var(--primary-dark-green);
+  text-decoration: none;
+  box-shadow: var(--button-hover-shadow);
 }
 
 .faq-toggle-btn {
-  background: #8DBB7A;
-  color: white;
+  background: var(--primary-dark-green);
+  color: var(--text-light);
   padding: 18px 38px 18px 32px;
-  border-radius: 15px;
+  border-radius: 0;
   margin: 16px 0;
   text-align: center;
-  box-shadow: 0 8px 32px 0 rgba(141, 187, 122, 0.35), 0 1.5px 8px 0 rgba(60, 60, 60, 0.10);
+  box-shadow: var(--button-shadow);
   cursor: pointer;
-  transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
+  transition: all 0.3s ease;
   font-size: 1.15rem;
   font-weight: 600;
   display: flex;
@@ -134,44 +134,43 @@ body {
   gap: 12px;
 }
 .faq-toggle-btn:hover, .faq-toggle-btn:focus {
-  background: #7CA86B;
-  box-shadow: 0 12px 36px 0 rgba(141, 187, 122, 0.45), 0 2px 12px 0 rgba(60, 60, 60, 0.13);
-  transform: translateY(-2px) scale(1.03);
-  color: #fff;
-  text-decoration: underline;
+  background: #f5f5f5;
+  color: var(--primary-dark-green);
+  text-decoration: none;
+  box-shadow: var(--button-hover-shadow);
 }
 
 /* Download button styling */
 .download-btn {
-  background: linear-gradient(135deg, #f8faf9 0%, #e5e7eb 100%) !important;
-  color: #181818 !important;
-  border: 2px solid #d1d5db !important;
-  border-radius: 12px !important;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border-light) 100%) !important;
+  color: var(--text-primary) !important;
+  border: 2px solid var(--border-light) !important;
+  border-radius: 0 !important;
   font-weight: 600 !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06) !important;
+  box-shadow: var(--button-shadow) !important;
   text-decoration: none !important;
 }
 
 .download-btn:hover, .download-btn:focus {
-  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%) !important;
+  background: #f5f5f5 !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-  color: #181818 !important;
+  box-shadow: var(--button-hover-shadow) !important;
+  color: var(--primary-dark-green) !important;
   text-decoration: none !important;
-  border-color: #9ca3af !important;
+  border-color: var(--primary-dark-green) !important;
 }
 
 .download-btn svg {
   transition: transform 0.3s ease !important;
-  color: #181818 !important;
+  color: var(--text-primary) !important;
 }
 
 .download-btn:hover svg {
   transform: translateX(4px) !important;
-  color: #181818 !important;
+  color: var(--text-primary) !important;
 } 
