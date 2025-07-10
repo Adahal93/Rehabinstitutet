@@ -7,6 +7,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [omOssDropdownOpen, setOmOssDropdownOpen] = useState(false);
   const [tjansterDropdownOpen, setTjansterDropdownOpen] = useState(false);
+  const [produkterDropdownOpen, setProdukterDropdownOpen] = useState(false);
   let dropdownCloseTimeout = null;
   const navigate = useNavigate();
 
@@ -14,6 +15,7 @@ const Header = () => {
   const closeAllDropdowns = () => {
     setOmOssDropdownOpen(false);
     setTjansterDropdownOpen(false);
+    setProdukterDropdownOpen(false);
   };
 
   return (
@@ -63,6 +65,7 @@ const Header = () => {
             if (dropdownCloseTimeout) clearTimeout(dropdownCloseTimeout);
             setTjansterDropdownOpen(true);
             setOmOssDropdownOpen(false);
+            setProdukterDropdownOpen(false);
           }}
           onMouseLeave={() => {
             dropdownCloseTimeout = setTimeout(() => setTjansterDropdownOpen(false), 150);
@@ -82,8 +85,32 @@ const Header = () => {
         </div>
         
         <Link to="/program" className="nav-link">Program</Link>
-        <Link to="/ovningar" className="nav-link">Övningar</Link>
         <Link to="/kompetens" className="nav-link">Kompetens</Link>
+        
+        <div
+          className="dropdown-container"
+          onMouseEnter={() => {
+            if (dropdownCloseTimeout) clearTimeout(dropdownCloseTimeout);
+            setProdukterDropdownOpen(true);
+            setOmOssDropdownOpen(false);
+            setTjansterDropdownOpen(false);
+          }}
+          onMouseLeave={() => {
+            dropdownCloseTimeout = setTimeout(() => setProdukterDropdownOpen(false), 150);
+          }}
+        >
+          <Link to="/rekommenderade-produkter" className="nav-link dropdown-trigger" onClick={() => setProdukterDropdownOpen(!produkterDropdownOpen)}>
+            Rekommenderade Produkter <span className="dropdown-arrow">▼</span>
+          </Link>
+          {produkterDropdownOpen && (
+            <div className="dropdown-menu">
+              <Link to="/training-equipment">Träningsutrustning</Link>
+              <Link to="/supplements">Kosttillskott</Link>
+              <Link to="/rehabilitation">Rehabilitering</Link>
+              <Link to="/apps-software">Appar & Mjukvara</Link>
+            </div>
+          )}
+        </div>
         <a href="#contact" className="nav-link" onClick={e => {
           e.preventDefault();
           if (window.location.pathname === "/") {
@@ -101,8 +128,14 @@ const Header = () => {
           <div className="mobile-menu-content">
             <Link to="/om-oss" className="mobile-nav-link">Om Oss</Link>
             <Link to="/program" className="mobile-nav-link">Program</Link>
-            <Link to="/ovningar" className="mobile-nav-link">Övningar</Link>
             <Link to="/kompetens" className="mobile-nav-link">Kompetens</Link>
+            <Link to="/rekommenderade-produkter" className="mobile-nav-link">Rekommenderade Produkter</Link>
+            <div className="mobile-submenu">
+              <Link to="/training-equipment" className="mobile-nav-link submenu-item">Träningsutrustning</Link>
+              <Link to="/supplements" className="mobile-nav-link submenu-item">Kosttillskott</Link>
+              <Link to="/rehabilitation" className="mobile-nav-link submenu-item">Rehabilitering</Link>
+              <Link to="/apps-software" className="mobile-nav-link submenu-item">Appar & Mjukvara</Link>
+            </div>
             <Link to="/tjanster" className="mobile-nav-link">Tjänster</Link>
             <Link to="/kontakt" className="mobile-nav-link">Kontakt</Link>
           </div>

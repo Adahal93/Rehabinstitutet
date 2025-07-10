@@ -14,6 +14,11 @@ import HemrehabPage from './views/HemrehabPage';
 import CodepenPriceTable from './views/CodepenPriceTable';
 import ProgramPage from './views/ProgramPage';
 import KompetensPage from './views/KompetensPage';
+import AffiliatePage from './views/AffiliatePage';
+import TrainingEquipmentPage from './views/TrainingEquipmentPage';
+import SupplementsPage from './views/SupplementsPage';
+import RehabilitationPage from './views/RehabilitationPage';
+import AppsSoftwarePage from './views/AppsSoftwarePage';
 import ContactSection from './views/ContactSection';
 import teamImg from './assets/images/team.png';
 
@@ -114,6 +119,11 @@ function App() {
           <Route path="/codepen" element={<CodepenPriceTable />} />
           <Route path="/program" element={<ProgramPage />} />
           <Route path="/kompetens" element={<KompetensPage />} />
+          <Route path="/rekommenderade-produkter" element={<AffiliatePage />} />
+          <Route path="/training-equipment" element={<TrainingEquipmentPage />} />
+          <Route path="/supplements" element={<SupplementsPage />} />
+          <Route path="/rehabilitation" element={<RehabilitationPage />} />
+          <Route path="/apps-software" element={<AppsSoftwarePage />} />
         </Routes>
         <ContactSection id="contact" />
       </div>
