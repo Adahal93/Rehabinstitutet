@@ -20,6 +20,8 @@ import SupplementsPage from './views/SupplementsPage';
 import RehabilitationPage from './views/RehabilitationPage';
 import AppsSoftwarePage from './views/AppsSoftwarePage';
 import ContactSection from './views/ContactSection';
+import BlogPage from './views/BlogPage';
+import BlogArticle from './views/BlogArticle';
 import teamImg from './assets/images/team.png';
 
 // Om Oss page with provided design
@@ -124,6 +126,8 @@ function App() {
           <Route path="/supplements" element={<SupplementsPage />} />
           <Route path="/rehabilitation" element={<RehabilitationPage />} />
           <Route path="/apps-software" element={<AppsSoftwarePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogArticle />} />
         </Routes>
         <ContactSection id="contact" />
       </div>

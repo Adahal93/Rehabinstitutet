@@ -85,6 +85,7 @@ const Header = () => {
         </div>
         
         <Link to="/program" className="nav-link">Program</Link>
+        <Link to="/blog" className="nav-link">Blogg</Link>
         <Link to="/kompetens" className="nav-link">Kompetens</Link>
         
         <div
@@ -128,6 +129,7 @@ const Header = () => {
           <div className="mobile-menu-content">
             <Link to="/om-oss" className="mobile-nav-link">Om Oss</Link>
             <Link to="/program" className="mobile-nav-link">Program</Link>
+            <Link to="/blog" className="mobile-nav-link">Blogg</Link>
             <Link to="/kompetens" className="mobile-nav-link">Kompetens</Link>
             <Link to="/rekommenderade-produkter" className="mobile-nav-link">Rekommenderade Produkter</Link>
             <div className="mobile-submenu">
