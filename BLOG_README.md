@@ -180,6 +180,22 @@ För bilder kan du använda:
 2. Lägg till bilder i `src/assets/images/` och importera dem
 3. Externa bild-URLs
 
+#### Lägga till nya WebP-bilder
+
+För att lägga till nya WebP-bilder:
+
+1. **Lägg till bilden** i `src/assets/images/blog/` mappen
+2. **Lägg till import** i `blogData.js`:
+   ```javascript
+   import stretching1 from '../assets/images/blog/stretching1.webp';
+   ```
+3. **Använd bilden** i din artikel:
+   ```javascript
+   image: stretching1,
+   ```
+
+Scriptet `fix-blog-ids.js` hanterar nu automatiskt alla WebP-bilder, så du behöver inte uppdatera scriptet när du lägger till nya bilder.
+
 ### Spara och testa
 
 Efter att du lagt till en ny artikel:

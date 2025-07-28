@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './BlogArticle.css';
 import { Link, useParams } from 'react-router-dom';
-import { blogPosts, fixIdsAfterManualChange } from '../data/blogData';
+import { blogPosts, fixIdsAfterManualChange } from '../data/markdownArticles';
 
 const BlogArticle = () => {
   const { id } = useParams();

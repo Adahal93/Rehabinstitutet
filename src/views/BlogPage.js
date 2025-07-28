@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './BlogPage.css';
 import { Link } from 'react-router-dom';
-import { blogPosts, fixIdsAfterManualChange } from '../data/blogData';
+import { blogPosts, fixIdsAfterManualChange } from '../data/markdownArticles';
 
 const BlogPage = () => {
   const [currentPage, setCurrentPage] = useState(1);

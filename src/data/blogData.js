@@ -13,6 +13,7 @@ import kettlebell_training from '../assets/images/blog/kettlebell_training.webp'
 import hamstringsmärta from '../assets/images/blog/hamstringsmärta.webp';
 import artros_knä from '../assets/images/blog/artros_knä.webp';
 import who_guidelines from '../assets/images/blog/who_guidelines.webp';
+import stretching1 from '../assets/images/blog/stretching1.webp';
 
 // Funktion för att beräkna lästid baserat på antal ord
 const calculateReadingTime = (text) => {
@@ -75,6 +76,72 @@ const processAllArticlesSequential = (posts) => {
 export const blogPosts = processAllArticlesSequential([
     {
     id: 1,
+    title: "Myter och fakta om stretching vid löpning",
+    excerpt: "Behöver man verkligen stretcha före löpning? I den här artikeln reder vi ut vanliga myter och vad forskningen säger om stretching, uppvärmning och skaderisk.",
+    category: "ARTIKEL",
+    author: "Anton Zackrisson",
+    authorTitle: "Leg. Fysioterapeut",
+    date: "2025-07-28",
+    image: stretching1,
+    featured: false,
+    latest: true,
+    tags: ["stretching", "löpning", "myter", "uppvärmning"],
+    content: `
+          <h1>Myter och fakta om stretching vid löpning</h1>
+
+    <p>Stretching före löpning har länge varit ett självklart inslag i mångas träningsrutin. Men behöver man verkligen stretcha innan man springer – eller är det bara en kvarleva från gamla träningsmyter? I den här artikeln går vi igenom vad forskningen faktiskt säger om stretching, uppvärmning och skaderisk för dig som löptränar.</p>
+
+    <h2>Vad menar vi med stretching?</h2>
+    <p>Stretching syftar oftast på statisk stretching, det vill säga att hålla en muskel i ett utsträckt läge under en viss tid (t.ex. 30 sekunder). Det kan också inkludera dynamisk stretching, där man rör sig kontrollerat genom ett rörelseomfång (t.ex. benpendlingar).</p>
+
+    <h2>Vanliga myter om stretching</h2>
+
+    <h3>“Stretching före träning minskar skaderisken”</h3>
+    <p>Detta är en av de mest spridda träningsmyterna – men forskningen stödjer inte påståendet. Studier visar att statisk stretching före aktivitet inte minskar risken för skador och i vissa fall till och med kan försämra explosiv styrka och prestationsförmåga kortsiktigt.</p>
+
+    <h3>“Stretching förhindrar träningsvärk”</h3>
+    <p>Tyvärr – stretching har inte visat sig ha någon signifikant effekt på att minska träningsvärk (DOMS). Istället handlar träningsvärk mer om ovana rörelser och excentrisk belastning än om stelhet som kan “stretchas bort”.</p>
+
+    <h3>“Man måste stretcha för att hålla sig rörlig”</h3>
+    <p>Rörlighet påverkas av flera faktorer, bland annat styrka, nervsystemets tolerans och ledstruktur. Många uppnår lika bra eller bättre rörlighet genom funktionell styrketräning, till exempel genom att träna knäböj eller utfall med fullt rörelseomfång.</p>
+
+    <h2>Vad säger forskningen?</h2>
+    <p>En sammanställning från Cochrane och andra systematiska översikter pekar på att statisk stretching före löpning inte ger skyddande effekt mot skador. Däremot har dynamisk uppvärmning, med rörelser som efterliknar aktiviteten, visat positiva effekter på både prestation och skaderisk.</p>
+
+    <p>Exempel på dynamiska uppvärmningsövningar:</p>
+    <ul>
+      <li>Benpendlingar framåt och åt sidan</li>
+      <li>Gång med höga knän</li>
+      <li>Utfallssteg med överkroppsvridning</li>
+      <li>Skipping (korta, snabba löpsteg på stället)</li>
+    </ul>
+
+    <h2>Så bör du värma upp inför löpning</h2>
+    <p>En bra uppvärmning inför löpning ska höja kroppstemperaturen, aktivera relevanta muskler och förbereda kroppen på rörelsemönstren som kommer. Här är ett enkelt upplägg:</p>
+    <ol>
+      <li>5–10 minuter rask gång eller lätt jogg</li>
+      <li>2–3 dynamiska rörlighetsövningar (t.ex. benpendlingar)</li>
+      <li>1–2 aktiveringsövningar (t.ex. höftlyft eller tåhävningar)</li>
+    </ol>
+
+    <p>Vill du ha ett färdigt upplägg med struktur för styrka och rörlighet kopplat till löpning kan vårt <a href="/program/styrketraning-for-lopare">Styrketräning för löpare</a> vara något för dig.</p>
+
+    <h2>Finns det någon plats för stretching?</h2>
+    <p>Absolut – men det handlar om rätt syfte och timing. Statisk stretching kan vara avslappnande efter ett pass eller användas specifikt vid nedsatt rörlighet. För den som till exempel har strama höftböjare eller inskränkt fotledsrörlighet kan stretching vara ett komplement – men bör inte ersätta funktionell träning.</p>
+
+    <h2>Stretching som ritual</h2>
+    <p>För många har stretching också en psykologisk funktion. Det kan signalera att träningen är slut, ge en känsla av kontroll eller lugn. Dessa effekter kan vara värdefulla i sig, men ska inte blandas ihop med påståenden om skaderisk och prestation.</p>
+
+    <h2>Sammanfattning</h2>
+    <p>Stretching är inte farligt – men det är inte heller den mirakelkur det en gång ansågs vara. Inför löpning är det bättre att fokusera på dynamisk uppvärmning och aktivering än på långvarig statisk stretching. Välj det som fyller en funktion för just dig, men basera dina val på kunskap snarare än myter.</p>
+
+    <p>Vill du ha hjälp att komma igång med kompletterande styrka rekommenderar vi vårt <a href="/program/traningsprogram-3-dagar">Träningsprogram 3 dagar</a> eller <a href="/program/traningsprogram-4-dagar">Träningsprogram 4 dagar</a> beroende på din träningsvana.</p>
+
+    <p><strong>Skriven av Anton Zackrisson, Leg. Fysioterapeut</strong></p>
+  `
+},
+    {
+    id: 2,
     title: "Hur du rehabiliterar hälseneinflammation med träning och stöd",
     excerpt: "Hälseneinflammation, eller tendinopati, är en vanlig åkomma hos aktiva personer. I den här artikeln går vi igenom hur du med rätt träning, tålamod och ibland inlägg kan återhämta dig och minska smärta.",
     category: "GUIDE",
@@ -148,7 +215,7 @@ export const blogPosts = processAllArticlesSequential([
         `
     },
   {
-    id: 2,
+    id: 3,
     title: "Hamstringsskador – varför de uppstår och hur du återhämtar dig",
     excerpt: "Hamstringsskador är vanliga, särskilt bland löpare och explosiva idrotter. I den här artikeln förklarar vi varför de uppstår, hur du rehabiliterar dem effektivt och vad du kan göra för att förebygga återfall.",
     category: "ARTIKEL",
@@ -157,7 +224,7 @@ export const blogPosts = processAllArticlesSequential([
     date: "2025-07-27",
     image: hamstringsmärta,
     featured: false,
-    latest: true,
+    latest: false,
     tags: ["hamstrings","muskelskada","rehabilitering","löpning"],
     content: `
     <h1>Hamstringsskador – varför de uppstår och hur du återhämtar dig</h1>
@@ -231,7 +298,7 @@ export const blogPosts = processAllArticlesSequential([
     `
   },
   {
-    id: 3,
+    id: 4,
     title: "Är kettlebellträning lika effektivt som traditionell styrketräning?",
     excerpt: "Kettlebellträning har blivit populärt – men kan det verkligen ersätta klassisk styrketräning med skivstång och maskiner? I den här artikeln jämför vi träningsformerna och går igenom för- och nackdelar.",
     category: "ARTIKEL",
@@ -308,7 +375,7 @@ export const blogPosts = processAllArticlesSequential([
         `
   },
   {
-    id: 4,
+    id: 5,
     title: "Hur mycket bör vi röra på oss enligt rekommendationer?",
     excerpt: "Hur mycket fysisk aktivitet behöver du egentligen för att må bra? Vi går igenom de svenska och internationella rörelseriktlinjerna och vad de innebär i praktiken – oavsett om du är nybörjare eller redan tränar regelbundet.",
     category: "GUIDE",
@@ -390,7 +457,7 @@ export const blogPosts = processAllArticlesSequential([
     `
   },
   {
-    id: 5,
+    id: 6,
     title: "MR-fynd hos friska personer – vad betyder det egentligen?",
     excerpt: "Många oroar sig för oväntade fynd vid MR-undersökningar, men vad betyder dessa egentligen om man inte har några symtom? Här reder vi ut begreppen och förklarar varför bilddiagnostik på friska personer kräver eftertanke.",
     category: "ARTIKEL",
@@ -454,7 +521,7 @@ export const blogPosts = processAllArticlesSequential([
     `
   },
   {
-    id: 6,
+    id: 7,
     title: "Artros i knä och höft – vad hjälper enligt forskningen?",
     excerpt: "Vad säger forskningen om vad som verkligen hjälper vid artros i knä och höft? I denna artikel går vi igenom evidensläget kring träning, viktnedgång, kirurgi, kosttillskott och mer.",
     category: "ARTIKEL",
@@ -545,7 +612,7 @@ export const blogPosts = processAllArticlesSequential([
     `
   },
   {
-    id: 7,
+    id: 8,
     title: "Kan styrketräning förbättra prestationen hos löpare?",
     excerpt: "Många löpare undviker styrketräning i rädsla för att bli långsammare eller tyngre. Men vad säger forskningen om styrketräningens effekt på löpprestation och skaderisk?",
     category: "ARTIKEL",
@@ -610,7 +677,7 @@ export const blogPosts = processAllArticlesSequential([
     `
   },
   {
-    id: 8,
+    id: 9,
     title: "Vanliga orsaker till smärta i rotatorcuffen och hur det kan behandlas",
     excerpt: "Rotatorcuffen är en vanlig källa till axelsmärta. I denna artikel går vi igenom vad rotatorcuffen är, vanliga orsaker till smärta och hur fysioterapi och träning kan hjälpa.",
     category: "ARTIKEL",
