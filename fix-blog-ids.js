@@ -14,23 +14,23 @@ const writeBlogPostsToFile = (updatedPosts) => {
     return false;
   }
   
-  // Hitta slutet av arrayen
-  let braceCount = 0;
-  let endIndex = startIndex;
-  let inArray = false;
-  
-  for (let i = startIndex; i < fileContent.length; i++) {
-    if (fileContent[i] === '[') {
-      braceCount++;
-      inArray = true;
-    } else if (fileContent[i] === ']') {
-      braceCount--;
-      if (inArray && braceCount === 0) {
-        endIndex = i + 1;
-        break;
+        // Hitta slutet av arrayen
+      let braceCount = 0;
+      let endIndex = startIndex;
+      let inArrayForWriting = false;
+      
+      for (let i = startIndex; i < fileContent.length; i++) {
+        if (fileContent[i] === '[') {
+          braceCount++;
+          inArrayForWriting = true;
+        } else if (fileContent[i] === ']') {
+          braceCount--;
+          if (inArrayForWriting && braceCount === 0) {
+            endIndex = i + 1;
+            break;
+          }
+        }
       }
-    }
-  }
   
   // Skapa nytt innehåll för blogPosts arrayen
   const newArrayContent = updatedPosts.map(post => {
@@ -92,12 +92,44 @@ const fixBlogIds = () => {
     if (id1Matches && id1Matches.length > 1) {
       console.log(`🔧 Hittade ${id1Matches.length} artiklar med ID 1 - fixar automatiskt...`);
       
-      // Hitta alla artikel-block med en mer robust regex
+      // Hitta alla artikel-block med en förbättrad regex som hittar ALLA artiklar
       const articleBlocks = [];
+      
+      // Först, hitta början av blogPosts arrayen
+      const arrayStartMarker = 'export const blogPosts = processAllArticlesSequential([';
+      const arrayStartIndex = fileContent.indexOf(arrayStartMarker);
+      
+      if (arrayStartIndex === -1) {
+        console.error('❌ Kunde inte hitta blogPosts arrayen');
+        return;
+      }
+      
+      // Hitta slutet av arrayen
+      let arrayBraceCount = 0;
+      let arrayEndIndex = arrayStartIndex;
+      let inArrayForParsing = false;
+      
+      for (let i = arrayStartIndex; i < fileContent.length; i++) {
+        if (fileContent[i] === '[') {
+          arrayBraceCount++;
+          inArrayForParsing = true;
+        } else if (fileContent[i] === ']') {
+          arrayBraceCount--;
+          if (inArrayForParsing && arrayBraceCount === 0) {
+            arrayEndIndex = i;
+            break;
+          }
+        }
+      }
+      
+      // Extrahera innehållet mellan [ och ]
+      const arrayContent = fileContent.substring(arrayStartIndex + arrayStartMarker.length, arrayEndIndex);
+      
+      // Hitta alla artikel-block i arrayen
       const articleRegex = /\{\s*id:\s*\d+,[\s\S]*?\n\s*\},?\s*(?=\{|$)/g;
       let match;
       
-      while ((match = articleRegex.exec(fileContent)) !== null) {
+      while ((match = articleRegex.exec(arrayContent)) !== null) {
         articleBlocks.push({
           content: match[0],
           startIndex: match.index,
@@ -131,14 +163,27 @@ const fixBlogIds = () => {
         console.log(`  ${index + 1}. ${title}`);
       });
       
+      console.log('📋 Planerad omordning:');
+      console.log(`  1. "${articlesWithId1[0].content.match(/title:\s*"([^"]+)"/)?.[1] || 'Okänd titel'}" (blir ID 1, latest: true)`);
+      console.log(`  2. Alla andra artiklar flyttas nedåt (ID 2, 3, 4, etc.)`);
+      
       // Ta den första artikeln med ID 1 som den nya (den som ska vara latest)
       const newArticle = articlesWithId1[0];
+      
+      // Hitta alla andra artiklar (inklusive den andra artikeln med ID 1)
       const otherArticles = articleBlocks.filter(block => 
-        !block.content.includes('id: 1,')
+        block !== newArticle // Exkludera bara den första artikeln med ID 1
       );
       
       // Sätt den nya artikeln först, sedan alla andra
       const reorderedArticles = [newArticle, ...otherArticles];
+      
+      // Säkerhetskontroll - säkerställ att vi inte förlorat några artiklar
+      if (reorderedArticles.length !== articleBlocks.length) {
+        console.error(`❌ FEL: Antal artiklar matchar inte! Fann ${articleBlocks.length} artiklar men har ${reorderedArticles.length} efter omordning.`);
+        console.error('Detta skulle kunna leda till förlust av artiklar. Avbryter operationen.');
+        return;
+      }
       
       // Skapa nytt innehåll för blogPosts arrayen
       const newArrayContent = reorderedArticles.map((article, index) => {

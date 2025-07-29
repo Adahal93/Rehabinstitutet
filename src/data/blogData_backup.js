@@ -14,7 +14,6 @@ import hamstringsmärta from '../assets/images/blog/hamstringsmärta.webp';
 import artros_knä from '../assets/images/blog/artros_knä.webp';
 import who_guidelines from '../assets/images/blog/who_guidelines.webp';
 import stretching1 from '../assets/images/blog/stretching1.webp';
-import runner from '../assets/images/blog/runner.webp';
 
 // Funktion för att beräkna lästid baserat på antal ord
 const calculateReadingTime = (text) => {
@@ -75,15 +74,15 @@ const processAllArticlesSequential = (posts) => {
 };
 
 export const blogPosts = processAllArticlesSequential([
-{
-        id: 1,
+    {
+        id: "NY",
         title: "Löparskador – de vanligaste och hur du undviker dem",
         excerpt: "Löpning är enkelt och effektivt, men också förknippat med skador. I den här artikeln går vi igenom de vanligaste löparskadorna – och hur du förebygger dem med rätt träning, belastning och återhämtning.",
         category: "GUIDE",
-        author: "Adam Carlén",
+        author: "Anton Zackrisson",
         authorTitle: "Leg. Fysioterapeut",
         date: "2025-07-28",
-        image: runner,
+        image: "https://source.unsplash.com/800x600/?running,injury,rehabilitation",
         featured: true,
         latest: true,
         tags: ["löparskador", "skadeförebyggande", "löpning", "rehabilitering"],
@@ -127,30 +126,30 @@ export const blogPosts = processAllArticlesSequential([
           <p>Öka inte mer än 10 % i total löpvolym per vecka. Variera intensitet, distans och underlag. Planera in återhämtningsveckor var 4:e till 5:e vecka.</p>
       
           <h3>2. Styrketräning – nyckeln till skadeprevention</h3>
-          <p>Styrketräning minskar risken för överbelastning genom att stärka senor, muskler och skelett. Den förbättrar också löpekonomi och maxhastighet, vilket gynnar dig som vill prestera på topp.
+          <p>Styrketräning minskar risken för överbelastning genom att stärka senor, muskler och skelett. Den förbättrar också löpekonomi och muskulär uthållighet.</p>
       
           <p>Fokusområden:</p>
           <ul>
-            <li>Höft (gluteus medius/minimus, hamstrings, höftböjare)</li>
+            <li>Höft och säte (gluteus, hamstrings)</li>
             <li>Underben och fotled</li>
-            <li>Kärnmuskulatur (Gluteus maximus, Quadriceps, bål)</li>
+            <li>Kärnmuskulatur</li>
           </ul>
       
-          <p>Prova vårt program <a href="/program/styrketraning-for-lopare">Styrketräning för löpare</a> som kombinerar evidensbaserade övningar med tydlig struktur och progression. Programmet kommer också med ett gediget teoretiskt ramverk bakom sig som beskriver forskningen och hur du applicerar den i din träning.</p> 
+          <p>Prova vårt program <a href="/program/styrketraning-for-lopare">Styrketräning för löpare</a> som kombinerar evidensbaserade övningar med tydlig struktur och progression.</p>
       
           <h3>3. Variation och alternativ träning</h3>
           <p>Lägg in pass med cykling, simning eller styrka för att minska ensidig belastning. Det ger kroppen möjlighet att återhämta sig utan att du behöver stå still i din utveckling.</p>
       
           <h3>4. Vila och återhämtning</h3>
-          <p>Minst en vilodag per vecka utan löpning. Sömn och bra kost är lika viktiga delar av träningen som själva passen. Smärta som inte går över med vila ska tas på allvar. Vissa kosttillskott kan vara till hjälp för återhämtningen, men kommer aldrig att kunna ersätta god kost och sömn. Några kosttillskott som kan ge effekt är proteinpulver, kreatin och kollagen. Se våra <a href="/supplements">Rekommenderade kosttillskott</a>.</p>
+          <p>Minst en vilodag per vecka utan löpning. Sömn och bra kost är lika viktiga delar av träningen som själva passen. Smärta som inte går över med vila ska tas på allvar.</p>
       
           <h3>5. Teknik och utrustning</h3>
-          <p>Löpteknik påverkar belastningen på kroppen. Att landa mjukt, ha en högre stegfrekvens (kadens) och undvika överdrivet kliv kan minska risken för skada. Investera också i bra löparskor som passar din fot och löpstil. Tänk också på att inte byta från en sko till en annan över en dag om du springer mycket. Ha hellre 2-3 skor som du alternerar mellan. Kostnaden är högre initialt, men på sikt ingen skillnad. Väl värt en investering om du ska löpa mycket.</p>
+          <p>Löpteknik påverkar belastningen på kroppen. Att landa mjukt, ha en högre stegfrekvens (kadens) och undvika överdrivet kliv kan minska risken för skada. Investera också i bra löparskor som passar din fot och löpstil.</p>
       
           <h2>När du redan har fått en skada</h2>
           <p>Om du misstänker en överbelastningsskada: minska belastningen, identifiera orsaken och sätt in riktad rehabilitering. Tidig åtgärd ger snabbare återgång till löpning.</p>
       
-          Om du är nybörjare eller kommer tillbaka från en lång paus kan även använda vår <a href="/program/fot-och-achillesprogrammet">gratis löparmallsstart</a> för att strukturera träningen från grunden.</p>
+          <p>Vi erbjuder <a href="/program/traningsprogram-3-dagar">3-dagars träningsprogram</a> som inkluderar styrka och rörlighet – anpassat för återgång till belastning. Du kan även använda vår <a href="/program/fot-och-achillesprogrammet">gratis löparmallsstart</a> för att strukturera träningen från grunden.</p>
       
           <h2>Vanliga missuppfattningar</h2>
           <ul>
@@ -162,23 +161,22 @@ export const blogPosts = processAllArticlesSequential([
           <h2>Sammanfattning</h2>
           <p>Löparskador är vanliga, men ofta möjliga att förebygga med rätt strategi. Progressiv träning, styrka, vila och variation är grundstenarna. Genom att förstå kroppens signaler och skapa balans i träningen kan du springa smärtfritt och långsiktigt.</p>
       
-          <p>Vill du ha en plan att följa? Prova <a href="/program/styrketraning-for-lopare">Styrketräning för löpare</a> eller <a href="/program/traningsprogram-3-dagar"> 3 dagars generell styrketräning</a> som integrerar styrka och löpning på ett hållbart sätt. Alla programmen kommer med långsiktig stegring av övningar och videoanvisningar.</p>
+          <p>Vill du ha en plan att följa? Prova <a href="/program/styrketraning-for-lopare">Styrketräning för löpare</a> eller våra <a href="/program/traningsprogram-4-dagar">flerdagarsprogram</a> som integrerar styrka och löpning på ett hållbart sätt.</p>
       
-          <p><strong>Skriven av Adam Carlén, Leg. Fysioterapeut</strong></p>
+          <p><strong>Skriven av Anton Zackrisson, Leg. Fysioterapeut</strong></p>
         `
       },
-
-{
-    id: 2,
+    {
+    id: 1,
     title: "Myter och fakta om stretching vid löpning",
     excerpt: "Behöver man verkligen stretcha före löpning? I den här artikeln reder vi ut vanliga myter och vad forskningen säger om stretching, uppvärmning och skaderisk.",
     category: "ARTIKEL",
     author: "Anton Zackrisson",
     authorTitle: "Leg. Fysioterapeut",
-    date: "2025-07-24",
+    date: "2025-07-28",
     image: stretching1,
     featured: false,
-    latest: false,
+    latest: true,
     tags: ["stretching", "löpning", "myter", "uppvärmning"],
     content: `
           <h1>Myter och fakta om stretching vid löpning</h1>
@@ -234,16 +232,14 @@ export const blogPosts = processAllArticlesSequential([
     <p><strong>Skriven av Anton Zackrisson, Leg. Fysioterapeut</strong></p>
   `
 },
-    
-
-{
-    id: 3,
+    {
+    id: 2,
     title: "Hur du rehabiliterar hälseneinflammation med träning och stöd",
     excerpt: "Hälseneinflammation, eller tendinopati, är en vanlig åkomma hos aktiva personer. I den här artikeln går vi igenom hur du med rätt träning, tålamod och ibland inlägg kan återhämta dig och minska smärta.",
     category: "GUIDE",
     author: "Adam Carlén",
     authorTitle: "Leg. Fysioterapeut",
-    date: "2025-07-21",
+    date: "2025-07-27",
     image: achilles_tendon_pain,
     featured: true,
     latest: false,
@@ -310,16 +306,14 @@ export const blogPosts = processAllArticlesSequential([
           <p><em>Skriven av Adam Carlén, Leg. Fysioterapeut</em></p>
         `
     },
-  
-
-{
-    id: 4,
+  {
+    id: 3,
     title: "Hamstringsskador – varför de uppstår och hur du återhämtar dig",
     excerpt: "Hamstringsskador är vanliga, särskilt bland löpare och explosiva idrotter. I den här artikeln förklarar vi varför de uppstår, hur du rehabiliterar dem effektivt och vad du kan göra för att förebygga återfall.",
     category: "ARTIKEL",
     author: "Anton Zackrisson",
     authorTitle: "Leg. Fysioterapeut",
-    date: "2025-07-14",
+    date: "2025-07-27",
     image: hamstringsmärta,
     featured: false,
     latest: false,
@@ -395,16 +389,14 @@ export const blogPosts = processAllArticlesSequential([
     <p><em>Skriven av Anton Zackrisson, Leg. Fysioterapeut</em></p>
     `
   },
-  
-
-{
-    id: 5,
+  {
+    id: 4,
     title: "Är kettlebellträning lika effektivt som traditionell styrketräning?",
     excerpt: "Kettlebellträning har blivit populärt – men kan det verkligen ersätta klassisk styrketräning med skivstång och maskiner? I den här artikeln jämför vi träningsformerna och går igenom för- och nackdelar.",
     category: "ARTIKEL",
     author: "Adam Carlén",
     authorTitle: "Leg. Fysioterapeut",
-    date: "2025-07-01",
+    date: "2025-07-27",
     image: kettlebell_training,
     featured: false,
     latest: false,
@@ -474,16 +466,14 @@ export const blogPosts = processAllArticlesSequential([
         <p><em>Skriven av Adam Carlén, Leg. Fysioterapeut</em></p>
         `
   },
-  
-
-{
-    id: 6,
+  {
+    id: 5,
     title: "Hur mycket bör vi röra på oss enligt rekommendationer?",
     excerpt: "Hur mycket fysisk aktivitet behöver du egentligen för att må bra? Vi går igenom de svenska och internationella rörelseriktlinjerna och vad de innebär i praktiken – oavsett om du är nybörjare eller redan tränar regelbundet.",
     category: "GUIDE",
     author: "Anton Zackrisson",
     authorTitle: "Leg. Fysioterapeut",
-    date: "2025-06-22",
+    date: "2025-07-27",
     image: who_guidelines,
     featured: false,
     latest: false,
@@ -558,16 +548,14 @@ export const blogPosts = processAllArticlesSequential([
     <p><em>Skriven av Anton Zackrisson, Leg. Fysioterapeut</em></p>
     `
   },
-  
-
-{
-    id: 7,
+  {
+    id: 6,
     title: "MR-fynd hos friska personer – vad betyder det egentligen?",
     excerpt: "Många oroar sig för oväntade fynd vid MR-undersökningar, men vad betyder dessa egentligen om man inte har några symtom? Här reder vi ut begreppen och förklarar varför bilddiagnostik på friska personer kräver eftertanke.",
     category: "ARTIKEL",
     author: "Adam Carlén",
     authorTitle: "Leg. Fysioterapeut",
-    date: "2025-06-20",
+    date: "2025-07-27",
     image: mri,
     featured: false,
     latest: false,
@@ -624,16 +612,14 @@ export const blogPosts = processAllArticlesSequential([
     <p><em>Skriven av Adam Carlén, Leg. Fysioterapeut</em></p>
     `
   },
-  
-
-{
-    id: 8,
+  {
+    id: 7,
     title: "Artros i knä och höft – vad hjälper enligt forskningen?",
     excerpt: "Vad säger forskningen om vad som verkligen hjälper vid artros i knä och höft? I denna artikel går vi igenom evidensläget kring träning, viktnedgång, kirurgi, kosttillskott och mer.",
     category: "ARTIKEL",
     author: "Anton Zackrisson",
     authorTitle: "Leg. Fysioterapeut",
-    date: "2025-06-15",
+    date: "2025-07-27",
     image: artros_knä,
     featured: true,
     latest: false,
@@ -717,16 +703,14 @@ export const blogPosts = processAllArticlesSequential([
       <p><em>Skriven av Anton Zackrisson, Leg. Fysioterapeut</em></p>
     `
   },
-  
-
-{
-    id: 9,
+  {
+    id: 8,
     title: "Kan styrketräning förbättra prestationen hos löpare?",
     excerpt: "Många löpare undviker styrketräning i rädsla för att bli långsammare eller tyngre. Men vad säger forskningen om styrketräningens effekt på löpprestation och skaderisk?",
     category: "ARTIKEL",
     author: "Adam Carlén",
     authorTitle: "Leg. Fysioterapeut",
-    date: "2025-06-09",
+    date: "2025-07-27",
     image: running,
     featured: true,
     latest: false,
@@ -784,16 +768,14 @@ export const blogPosts = processAllArticlesSequential([
     <p><em>Skriven av Adam Carlén, Leg. Fysioterapeut</em></p>
     `
   },
-  
-
-{
-    id: 10,
+  {
+    id: 9,
     title: "Vanliga orsaker till smärta i rotatorcuffen och hur det kan behandlas",
     excerpt: "Rotatorcuffen är en vanlig källa till axelsmärta. I denna artikel går vi igenom vad rotatorcuffen är, vanliga orsaker till smärta och hur fysioterapi och träning kan hjälpa.",
     category: "ARTIKEL",
     author: "Anton Zackrisson",
     authorTitle: "Leg. Fysioterapeut",
-    date: "2025-06-02",
+    date: "2025-07-26",
     image: shoulder_pain,
     featured: true,
     latest: false,
@@ -858,9 +840,7 @@ export const blogPosts = processAllArticlesSequential([
 <p><em>Skriven av Anton Zackrisson, Leg. Fysioterapeut</em></p>
 `
   }
-
-
-]);;;;;;
+]);;;;
 
 // Beräkna lästid för alla artiklar
 export const blogPostsWithReadingTime = blogPosts;
