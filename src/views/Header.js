@@ -44,6 +44,7 @@ const Header = () => {
             if (dropdownCloseTimeout) clearTimeout(dropdownCloseTimeout);
             setOmOssDropdownOpen(true);
             setTjansterDropdownOpen(false);
+            setProdukterDropdownOpen(false);
           }}
           onMouseLeave={() => {
             dropdownCloseTimeout = setTimeout(() => setOmOssDropdownOpen(false), 150);
@@ -55,6 +56,7 @@ const Header = () => {
           {omOssDropdownOpen && (
             <div className="dropdown-menu">
               <Link to="/team">Teamet</Link>
+              <Link to="/kompetens">Kompetens</Link>
             </div>
           )}
         </div>
@@ -85,9 +87,6 @@ const Header = () => {
         </div>
         
         <Link to="/program" className="nav-link">Program</Link>
-        <Link to="/blog" className="nav-link">Blogg</Link>
-        <Link to="/kompetens" className="nav-link">Kompetens</Link>
-        <Link to="/kontakt" className="nav-link">Kontakt</Link>
         
         <div
           className="dropdown-container"
@@ -113,6 +112,9 @@ const Header = () => {
             </div>
           )}
         </div>
+        
+        <Link to="/blog" className="nav-link">Blogg</Link>
+        <Link to="/kontakt" className="nav-link">Kontakt</Link>
 
       </div>
       
@@ -120,9 +122,9 @@ const Header = () => {
         <div className="mobile-menu">
           <div className="mobile-menu-content">
             <Link to="/om-oss" className="mobile-nav-link">Om Oss</Link>
+            <Link to="/kompetens" className="mobile-nav-link submenu-item">Kompetens</Link>
+            <Link to="/tjanster" className="mobile-nav-link">Tjänster</Link>
             <Link to="/program" className="mobile-nav-link">Program</Link>
-            <Link to="/blog" className="mobile-nav-link">Blogg</Link>
-            <Link to="/kompetens" className="mobile-nav-link">Kompetens</Link>
             <Link to="/rekommenderade-produkter" className="mobile-nav-link">Rekommenderade Produkter</Link>
             <div className="mobile-submenu">
               <Link to="/training-equipment" className="mobile-nav-link submenu-item">Träningsutrustning</Link>
@@ -130,7 +132,7 @@ const Header = () => {
               <Link to="/rehabilitation" className="mobile-nav-link submenu-item">Rehabilitering</Link>
               <Link to="/apps-software" className="mobile-nav-link submenu-item">Appar & Mjukvara</Link>
             </div>
-            <Link to="/tjanster" className="mobile-nav-link">Tjänster</Link>
+            <Link to="/blog" className="mobile-nav-link">Blogg</Link>
             <Link to="/kontakt" className="mobile-nav-link">Kontakt</Link>
           </div>
         </div>

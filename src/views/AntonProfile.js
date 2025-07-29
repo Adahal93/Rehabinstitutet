@@ -11,9 +11,9 @@ function AntonProfile() {
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          background: 'linear-gradient(120deg, #f0f5e8 60%, #fafaf9 100%)',
+          background: 'linear-gradient(135deg, #1f2937 0%, #374151 50%, #111827 100%)',
           borderRadius: '1.5rem',
-          boxShadow: '0 8px 32px rgba(124,169,102,0.10)',
+          boxShadow: '0 8px 32px rgba(31, 41, 55, 0.15)',
           padding: '36px 32px',
           marginBottom: 40,
           gap: 40,
@@ -36,9 +36,9 @@ function AntonProfile() {
             }}
           />
           <div style={{flex: 1, minWidth: 0}}>
-            <h1 className="omoss-title" style={{marginBottom: 8, textAlign: 'left'}}>ANTON ZACKRISSON</h1>
-            <h2 style={{fontSize: '1.2rem', fontWeight: 500, color: '#7ca966', marginBottom: 18, textAlign: 'left', letterSpacing: '1px'}}>LEG. FYSIOTERAPEUT</h2>
-            <p style={{marginBottom: 0, lineHeight: 1.7, textAlign: 'left', color: '#181818'}}>
+            <h1 className="omoss-title" style={{marginBottom: 8, textAlign: 'left', color: 'white'}}>ANTON ZACKRISSON</h1>
+            <h2 style={{fontSize: '1.2rem', fontWeight: 500, color: '#9ca3af', marginBottom: 18, textAlign: 'left', letterSpacing: '1px'}}>LEG. FYSIOTERAPEUT</h2>
+            <p style={{marginBottom: 0, lineHeight: 1.7, textAlign: 'left', color: '#e5e7eb'}}>
               Anton är legitimerad fysioterapeut utbildad på Karolinska Institutet i Stockholm. Han har ett stort och brinnande intresse för träning och diagnostik. Parallellt med sitt arbete på Rehabinstitutet och Stockholms Rehabklinik City är Anton i slutskedet av att färdigställa sin masterexamen och specialistutbildning.
             </p>
           </div>
