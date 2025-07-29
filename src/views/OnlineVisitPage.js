@@ -1,6 +1,7 @@
 import React from 'react';
 import './OnlineVisitPage.css';
 import onlineImg from '../assets/images/online_coaching.png';
+import onlineMeetingImg from '../assets/images/online_meeting.webp';
 import { useNavigate } from 'react-router-dom';
 import CodepenPriceTable from './CodepenPriceTable';
 import { scrollToContact } from '../utils/scrollToContact';
@@ -14,13 +15,7 @@ const OnlineVisitPage = () => {
     navigate('/');
   };
 
-  const handleArrowClick = () => {
-    const el = document.getElementById('onlinevisit-price-table');
-    if (el) {
-      const y = el.getBoundingClientRect().top + window.pageYOffset - 120; // Offset by 120px higher
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
+
 
   return (
     <div className="onlinevisit-page">
@@ -42,6 +37,9 @@ const OnlineVisitPage = () => {
           <p className="onlinevisit-intro">
             Onlinebesök är ett flexibelt och effektivt alternativ till traditionella rehabiliteringskonsultationer. Du kan få professionell hjälp direkt hemifrån, vilket sparar tid och eliminerar behovet av resor. Våra digitala möten gör det möjligt att anpassa rehabiliteringsplanen till dina unika behov, samtidigt som du får personlig kontakt med en fysioterapeut. Med hjälp av videoanalys och tydliga instruktioner kan vi guida dig i träning och återhämtning, oavsett var du befinner dig.
           </p>
+          <div className="onlinevisit-intro-image">
+            <img src={onlineMeetingImg} alt="Online möte med fysioterapeut" />
+          </div>
         </div>
 
         <div className="onlinevisit-timeline-section">
@@ -174,12 +172,6 @@ const OnlineVisitPage = () => {
         <div className="onlinevisit-pricing-section">
           <div className="pricing-header">
             <h2 className="pricing-title">Prislista</h2>
-            <div className="scroll-indicator" onClick={handleArrowClick}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 13L12 18L17 13" stroke="var(--primary-dark-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M7 6L12 11L17 6" stroke="var(--primary-dark-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
           </div>
           <div id="onlinevisit-price-table">
             <CodepenPriceTable />
