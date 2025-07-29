@@ -23,6 +23,7 @@ import ContactSection from './views/ContactSection';
 import BlogPage from './views/BlogPage';
 import BlogArticle from './views/BlogArticle';
 import KontaktPage from './views/KontaktPage';
+import ProgramDetailPage from './views/ProgramDetailPage';
 import teamImg from './assets/images/team.png';
 
 // Om Oss page with provided design
@@ -130,6 +131,7 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogArticle />} />
           <Route path="/kontakt" element={<KontaktPage />} />
+          <Route path="/program/:programId" element={<ProgramDetailPage />} />
         </Routes>
         <ContactSection id="contact" />
       </div>

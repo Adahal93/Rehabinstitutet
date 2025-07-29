@@ -47,21 +47,23 @@ const HomePage = () => {
       </div>
       
       <section className="welcome-section">
-        <div className="welcome-text">
-          <h2>Träningsprogram online – utvecklade av legitimerad fysioterapeut</h2>
-          <p>
-            Våra digitala rehabiliteringsprogram är framtagna för dig som vill återfå eller förbättra styrka, rörlighet och funktion i en frisk eller skadad kroppsdel.
-          </p>
-          <p>
-            Programmen riktar sig till vanliga besvär i leder och senor, som bland annat axel, knä, höft eller fot, och passar både nybörjare och dig med tidigare träningsvana.<br/>
-            Varje program innehåller ett tydligt teoretiskt ramverk, evidensbaserade övningar och instruktiva videoklipp som guidar dig steg för steg.<br/>
-            Innehållet bygger på beprövad erfarenhet och aktuell forskning inom fysioterapi och träning.<br/>
-            Många användare upplever förbättring redan inom några veckor – trots tidigare misslyckade försök.
-          </p>
-        </div>
-        <div className="welcome-image-frame">
-          <div className="welcome-image-bg" />
-          <img src={styrketraningImg} alt="Styrketräning för löpare" className="welcome-image" />
+        <div className="welcome-container">
+          <div className="welcome-text">
+            <h2>Träningsprogram online – utvecklade av legitimerad fysioterapeut</h2>
+            <p>
+              Våra digitala rehabiliteringsprogram är framtagna för dig som vill återfå eller förbättra styrka, rörlighet och funktion i en frisk eller skadad kroppsdel.
+            </p>
+            <p>
+              Programmen riktar sig till vanliga besvär i leder och senor, som bland annat axel, knä, höft eller fot, och passar både nybörjare och dig med tidigare träningsvana.<br/>
+              Varje program innehåller ett tydligt teoretiskt ramverk, evidensbaserade övningar och instruktiva videoklipp som guidar dig steg för steg.<br/>
+              Innehållet bygger på beprövad erfarenhet och aktuell forskning inom fysioterapi och träning.<br/>
+              Många användare upplever förbättring redan inom några veckor – trots tidigare misslyckade försök.
+            </p>
+          </div>
+          <div className="welcome-image-frame">
+            <div className="welcome-image-bg" />
+            <img src={styrketraningImg} alt="Styrketräning för löpare" className="welcome-image" />
+          </div>
         </div>
       </section>
       <div className="cafe-homepage">

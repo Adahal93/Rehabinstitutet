@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ProgramPage.css';
 import { CheckCircle, Check, X, ChevronDown, Download } from 'lucide-react';
 import styrketraningForLopare from '../assets/images/styrketräning_för_löpare.png';
@@ -9,6 +10,7 @@ import fotachillesProgram from '../assets/images/fotachilles-program.png';
 
 const products = [
   {
+    id: 'styrketraning-for-lopare',
     title: 'Styrketräning för löpare',
     img: styrketraningForLopare,
     desc: 'Ett 12-veckors program med styrkeövningar för att förbättra löpekonomi, maxhastighet, styrka och minska skaderisken.',
@@ -19,6 +21,7 @@ const products = [
     price: '399 kr',
   },
   {
+    id: 'hamstringprogrammet',
     title: 'Hamstringprogrammet',
     img: hamstringprogrammet,
     desc: 'Specifikt utformat för att bli av med hamstringtendinopatier (smärta från senan) och förebygga skador i baksida lår – 12 veckors progressivt schema.',
@@ -26,6 +29,7 @@ const products = [
     price: '449 kr',
   },
   {
+    id: 'artrosprogram-kna-och-hoft',
     title: 'Artrosprogrammet (knä och höft)',
     img: artrosprogramKna,
     desc: 'Beprövat 8-veckorsprogram utvecklat för att minska smärta och öka rörlighet vid artros i knä och höft.',
@@ -33,6 +37,7 @@ const products = [
     price: '499 kr',
   },
   {
+    id: 'traningsprogram-3-ggr',
     title: 'Träningsprogram 3 gånger i veckan',
     img: traningsprogram3ggr,
     desc: 'Optimalt upplägg för dig som vill träna tre gånger i veckan med balans mellan styrka, kondition och rörlighet.',
@@ -40,6 +45,7 @@ const products = [
     price: '399 kr',
   },
   {
+    id: 'traningsprogram-4-ggr',
     title: 'Träningsprogram 4 gånger i veckan',
     img: traningsprogram3ggr,
     desc: 'Fyra välplanerade pass per vecka för dig som vill ta nästa steg – variation av styrka, core och kondition.',
@@ -47,6 +53,7 @@ const products = [
     price: '449 kr',
   },
   {
+    id: 'fot-och-achillesprogrammet',
     title: 'Fot- och Achillesprogrammet',
     img: fotachillesProgram,
     desc: 'Ett 6-veckorsprogram för att stärka fot och hälsena, förbättra balans och minska risken för överbelastningsskador.',
@@ -131,48 +138,52 @@ export default function ProgramPage() {
           <h2 className="font-display text-2xl font-semibold mb-10 text-center tracking-tight fade-in" style={{'--stagger':'200ms'}}>Våra Program</h2>
           <div className="program-products-row">
             {products.slice(0,3).map((p, i) => (
-              <div className="product-card fade-in fade-in-stagger border border-slate-200 bg-white rounded-2xl shadow-sm p-7 flex flex-col transition-all duration-300 cursor-pointer" tabIndex={0} style={{'--stagger':`${300+i*50}ms`}} key={p.title}>
-                <div className="product-card-image">
-                  <img src={p.img} alt={p.title} />
+              <Link to={`/program/${p.id}`} key={p.title} className="product-card-link">
+                <div className="product-card fade-in fade-in-stagger border border-slate-200 bg-white rounded-2xl shadow-sm p-7 flex flex-col transition-all duration-300 cursor-pointer" tabIndex={0} style={{'--stagger':`${300+i*50}ms`}}>
+                  <div className="product-card-image">
+                    <img src={p.img} alt={p.title} />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold tracking-tight mb-2">{p.title}</h3>
+                  <p className="text-slate-600 text-sm mb-4">{p.desc}</p>
+                  <ul className="product-features-list">
+                    {p.features && p.features.map((f, idx) => (
+                      <li key={idx} className="product-feature-item">
+                        <CheckCircle className="w-5 h-5 text-cyan-600" />
+                        <span className="text-sm text-slate-700">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto flex items-center justify-between">
+                    <span className="font-display text-2xl font-semibold tracking-tight text-cyan-700">{p.price}</span>
+                    <button className="green-buy-btn px-5 py-2 text-lg">Köp nu</button>
+                  </div>
                 </div>
-                <h3 className="font-display text-xl font-semibold tracking-tight mb-2">{p.title}</h3>
-                <p className="text-slate-600 text-sm mb-4">{p.desc}</p>
-                <ul className="product-features-list">
-                  {p.features && p.features.map((f, idx) => (
-                    <li key={idx} className="product-feature-item">
-                      <CheckCircle className="w-5 h-5 text-cyan-600" />
-                      <span className="text-sm text-slate-700">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto flex items-center justify-between">
-                  <span className="font-display text-2xl font-semibold tracking-tight text-cyan-700">{p.price}</span>
-                  <button className="green-buy-btn px-5 py-2 text-lg">Köp nu</button>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="program-products-row">
             {products.slice(3,6).map((p, i) => (
-              <div className="product-card fade-in fade-in-stagger border border-slate-200 bg-white rounded-2xl shadow-sm p-7 flex flex-col transition-all duration-300 cursor-pointer" tabIndex={0} style={{'--stagger':`${450+i*50}ms`}} key={p.title}>
-                <div className="product-card-image">
-                  <img src={p.img} alt={p.title} />
+              <Link to={`/program/${p.id}`} key={p.title} className="product-card-link">
+                <div className="product-card fade-in fade-in-stagger border border-slate-200 bg-white rounded-2xl shadow-sm p-7 flex flex-col transition-all duration-300 cursor-pointer" tabIndex={0} style={{'--stagger':`${450+i*50}ms`}}>
+                  <div className="product-card-image">
+                    <img src={p.img} alt={p.title} />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold tracking-tight mb-2">{p.title}</h3>
+                  <p className="text-slate-600 text-sm mb-4">{p.desc}</p>
+                  <ul className="product-features-list">
+                    {p.features && p.features.map((f, idx) => (
+                      <li key={idx} className="product-feature-item">
+                        <CheckCircle className="w-5 h-5 text-cyan-600" />
+                        <span className="text-sm text-slate-700">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto flex items-center justify-between">
+                    <span className="font-display text-2xl font-semibold tracking-tight text-cyan-700">{p.price}</span>
+                    <button className="green-buy-btn px-5 py-2 text-lg">Köp nu</button>
+                  </div>
                 </div>
-                <h3 className="font-display text-xl font-semibold tracking-tight mb-2">{p.title}</h3>
-                <p className="text-slate-600 text-sm mb-4">{p.desc}</p>
-                <ul className="product-features-list">
-                  {p.features && p.features.map((f, idx) => (
-                    <li key={idx} className="product-feature-item">
-                      <CheckCircle className="w-5 h-5 text-cyan-600" />
-                      <span className="text-sm text-slate-700">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto flex items-center justify-between">
-                  <span className="font-display text-2xl font-semibold tracking-tight text-cyan-700">{p.price}</span>
-                  <button className="green-buy-btn px-5 py-2 text-lg">Köp nu</button>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
