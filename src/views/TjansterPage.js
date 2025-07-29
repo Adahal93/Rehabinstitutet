@@ -82,7 +82,7 @@ const TjansterPage = () => {
         <div className="tjanster-intro">
           <p>
             Vi erbjuder ett brett utbud av rehabiliteringstjänster anpassade för både privatpersoner och företag. 
-            Alla våra tjänster bygger på evidensbaserad forskning och vår erfarenhet inom fysioterapi.
+            Alla våra tjänster bygger på rådande evidensläge och vår gedigna erfarenhet inom fysioterapi och träning.
           </p>
         </div>
         {/* Top main service */}

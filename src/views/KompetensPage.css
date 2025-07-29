@@ -1,17 +1,17 @@
-/* Kompetens Page Styles - harmoniserad med landningssidan */
+/* Kompetens Page Styles - professionell och modern design */
 .kompetens-root {
-  background: var(--bg-secondary);
+  background: #ffffff;
   min-height: 100vh;
   width: 100vw;
-  font-family: 'Inter', 'Manrope', Arial, sans-serif;
-  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  color: #1f2937;
 }
 
 .kompetens-hero {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 80px 0 60px 0;
+  padding: 100px 0 80px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
 .kompetens-hero-overlay {
@@ -27,7 +28,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
@@ -65,102 +66,106 @@
 
 .kompetens-title {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 300;
   margin-bottom: 24px;
-  color: var(--text-light);
-  letter-spacing: -1px;
+  color: white;
+  letter-spacing: -0.02em;
   line-height: 1.2;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', sans-serif;
 }
 
 .kompetens-subtitle {
-  font-size: 1.25rem;
-  color: var(--text-light);
-  line-height: 1.6;
+  font-size: 1.2rem;
+  color: white;
+  line-height: 1.7;
   max-width: 600px;
   margin: 0 auto;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
 }
 
 .kompetens-content {
   max-width: 900px;
   margin: 0 auto;
-  padding: 60px 24px 80px 24px;
+  padding: 80px 24px 100px 24px;
+  background: #fafafa;
 }
 
 .kompetens-text-section {
-  background: var(--bg-primary);
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: 48px;
-  border: 1px solid var(--border-light);
+  border: 1px solid #e5e7eb;
 }
 
 .kompetens-intro {
   margin-bottom: 48px;
   padding-bottom: 32px;
-  border-bottom: 2px solid #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .kompetens-intro p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.7;
-  color: var(--text-secondary);
+  color: #6b7280;
   margin: 0;
 }
 
 .kompetens-section {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   padding: 32px;
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
-  border-radius: 16px;
-  border: 1px solid var(--border-light);
-  transition: all 0.3s ease;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
 }
 
 .kompetens-section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(26, 61, 46, 0.15);
-  border-color: var(--primary-dark-green);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+  background: #f3f4f6;
 }
 
 .kompetens-section h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: var(--primary-dark-green);
+  color: #1f2937;
   margin-bottom: 16px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.01em;
+  font-family: 'Inter', sans-serif;
 }
 
 .kompetens-section p {
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.7;
-  color: var(--text-secondary);
+  color: #6b7280;
   margin: 0;
 }
 
 .kompetens-highlight {
-  background: var(--primary-dark-green);
-  color: var(--text-light);
+  background: #1f2937;
+  color: white;
   border: none;
-  border-radius: 0;
+  border-radius: 8px;
   padding: 16px 24px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   gap: 12px;
   margin-top: 20px;
-  box-shadow: var(--button-shadow);
+  font-family: 'Inter', sans-serif;
 }
 
 .kompetens-highlight:hover {
-  background: var(--primary-green);
-  color: var(--text-light);
+  background: #111827;
+  color: white;
   text-decoration: none;
-  box-shadow: var(--button-hover-shadow);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .kompetens-highlight svg {
@@ -174,21 +179,22 @@
 .kompetens-team-section {
   margin-top: 60px;
   padding-top: 40px;
-  border-top: 2px solid #f3f4f6;
+  border-top: 1px solid #e5e7eb;
   text-align: center;
 }
 
 .kompetens-team-section h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #1f2937;
   margin-bottom: 16px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.01em;
+  font-family: 'Inter', sans-serif;
 }
 
 .kompetens-team-section > p {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
+  font-size: 1rem;
+  color: #6b7280;
   margin-bottom: 32px;
   line-height: 1.6;
 }
@@ -207,14 +213,15 @@
 }
 
 .team-link-content {
-  background: linear-gradient(135deg, #f8faf9 0%, #f0f9ff 100%);
-  border: 2px solid #e5e7eb;
-  border-radius: 16px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   padding: 32px 24px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .team-link-content::before {
@@ -229,9 +236,9 @@
 }
 
 .team-link:hover .team-link-content {
-  transform: translateY(-4px);
-  border-color: var(--primary-dark-green);
-  box-shadow: 0 12px 24px rgba(26, 61, 46, 0.2);
+  transform: translateY(-2px);
+  border-color: #d1d5db;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .team-link:hover .team-link-content::before {
@@ -239,29 +246,30 @@
 }
 
 .team-link-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  color: #1a202c;
+  color: #1f2937;
   margin-bottom: 8px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.01em;
+  font-family: 'Inter', sans-serif;
 }
 
 .team-link-content p {
-  font-size: 0.95rem;
-  color: var(--primary-dark-green);
+  font-size: 0.875rem;
+  color: #6b7280;
   margin-bottom: 16px;
   font-weight: 500;
 }
 
 .team-link-arrow {
-  font-size: 0.9rem;
-  color: var(--primary-dark-green);
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .team-link:hover .team-link-arrow {
-  color: var(--primary-green);
+  color: #374151;
   transform: translateX(4px);
 }
 
@@ -324,44 +332,47 @@
 }
 
 .kompetens-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-  border-color: var(--primary-dark-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  border-color: #d1d5db;
 }
 
 .kompetens-card-icon {
-  font-size: 2.5rem;
-  color: var(--primary-dark-green);
+  font-size: 2rem;
+  color: #6b7280;
 }
 
 .kompetens-card-icon:hover {
-  color: var(--primary-green);
+  color: #374151;
 }
 
 .kompetens-btn {
-  background: var(--primary-dark-green);
-  color: var(--text-light);
+  background: #1f2937;
+  color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 14px 28px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   text-decoration: none;
   display: inline-block;
+  font-family: 'Inter', sans-serif;
 }
 
 .kompetens-btn:hover {
-  background: var(--primary-green);
-  color: var(--text-light);
+  background: #111827;
+  color: white;
   text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .kompetens-bg {
-  background: linear-gradient(135deg, #fafafa 0%, #f8f9fa 100%);
+  background: #fafafa;
 }
 
 .kompetens-text {
-  color: var(--primary-dark-green);
+  color: #1f2937;
 } 

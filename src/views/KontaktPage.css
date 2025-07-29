@@ -1,0 +1,333 @@
+/* Kontakt Page Styles */
+.kontakt-page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Hero Section */
+.kontakt-hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.kontakt-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.5;
+}
+
+.kontakt-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.kontakt-hero-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 24px;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.kontakt-hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  opacity: 0.8;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Content */
+.kontakt-main {
+  padding: 100px 0;
+  background: #fafafa;
+}
+
+.kontakt-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kontakt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Form Section */
+.kontakt-form-section {
+  background: white;
+  padding: 48px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.kontakt-section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.kontakt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.875rem;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-input,
+.form-textarea {
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+  background: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-submit-btn {
+  background: #1f2937;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 24px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-submit-btn:hover {
+  background: #111827;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Info Section */
+.kontakt-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.kontakt-info-card {
+  background: white;
+  padding: 48px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.kontakt-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.kontakt-info-item:last-child {
+  margin-bottom: 0;
+}
+
+.kontakt-info-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+}
+
+.kontakt-info-content {
+  flex: 1;
+}
+
+.kontakt-info-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+}
+
+.kontakt-info-text {
+  color: #6b7280;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+.kontakt-info-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.kontakt-info-link:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+
+
+/* FAQ Section */
+.kontakt-faq {
+  background: white;
+  padding: 100px 0;
+}
+
+.faq-content {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faq-item {
+  background: #f9fafb;
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.faq-item:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.faq-question {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.faq-answer {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .kontakt-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .kontakt-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .kontakt-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .kontakt-form-section,
+  .kontakt-info-card {
+    padding: 32px 24px;
+  }
+  
+
+  
+  .kontakt-main,
+  .kontakt-faq {
+    padding: 60px 0;
+  }
+  
+  .faq-item {
+    padding: 24px 20px;
+  }
+  
+  .kontakt-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .kontakt-hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kontakt-hero {
+    padding: 60px 0;
+  }
+  
+  .kontakt-hero-title {
+    font-size: 2rem;
+  }
+  
+  .kontakt-section-title {
+    font-size: 1.5rem;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 12px;
+  }
+  
+  .form-submit-btn {
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+} 

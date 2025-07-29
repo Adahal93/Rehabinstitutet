@@ -87,6 +87,7 @@ const Header = () => {
         <Link to="/program" className="nav-link">Program</Link>
         <Link to="/blog" className="nav-link">Blogg</Link>
         <Link to="/kompetens" className="nav-link">Kompetens</Link>
+        <Link to="/kontakt" className="nav-link">Kontakt</Link>
         
         <div
           className="dropdown-container"
@@ -112,16 +113,7 @@ const Header = () => {
             </div>
           )}
         </div>
-        <a href="#contact" className="nav-link" onClick={e => {
-          e.preventDefault();
-          if (window.location.pathname === "/") {
-            const el = document.getElementById('contact');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          } else {
-            window.sessionStorage.setItem('scrollToContact', 'true');
-            navigate("/");
-          }
-        }}>Kontakt</a>
+
       </div>
       
       {isMobileMenuOpen && (
