@@ -16,9 +16,9 @@ const BlogPage = () => {
   const postsPerPage = 8;
   const totalPages = Math.ceil(processedPosts.length / postsPerPage);
 
-  // Get featured posts (latest + 3 featured)
+  // Get featured posts (latest + 3 most recent)
   const latestPost = processedPosts.find(post => post.latest);
-  const featuredPosts = processedPosts.filter(post => post.featured && !post.latest).slice(0, 3);
+  const featuredPosts = processedPosts.filter(post => !post.latest).slice(0, 3);
 
   // Get posts for current page
   const indexOfLastPost = currentPage * postsPerPage;
