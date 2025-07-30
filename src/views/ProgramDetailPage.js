@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { CheckCircle, Download, CreditCard, Smartphone, ExternalLink } from 'lucide-react';
 import './ProgramDetailPage.css';
+import './ProgramDetailPageMobile.css';
 import styrketraningForLopare from '../assets/images/styrketräning_för_löpare.png';
 import hamstringprogrammet from '../assets/images/hamstringprogrammet.png';
 import artrosprogramKna from '../assets/images/artrosprogram_knä.png';
