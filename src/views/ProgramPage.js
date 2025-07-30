@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProgramPage.css';
-import { CheckCircle, Check, X, ChevronDown, Download } from 'lucide-react';
+import { CheckCircle, Check, X, ChevronDown, Download, ExternalLink } from 'lucide-react';
 import styrketraningForLopare from '../assets/images/styrketräning_för_löpare.png';
 import hamstringprogrammet from '../assets/images/hamstringprogrammet.png';
 import artrosprogramKna from '../assets/images/artrosprogram_knä.png';
@@ -18,7 +18,7 @@ const products = [
       'Fokus på skadeprevention och löpekonomi',
       'Teoretiskt ramverk ingår'
     ],
-    price: '399 kr',
+    price: '399 kr'
   },
   {
     id: 'hamstringprogrammet',
@@ -26,7 +26,7 @@ const products = [
     img: hamstringprogrammet,
     desc: 'Specifikt utformat för att bli av med hamstringtendinopatier (smärta från senan) och förebygga skador i baksida lår – 12 veckors progressivt schema.',
     features: ['Rehab och prehab kombinerat'],
-    price: '449 kr',
+    price: '449 kr'
   },
   {
     id: 'artrosprogram-kna-och-hoft',
@@ -34,7 +34,7 @@ const products = [
     img: artrosprogramKna,
     desc: 'Beprövat 8-veckorsprogram utvecklat för att minska smärta och öka rörlighet vid artros i knä och höft.',
     features: ['Godkänt av fysioterapeuter'],
-    price: '499 kr',
+    price: '499 kr'
   },
   {
     id: 'traningsprogram-3-ggr',
@@ -42,7 +42,7 @@ const products = [
     img: traningsprogram3ggr,
     desc: 'Optimalt upplägg för dig som vill träna tre gånger i veckan med balans mellan styrka, kondition och rörlighet.',
     features: ['Perfekt för upptagna scheman'],
-    price: '399 kr',
+    price: '399 kr'
   },
   {
     id: 'traningsprogram-4-ggr',
@@ -50,7 +50,7 @@ const products = [
     img: traningsprogram3ggr,
     desc: 'Fyra välplanerade pass per vecka för dig som vill ta nästa steg – variation av styrka, core och kondition.',
     features: ['Både hemma & gymvänligt'],
-    price: '449 kr',
+    price: '449 kr'
   },
   {
     id: 'fot-och-achillesprogrammet',
@@ -58,7 +58,7 @@ const products = [
     img: fotachillesProgram,
     desc: 'Ett 6-veckorsprogram för att stärka fot och hälsena, förbättra balans och minska risken för överbelastningsskador.',
     features: ['Stegrande övningar med video'],
-    price: '449 kr',
+    price: '449 kr'
   },
 ];
 
@@ -221,6 +221,8 @@ export default function ProgramPage() {
           </div>
         </div>
       </section>
+      
+
       
       {/* Gratisdokument sektion */}
       <section className="px-8 pb-32 pt-12 fade-in" style={{'--stagger':'650ms'}}>

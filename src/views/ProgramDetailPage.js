@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { CheckCircle, Download, CreditCard, Smartphone } from 'lucide-react';
+import { CheckCircle, Download, CreditCard, Smartphone, ExternalLink } from 'lucide-react';
 import './ProgramDetailPage.css';
 import styrketraningForLopare from '../assets/images/styrketräning_för_löpare.png';
 import hamstringprogrammet from '../assets/images/hamstringprogrammet.png';
@@ -49,7 +49,23 @@ const programData = {
     delivery: 'Digitalt (PDF + videos)',
     image: styrketraningForLopare,
     swishNumber: '123 456 7890', // Ersätt med riktigt företags-Swish
-    swishMessage: 'STYRKELOPARE'
+    swishMessage: 'STYRKELOPARE',
+    equipment: [
+      'Tillgång till gym eller hemmagym med hantlar/skivstång',
+      'Vikter upp till 60kg (kvinnor) / 80kg (män)'
+    ],
+    affiliateProducts: [
+      {
+        name: 'Justerbara Hantlar Premium',
+        link: 'https://gymkompaniet.se/nuo-athletics-nuobell-set-2-32kg-parvis?___store=default',
+        description: 'Högkvalitativt justerbart hantelset 2-32kg per hantel'
+      },
+      {
+        name: 'Justerbara Hantlar Kostnadseffektivt',
+        link: 'https://www.gymgrossisten.com/bowflex-selecttech-552i/373384.html',
+        description: 'Kostnadseffektivt justerbart hantelset 2-24kg per hantel'
+      }
+    ]
   },
   'hamstringprogrammet': {
     id: 'hamstringprogrammet',
@@ -89,7 +105,23 @@ const programData = {
     delivery: 'Digitalt (PDF + videos)',
     image: hamstringprogrammet,
     swishNumber: '123 456 7890',
-    swishMessage: 'HAMSTRING'
+    swishMessage: 'HAMSTRING',
+    equipment: [
+      'Foamroller av valfri storlek',
+      'Tillgång till gym eller hemmagym med hantlar/skivstång upp till 60kg'
+    ],
+    affiliateProducts: [
+      {
+        name: 'Gummiband Varierande Styrka',
+        link: 'https://www.gymgrossisten.com/gummiband-45---795-kg/1095-01R.html',
+        description: 'Hållbara gummiband för rehabträning'
+      },
+      {
+        name: 'Justerbara Hantlar Kostnadseffektivt',
+        link: 'https://www.gymgrossisten.com/bowflex-selecttech-552i/373384.html',
+        description: 'Kostnadseffektivt justerbart hantelset 2-24kg per hantel'
+      }
+    ]
   },
   'artrosprogram-kna-och-hoft': {
     id: 'artrosprogram-kna-och-hoft',
@@ -129,7 +161,27 @@ const programData = {
     delivery: 'Digitalt (PDF + videos)',
     image: artrosprogramKna,
     swishNumber: '123 456 7890',
-    swishMessage: 'ARTROS'
+    swishMessage: 'ARTROS',
+    equipment: [
+      'En vikt upp till 30kg (kettlebell, hantel eller viktväst)'
+    ],
+    affiliateProducts: [
+      {
+        name: 'Justerbar Kettlebell',
+        link: 'https://gymkompaniet.se/quick-lock-kettlebell-13-5kg-gymstick?___store=default',
+        description: 'Justerbar kettlebell 4.5-13.5kg'
+      },
+      {
+        name: 'Kettlebell Standard',
+        link: 'https://www.gymgrossisten.com/kettlebell-bc-4%E2%80%9348-kg/68-2178-10R.html',
+        description: 'Högkvalitativ kettlebell i olika storlekar'
+      },
+      {
+        name: 'Justerbara Hantlar Kostnadseffektivt',
+        link: 'https://www.gymgrossisten.com/bowflex-selecttech-552i/373384.html',
+        description: 'Kostnadseffektivt justerbart hantelset 2-24kg per hantel'
+      }
+    ]
   },
   'fot-och-achillesprogrammet': {
     id: 'fot-och-achillesprogrammet',
@@ -169,7 +221,28 @@ const programData = {
     delivery: 'Digitalt (PDF + videos)',
     image: fotachillesProgram,
     swishNumber: '123 456 7890',
-    swishMessage: 'FOTACHILLES'
+    swishMessage: 'FOTACHILLES',
+    equipment: [
+      'Foamroller',
+      'En vikt upp till 30kg (kettlebell, hantel eller viktväst)'
+    ],
+    affiliateProducts: [
+      {
+        name: 'Justerbar Kettlebell',
+        link: 'https://gymkompaniet.se/quick-lock-kettlebell-13-5kg-gymstick?___store=default',
+        description: 'Justerbar kettlebell 4.5-13.5kg'
+      },
+      {
+        name: 'Kettlebell Standard',
+        link: 'https://www.gymgrossisten.com/kettlebell-bc-4%E2%80%9348-kg/68-2178-10R.html',
+        description: 'Högkvalitativ kettlebell i olika storlekar'
+      },
+      {
+        name: 'Justerbara Hantlar Kostnadseffektivt',
+        link: 'https://www.gymgrossisten.com/bowflex-selecttech-552i/373384.html',
+        description: 'Kostnadseffektivt justerbart hantelset 2-24kg per hantel'
+      }
+    ]
   },
   'traningsprogram-3-ggr': {
     id: 'traningsprogram-3-ggr',
@@ -210,7 +283,23 @@ const programData = {
     delivery: 'Digitalt (PDF + videos)',
     image: traningsprogram3ggr,
     swishNumber: '123 456 7890',
-    swishMessage: 'TRÄNING3GGR'
+    swishMessage: 'TRÄNING3GGR',
+    equipment: [
+      'Grundläggande träningsutrustning (gummiband, kroppsvikt)',
+      'Valfritt: hantlar eller kettlebell för progression'
+    ],
+    affiliateProducts: [
+      {
+        name: 'Gummiband Varierande Styrka',
+        link: 'https://www.gymgrossisten.com/gummiband-45---795-kg/1095-01R.html',
+        description: 'Hållbara gummiband för olika träningsnivåer'
+      },
+      {
+        name: 'Gummiband Med Handtag',
+        link: 'https://www.gymgrossisten.com/exertube-eco-traningsband-med-handtag/37356R.html',
+        description: 'Gummiband med handtag för hemmaträning'
+      }
+    ]
   },
   'traningsprogram-4-ggr': {
     id: 'traningsprogram-4-ggr',
@@ -251,7 +340,23 @@ const programData = {
     delivery: 'Digitalt (PDF + videos)',
     image: traningsprogram3ggr,
     swishNumber: '123 456 7890',
-    swishMessage: 'TRÄNING4GGR'
+    swishMessage: 'TRÄNING4GGR',
+    equipment: [
+      'Tillgång till gym eller hemmagym med hantlar/skivstång',
+      'Vikter upp till 60kg (kvinnor) / 80kg (män)'
+    ],
+    affiliateProducts: [
+      {
+        name: 'Justerbara Hantlar Premium',
+        link: 'https://gymkompaniet.se/nuo-athletics-nuobell-set-2-32kg-parvis?___store=default',
+        description: 'Högkvalitativt justerbart hantelset 2-32kg per hantel'
+      },
+      {
+        name: 'Justerbara Hantlar Kostnadseffektivt',
+        link: 'https://www.gymgrossisten.com/bowflex-selecttech-552i/373384.html',
+        description: 'Kostnadseffektivt justerbart hantelset 2-24kg per hantel'
+      }
+    ]
   }
   // Fler program kan läggas till här
 };
@@ -375,6 +480,49 @@ const ProgramDetailPage = () => {
                     <span>{feature}</span>
                   </div>
                 ))}
+              </div>
+              
+              <h2>Utrustningskrav</h2>
+              <div className="equipment-section">
+                <p className="equipment-intro">
+                  För att kunna genomföra detta program effektivt behöver du följande utrustning:
+                </p>
+                <div className="equipment-list">
+                  {program.equipment && program.equipment.map((item, index) => (
+                    <div key={index} className="equipment-item">
+                      <CheckCircle className="check-icon" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                {program.affiliateProducts && program.affiliateProducts.length > 0 && (
+                  <div className="affiliate-section">
+                    <h3>Rekommenderade produkter</h3>
+                    <p>Vi rekommenderar följande produkter för att få bästa resultat:</p>
+                    <div className="affiliate-products">
+                      {program.affiliateProducts.map((product, index) => (
+                        <div key={index} className="affiliate-product">
+                          <a 
+                            href={product.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="affiliate-link"
+                          >
+                            <span className="product-name">{product.name}</span>
+                            <ExternalLink className="external-link-icon" />
+                          </a>
+                          <p className="product-description">{product.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="affiliate-footer">
+                      <Link to="/rekommenderade-produkter" className="view-all-products-link">
+                        Se alla rekommenderade produkter →
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             
