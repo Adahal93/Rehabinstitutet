@@ -65,11 +65,11 @@ const products = [
 const faqList = [
   {
     q: 'Hur får jag tillgång till mitt program?',
-    a: 'Du får direkt tillgång till ditt program digitalt efter köp via e-post och på din personliga sida.'
+    a: 'När du betalat med swish eller kort får du direkt tillgång till ditt program som nedladdningsbar PDF. Du får också en e-post med länken till din personliga sida där du kan se dina köp och få tillgång till dina program.'
   },
   {
     q: 'Kan jag återanvända programmet flera gånger?',
-    a: 'Ja, du kan använda programmet hur många gånger du vill – det är ditt för alltid!'
+    a: 'Ja, du kan använda programmet hur många gånger du vill – det är ditt för alltid! Våra program är också utformade för att kunna upprepas från vecka 1 efter du är färdig med hela programmet.'
   },
   {
     q: 'Kan jag få pengarna tillbaka?',
@@ -223,7 +223,7 @@ export default function ProgramPage() {
       </section>
       
       {/* Gratisdokument sektion */}
-      <section className="px-8 pb-20 pt-12 fade-in" style={{'--stagger':'650ms'}}>
+      <section className="px-8 pb-32 pt-12 fade-in" style={{'--stagger':'650ms'}}>
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-2xl font-semibold text-center mb-4 tracking-tight">Gratis Dokument</h2>
           <p className="text-center text-slate-600 mb-10 max-w-2xl mx-auto">
@@ -251,7 +251,7 @@ export default function ProgramPage() {
         </div>
       </section>
       
-      <section className="px-8 pb-24 fade-in" style={{'--stagger':'700ms'}}>
+      <section className="px-8 pb-24 pt-12 fade-in" style={{'--stagger':'700ms'}}>
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display text-2xl font-semibold text-center mb-10 tracking-tight">Vanliga Frågor</h2>
           <div className="space-y-4">

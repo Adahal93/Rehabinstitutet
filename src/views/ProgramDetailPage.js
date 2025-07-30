@@ -4,6 +4,9 @@ import { CheckCircle, Download, CreditCard, Smartphone } from 'lucide-react';
 import './ProgramDetailPage.css';
 import styrketraningForLopare from '../assets/images/styrketräning_för_löpare.png';
 import hamstringprogrammet from '../assets/images/hamstringprogrammet.png';
+import artrosprogramKna from '../assets/images/artrosprogram_knä.png';
+import fotachillesProgram from '../assets/images/fotachilles-program.png';
+import traningsprogram3ggr from '../assets/images/träningsprogram_3ggr_v.png';
 
 // Program data - this could be moved to a separate file later
 const programData = {
@@ -12,7 +15,6 @@ const programData = {
     title: 'Styrketräning för löpare',
     subtitle: '12-veckors program för förbättrad löpekonomi och skadeprevention',
     price: 399,
-    originalPrice: 599,
     description: 'Ett komplett 12-veckors program utvecklat för löpare som vill förbättra sin löpekonomi, öka maxhastighet, bygga styrka och minska skaderisken. Programmet är baserat på senaste forskningen inom löparträning och skadeprevention.',
     longDescription: `
       <p>Detta program är skapat för dig som vill ta ditt löpande till nästa nivå. Genom systematisk styrketräning kommer du att:</p>
@@ -54,7 +56,6 @@ const programData = {
     title: 'Hamstringprogrammet',
     subtitle: '12-veckors program för att bli av med hamstringtendinopatier',
     price: 449,
-    originalPrice: 649,
     description: 'Specifikt utformat för att bli av med hamstringtendinopatier (smärta från senan) och förebygga skador i baksida lår. Ett 12-veckors progressivt schema som kombinerar rehab och prehab.',
     longDescription: `
       <p>Hamstringtendinopatier är en vanlig och frustrerande skada som kan påverka både vardagsliv och träning. Detta program är specialutformat för att:</p>
@@ -89,6 +90,168 @@ const programData = {
     image: hamstringprogrammet,
     swishNumber: '123 456 7890',
     swishMessage: 'HAMSTRING'
+  },
+  'artrosprogram-kna-och-hoft': {
+    id: 'artrosprogram-kna-och-hoft',
+    title: 'Artrosprogrammet (knä och höft)',
+    subtitle: '8-veckors program för att minska smärta och öka rörlighet vid artros',
+    price: 499,
+    description: 'Beprövat 8-veckorsprogram utvecklat för att minska smärta och öka rörlighet vid artros i knä och höft. Godkänt av fysioterapeuter.',
+    longDescription: `
+      <p>Artros i knä och höft är en vanlig och frustrerande åkomma som kan påverka både vardagsliv och träning. Detta program är specialutformat för att:</p>
+      <ul>
+        <li>Minska smärta från artros</li>
+        <li>Återställa funktionell styrka</li>
+        <li>Förebygga framtida skador</li>
+        <li>Förbättra rörlighet och mobilitet</li>
+      </ul>
+      <p>Programmet innehåller:</p>
+      <ul>
+        <li>8 veckors progressivt rehab-schema</li>
+        <li>Specifika övningar för artros</li>
+        <li>Gradvis ökning av belastning</li>
+        <li>Mobilitets- och stretchingprogram</li>
+        <li>Råd för återgång till träning</li>
+      </ul>
+    `,
+    features: [
+      '8 veckors progressivt schema',
+      'Specifikt för artros',
+      'Rehab och prehab kombinerat',
+      'Gradvis belastningsökning',
+      'Mobilitetsprogram',
+      'Återgångsplan',
+      'Videoinstruktioner',
+      'Godkänt av fysioterapeuter'
+    ],
+    duration: '8 veckor',
+    level: 'Alla nivåer',
+    delivery: 'Digitalt (PDF + videos)',
+    image: artrosprogramKna,
+    swishNumber: '123 456 7890',
+    swishMessage: 'ARTROS'
+  },
+  'fot-och-achillesprogrammet': {
+    id: 'fot-och-achillesprogrammet',
+    title: 'Fot- och Achillesprogrammet',
+    subtitle: '6-veckors program för att stärka fot och hälsena',
+    price: 449,
+    description: 'Ett 6-veckorsprogram för att stärka fot och hälsena, förbättra balans och minska risken för överbelastningsskador. Stegrande övningar med video.',
+    longDescription: `
+      <p>Fot- och Achillesledsskador är vanliga och frustrerande skador som kan påverka både vardagsliv och träning. Detta program är specialutformat för att:</p>
+      <ul>
+        <li>Stärka fot och hälsena</li>
+        <li>Förbättra balans och stabilitet</li>
+        <li>Minska risken för överbelastningsskador</li>
+        <li>Förbättra rörlighet och mobilitet</li>
+      </ul>
+      <p>Programmet innehåller:</p>
+      <ul>
+        <li>6 veckors progressivt rehab-schema</li>
+        <li>Specifika övningar för fot och hälsena</li>
+        <li>Gradvis ökning av belastning</li>
+        <li>Mobilitets- och stretchingprogram</li>
+        <li>Stegrande övningar med video</li>
+      </ul>
+    `,
+    features: [
+      '6 veckors progressivt schema',
+      'Specifikt för fot och hälsena',
+      'Rehab och prehab kombinerat',
+      'Gradvis belastningsökning',
+      'Mobilitetsprogram',
+      'Stegrande övningar med video',
+      'Videoinstruktioner',
+      'Evidensbaserat program'
+    ],
+    duration: '6 veckor',
+    level: 'Alla nivåer',
+    delivery: 'Digitalt (PDF + videos)',
+    image: fotachillesProgram,
+    swishNumber: '123 456 7890',
+    swishMessage: 'FOTACHILLES'
+  },
+  'traningsprogram-3-ggr': {
+    id: 'traningsprogram-3-ggr',
+    title: 'Träningsprogram 3 gånger i veckan',
+    subtitle: '8-veckors program för balans mellan styrka, kondition och rörlighet',
+    price: 399,
+    description: 'Optimalt upplägg för dig som vill träna tre gånger i veckan med balans mellan styrka, kondition och rörlighet. Perfekt för upptagna scheman.',
+    longDescription: `
+      <p>Detta program är skapat för dig som vill ha en balanserad träning. Genom systematisk träning kommer du att:</p>
+      <ul>
+        <li>Bygga styrka och kondition</li>
+        <li>Förbättra rörlighet och mobilitet</li>
+        <li>Minska risken för skador</li>
+        <li>Förbättra allmän hälsa</li>
+      </ul>
+      <p>Programmet innehåller:</p>
+      <ul>
+        <li>8 veckors balanserat träningsschema</li>
+        <li>Detaljerade övningsbeskrivningar med bilder</li>
+        <li>Videoinstruktioner för alla övningar</li>
+        <li>Teoretiskt ramverk och förklaringar</li>
+        <li>Skadepreventiva övningar</li>
+        <li>Mobilitets- och rörlighetsprogram</li>
+      </ul>
+    `,
+    features: [
+      '8 veckors balanserat schema',
+      'Videoinstruktioner för alla övningar',
+      'Teoretiskt ramverk ingår',
+      'Skadepreventiva övningar',
+      'Mobilitets- och rörlighetsprogram',
+      'Lätt att följa format',
+      'Perfekt för upptagna scheman',
+      'Evidensbaserat program'
+    ],
+    duration: '8 veckor',
+    level: 'Nybörjare+',
+    delivery: 'Digitalt (PDF + videos)',
+    image: traningsprogram3ggr,
+    swishNumber: '123 456 7890',
+    swishMessage: 'TRÄNING3GGR'
+  },
+  'traningsprogram-4-ggr': {
+    id: 'traningsprogram-4-ggr',
+    title: 'Träningsprogram 4 gånger i veckan',
+    subtitle: '8-veckors program för avancerad träning',
+    price: 449,
+    description: 'Fyra välplanerade pass per vecka för dig som vill ta nästa steg – variation av styrka, core och kondition. Både hemma & gymvänligt.',
+    longDescription: `
+      <p>Detta avancerade program är skapat för dig som vill ta sin träning till nästa nivå. Genom intensiv träning kommer du att:</p>
+      <ul>
+        <li>Bygga styrka och kondition</li>
+        <li>Förbättra core-styrka</li>
+        <li>Minska risken för skador</li>
+        <li>Förbättra allmän hälsa</li>
+      </ul>
+      <p>Programmet innehåller:</p>
+      <ul>
+        <li>8 veckors intensivt träningsschema</li>
+        <li>Detaljerade övningsbeskrivningar med bilder</li>
+        <li>Videoinstruktioner för alla övningar</li>
+        <li>Teoretiskt ramverk och förklaringar</li>
+        <li>Skadepreventiva övningar</li>
+        <li>Mobilitets- och rörlighetsprogram</li>
+      </ul>
+    `,
+    features: [
+      '8 veckors intensivt schema',
+      'Videoinstruktioner för alla övningar',
+      'Teoretiskt ramverk ingår',
+      'Skadepreventiva övningar',
+      'Mobilitets- och rörlighetsprogram',
+      'Lätt att följa format',
+      'Både hemma & gymvänligt',
+      'Evidensbaserat program'
+    ],
+    duration: '8 veckor',
+    level: 'Erfaren',
+    delivery: 'Digitalt (PDF + videos)',
+    image: traningsprogram3ggr,
+    swishNumber: '123 456 7890',
+    swishMessage: 'TRÄNING4GGR'
   }
   // Fler program kan läggas till här
 };
@@ -146,8 +309,6 @@ const ProgramDetailPage = () => {
             <p className="program-subtitle">{program.subtitle}</p>
             <div className="price-section">
               <span className="current-price">{program.price} kr</span>
-              <span className="original-price">{program.originalPrice} kr</span>
-              <span className="discount">Spara {program.originalPrice - program.price} kr</span>
             </div>
             <p className="program-description">{program.description}</p>
             <button 
@@ -235,7 +396,6 @@ const ProgramDetailPage = () => {
                 <h3>Köp programmet</h3>
                 <div className="price-display">
                   <span className="current-price">{program.price} kr</span>
-                  <span className="original-price">{program.originalPrice} kr</span>
                 </div>
                 <button 
                   className="buy-button-full"

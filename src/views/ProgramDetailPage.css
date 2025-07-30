@@ -465,9 +465,10 @@
 }
 
 .buy-button:hover {
-  background: #111827;
+  background: #f3f4f6;
+  color: #1f2937;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(31, 41, 55, 0.4);
+  box-shadow: 0 8px 30px rgba(31, 41, 55, 0.2);
 }
 
 .hero-image {
@@ -736,9 +737,10 @@
 }
 
 .buy-button-full:hover {
-  background: #111827;
+  background: #f3f4f6;
+  color: #1f2937;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(31, 41, 55, 0.4);
+  box-shadow: 0 8px 30px rgba(31, 41, 55, 0.2);
 }
 
 .guarantee {
