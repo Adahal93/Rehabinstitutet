@@ -10,6 +10,14 @@ const KontaktPage = () => {
     message: ''
   });
 
+  // CSRF token för säkerhet
+  const [csrfToken] = useState(() => {
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  });
+
+  // Rate limiting för formulär
+  const [lastSubmission, setLastSubmission] = useState(0);
+
 
 
   const handleChange = (e) => {
@@ -22,11 +30,42 @@ const KontaktPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
+    // Rate limiting - max 1 submission per 30 sekunder
+    const now = Date.now();
+    if (now - lastSubmission < 30000) {
+      alert('Vänligen vänta 30 sekunder innan du skickar ett nytt meddelande.');
+      return;
+    }
+    
+    // Validera input
+    if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
+      alert('Alla fält måste fyllas i.');
+      return;
+    }
+    
+    // Validera email-format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert('Vänligen ange en giltig e-postadress.');
+      return;
+    }
+    
+    // Sanera input för säkerhet
+    const sanitizedData = {
+      name: formData.name.trim().replace(/[<>]/g, ''),
+      email: formData.email.trim(),
+      subject: formData.subject.trim().replace(/[<>]/g, ''),
+      message: formData.message.trim().replace(/[<>]/g, '')
+    };
+    
     // Skapa email-innehåll
-    const emailBody = `Namn: ${formData.name}\nEmail: ${formData.email}\n\nMeddelande:\n${formData.message}`;
+    const emailBody = `Namn: ${sanitizedData.name}\nEmail: ${sanitizedData.email}\n\nMeddelande:\n${sanitizedData.message}`;
     
     // Skicka direkt till info@rehabinstitutet.se
-    const mailtoLink = `mailto:info@rehabinstitutet.se?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:info@rehabinstitutet.se?subject=${encodeURIComponent(sanitizedData.subject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Uppdatera rate limiting
+    setLastSubmission(now);
     
     // Öppna email-klienten
     window.location.href = mailtoLink;
@@ -60,6 +99,7 @@ const KontaktPage = () => {
             <div className="kontakt-form-section">
               <h2 className="kontakt-section-title">Skicka ett meddelande</h2>
               <form className="kontakt-form" onSubmit={handleSubmit}>
+                <input type="hidden" name="csrf_token" value={csrfToken} />
                 <div className="form-group">
                   <label htmlFor="name" className="form-label">Namn *</label>
                   <input

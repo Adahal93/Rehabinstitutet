@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './BlogArticle.css';
 import { Link, useParams } from 'react-router-dom';
 import { blogPosts, fixIdsAfterManualChange } from '../data/markdownArticles';
+import DOMPurify from 'dompurify';
 
 const BlogArticle = () => {
   const { id } = useParams();
@@ -64,7 +65,7 @@ const BlogArticle = () => {
           <div className="blog-container">
             <div 
               className="blog-article-body"
-              dangerouslySetInnerHTML={{ __html: article.content }}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(article.content) }}
             />
             
             <div className="blog-article-footer">

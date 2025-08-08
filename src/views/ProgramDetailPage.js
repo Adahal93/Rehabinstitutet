@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { CheckCircle, Download, CreditCard, Smartphone, ExternalLink } from 'lucide-react';
+import DOMPurify from 'dompurify';
 import './ProgramDetailPage.css';
 import './ProgramDetailPageMobile.css';
 import styrketraningForLopare from '../assets/images/styrketräning_för_löpare.png';
@@ -470,7 +471,7 @@ const ProgramDetailPage = () => {
               <h2>Om programmet</h2>
               <div 
                 className="long-description"
-                dangerouslySetInnerHTML={{ __html: program.longDescription }}
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(program.longDescription) }}
               />
               
               <h2>Vad du får</h2>

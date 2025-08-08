@@ -8,6 +8,9 @@ const Header = () => {
   const [omOssDropdownOpen, setOmOssDropdownOpen] = useState(false);
   const [tjansterDropdownOpen, setTjansterDropdownOpen] = useState(false);
   const [produkterDropdownOpen, setProdukterDropdownOpen] = useState(false);
+  const [mobileOmOssOpen, setMobileOmOssOpen] = useState(false);
+  const [mobileTjansterOpen, setMobileTjansterOpen] = useState(false);
+  const [mobileProdukterOpen, setMobileProdukterOpen] = useState(false);
   let dropdownCloseTimeout = null;
   const navigate = useNavigate();
 
@@ -18,10 +21,23 @@ const Header = () => {
     setProdukterDropdownOpen(false);
   };
 
+  // Helper to close mobile menu and all dropdowns
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setMobileOmOssOpen(false);
+    setMobileTjansterOpen(false);
+    setMobileProdukterOpen(false);
+  };
+
+  // Handle mobile link click
+  const handleMobileLinkClick = () => {
+    closeMobileMenu();
+  };
+
   return (
     <header className="sticky-header">
       <div className="logo-nav">
-        <Link to="/" className="header-title">
+        <Link to="/" className="header-title" onClick={closeMobileMenu}>
           <img src={logo} alt="Rehabinstitutet logotyp" className="header-logo" />
           <span>REHABINSTITUTET</span>
         </Link>
@@ -121,19 +137,62 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="mobile-menu">
           <div className="mobile-menu-content">
-            <Link to="/om-oss" className="mobile-nav-link">Om Oss</Link>
-            <Link to="/kompetens" className="mobile-nav-link submenu-item">Kompetens</Link>
-            <Link to="/tjanster" className="mobile-nav-link">Tjänster</Link>
-            <Link to="/program" className="mobile-nav-link">Program</Link>
-            <Link to="/rekommenderade-produkter" className="mobile-nav-link">Rekommenderade Produkter</Link>
-            <div className="mobile-submenu">
-              <Link to="/training-equipment" className="mobile-nav-link submenu-item">Träningsutrustning</Link>
-              <Link to="/supplements" className="mobile-nav-link submenu-item">Kosttillskott</Link>
-              <Link to="/rehabilitation" className="mobile-nav-link submenu-item">Rehabilitering</Link>
-              <Link to="/apps-software" className="mobile-nav-link submenu-item">Appar & Mjukvara</Link>
+            {/* Om Oss Section */}
+            <div className="mobile-dropdown-section">
+              <button 
+                className="mobile-nav-link mobile-dropdown-trigger"
+                onClick={() => setMobileOmOssOpen(!mobileOmOssOpen)}
+              >
+                Om Oss <span className="mobile-dropdown-arrow">{mobileOmOssOpen ? '▲' : '▼'}</span>
+              </button>
+              {mobileOmOssOpen && (
+                <div className="mobile-submenu">
+                  <Link to="/team" className="mobile-nav-link submenu-item" onClick={handleMobileLinkClick}>Teamet</Link>
+                  <Link to="/kompetens" className="mobile-nav-link submenu-item" onClick={handleMobileLinkClick}>Kompetens</Link>
+                </div>
+              )}
             </div>
-            <Link to="/blog" className="mobile-nav-link">Blogg</Link>
-            <Link to="/kontakt" className="mobile-nav-link">Kontakt</Link>
+
+            {/* Tjänster Section */}
+            <div className="mobile-dropdown-section">
+              <button 
+                className="mobile-nav-link mobile-dropdown-trigger"
+                onClick={() => setMobileTjansterOpen(!mobileTjansterOpen)}
+              >
+                Tjänster <span className="mobile-dropdown-arrow">{mobileTjansterOpen ? '▲' : '▼'}</span>
+              </button>
+              {mobileTjansterOpen && (
+                <div className="mobile-submenu">
+                  <Link to="/onlinebesok" className="mobile-nav-link submenu-item" onClick={handleMobileLinkClick}>Online Coaching</Link>
+                  <Link to="/ergonomi" className="mobile-nav-link submenu-item" onClick={handleMobileLinkClick}>Ergonomiföreläsning</Link>
+                  <Link to="/hemrehab" className="mobile-nav-link submenu-item" onClick={handleMobileLinkClick}>Hemrehab</Link>
+                  <Link to="/program" className="mobile-nav-link submenu-item" onClick={handleMobileLinkClick}>Tränings- & rehabiliteringsprogram</Link>
+                </div>
+              )}
+            </div>
+
+            <Link to="/program" className="mobile-nav-link" onClick={handleMobileLinkClick}>Program</Link>
+
+            {/* Rekommenderade Produkter Section */}
+            <div className="mobile-dropdown-section">
+              <button 
+                className="mobile-nav-link mobile-dropdown-trigger"
+                onClick={() => setMobileProdukterOpen(!mobileProdukterOpen)}
+              >
+                Rekommenderade Produkter <span className="mobile-dropdown-arrow">{mobileProdukterOpen ? '▲' : '▼'}</span>
+              </button>
+              {mobileProdukterOpen && (
+                <div className="mobile-submenu">
+                  <Link to="/training-equipment" className="mobile-nav-link submenu-item" onClick={handleMobileLinkClick}>Träningsutrustning</Link>
+                  <Link to="/supplements" className="mobile-nav-link submenu-item" onClick={handleMobileLinkClick}>Kosttillskott</Link>
+                  <Link to="/rehabilitation" className="mobile-nav-link submenu-item" onClick={handleMobileLinkClick}>Rehabilitering</Link>
+                  <Link to="/apps-software" className="mobile-nav-link submenu-item" onClick={handleMobileLinkClick}>Appar & Mjukvara</Link>
+                </div>
+              )}
+            </div>
+
+            <Link to="/blog" className="mobile-nav-link" onClick={handleMobileLinkClick}>Blogg</Link>
+            <Link to="/kontakt" className="mobile-nav-link" onClick={handleMobileLinkClick}>Kontakt</Link>
           </div>
         </div>
       )}

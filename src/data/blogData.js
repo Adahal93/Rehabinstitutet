@@ -15,6 +15,7 @@ import artros_knä from '../assets/images/blog/artros_knä.webp';
 import who_guidelines from '../assets/images/blog/who_guidelines.webp';
 import stretching1 from '../assets/images/blog/stretching1.webp';
 import runner from '../assets/images/blog/runner.webp';
+import runner_foot_pain from '../assets/images/blog/runner_foot_pain.webp';
 
 // Funktion för att beräkna lästid baserat på antal ord
 const calculateReadingTime = (text) => {
@@ -76,7 +77,75 @@ const processAllArticlesSequential = (posts) => {
 
 export const blogPosts = processAllArticlesSequential([
 {
-        id: 1,
+  id: 1,
+  title: "Fotproblem hos löpare – vad du kan göra åt dem",
+  excerpt: "Fotproblem är vanliga hos löpare och kan hindra både prestation och träningsglädje. Här går vi igenom vanliga orsaker, behandling och hur du kan förebygga problemen.",
+  category: "ARTIKEL",
+  author: "Adam Carlén",
+  authorTitle: "Leg. Fysioterapeut",
+  date: "2025-08-02",
+  image: runner_foot_pain,
+  featured: true,
+  latest: true,
+  tags: ["fotproblem", "löpning", "rehabilitering", "skadeförebyggande"],
+  content: `
+    <h1>Fotproblem hos löpare – vad du kan göra åt dem</h1>
+    <p>Foten agerar som löparens kontaktpunkt med underlaget och spelar en avgörande roll för både prestation och skadefrihet. När foten börjar krångla kan det leda till smärta, förändrat löpsteg och i värsta fall längre avbrott från träning. I den här artikeln går vi igenom de vanligaste fotproblemen hos löpare, varför de uppstår, och vad du själv kan göra för att både behandla och förebygga dem.</p>
+
+    <h2>Vanliga fotproblem hos löpare</h2>
+    <h3>1. Plantar fasciit (hälsporre)</h3>
+    <p>Plantarfasciopati är ett vanligt smärttillstånd i hälen, ofta lokaliserat till plantarfascins fäste mot calcaneus. Det benämns ofta plantarfasciit, vilket antyder en inflammatorisk process. Modern forskning, inklusive histologiska studier, visar dock att tillståndet i de flesta fall domineras av degenerativa förändringar snarare än klassisk inflammation.</p>
+
+    <h3>2. Stressfrakturer i mellanfotsbenen</h3>
+    <p>Stressfrakturer orsakas av upprepad belastning och är vanligare vid kraftig ökning av löpmängd eller träning på hårt underlag. Smärtan är ofta fokal och förvärras vid aktivitet.</p>
+
+    <h3>3. Hälseneinflammation (Achillestendinopati)</h3>
+    <p>Även om hälsenan inte är själva foten påverkar problemen här löpsteget kraftigt. Smärtan känns ofta bak på hälen och kan vara en följd av överbelastning eller bristande rörlighet i fotens leder.</p>
+
+    <h3>4. Framfotsproblem (Mortons neurom, metatarsalgi)</h3>
+    <p>Smärta eller domningar i framfoten kan bero på nervinklämning (Mortons neurom) eller överbelastning av mellanfotsbenen (metatarsalgi). Trånga skor eller för enformig belastning är vanliga orsaker.</p>
+
+    <h2>Varför uppstår fotproblem hos löpare?</h2>
+    <p>Flera faktorer bidrar till fotproblem, bland annat:</p>
+    <ul>
+      <li>Ökad träningsmängd eller intensitet för snabbt</li>
+      <li>Bristande återhämtning</li>
+      <li>Felaktiga eller slitna skor</li>
+      <li>Svaghet i fotens och underbenets muskler</li>
+      <li>Bristande rörlighet i fotled och vad</li>
+    </ul>
+
+    <h2>Vad kan du göra åt fotproblem?</h2>
+    <h3>1. Vila och avlastning</h3>
+    <p>Ge foten tid att återhämta sig. Det betyder inte alltid total vila, men anpassa träningen för att undvika att förvärra besvären.</p>
+
+    <h3>2. Fotstyrka och stabilitetsträning</h3>
+    <p>Starka fotmuskler hjälper till att absorbera stötar och minska belastningen på leder och senor. Övningar som tåhävningar, rörelseövningar för fotleden och balansövningar kan vara effektiva.</p>
+
+    <h3>3. Mobilitetsträning</h3>
+    <p>God rörlighet i fotleden kan minska risken för överbelastning. Stretching av vadmuskulaturen och mobiliserande fotledsrörelser kan för vissa vara till hjälp.</p>
+
+    <h3>4. Anpassade skor</h3>
+    <p>Det viktigaste när det kommer till skor är att de är sköna och sitter bra på just din fot. En fotanalys kan låta avancerat och givande, men faktum är att flertalet studier påvisar att det inte säger särskilt mycket om vilken sko som kommer att passa dig och att vi snarare ska plocka ut en sko som sitter bra och känns skön. Om du löper mycket är det rekommenderat att variera mellan flera olika skor med olika slitage. Detta gör att belastningen blir mindre enformig samt att du inte utsätter foten för ett drastiskt byte av underlag när du byter från en nedsliten sko till en helt ny sko. </p>
+
+    <h3>5. Rehabiliteringsprogram</h3>
+    <p>Strukturerad rehab ger bäst resultat. Vi på Rehabinstitutet erbjuder <a href="/program/fot-och-achillesprogrammet">Fot- och achillesprogrammet</a> som är specifikt framtaget för att återställa styrka, rörlighet och funktion i fot och hälsena. Om du inte har några problem, men vill förebygga skador rekommenderas istället vårt program <a href="/program/styrketraning-for-lopare ">styrketräning för löpare</a>, ett gediget träningsprogram utformat för löpare som vill minska skaderisk och öka löpprestation. </p>
+
+    <h2>Skadeförebyggande träning</h2>
+    <p>För att minska risken för framtida fotproblem bör du inkludera skadeförebyggande övningar i din träningsrutin. Detta kan vara en kombination av fotstyrka, balans och löpteknikträning. Ett exempel är att kombinera korta tunga tåhävningar med balansövningar på ett ben och eventuellt några plyometriska övningar som drop jumps.</p>
+
+    <h2>När ska du söka vård?</h2>
+    <p>Om du upplever ihållande smärta som inte förbättras på 1-2 veckor med egenvård, om du får svullnad eller rodnad, eller om smärtan gör det omöjligt att belasta foten bör du söka hjälp hos fysioterapeut eller läkare.</p>
+
+    <h2>Sammanfattning</h2>
+    <p>Fotproblem är vanliga hos löpare, men med rätt kunskap och insatser går det att både behandla och förebygga dem. Genom att kombinera avlastning, styrketräning, rörlighetsarbete och anpassade skor kan du minimera risken för återkommande problem och fortsätta springa skadefritt.</p>
+
+    <p><em>Skriven av ${"Adam Carlén"}, Leg. Fysioterapeut</em></p>
+  `
+},
+
+{
+        id: 2,
         title: "Löparskador – de vanligaste och hur du undviker dem",
         excerpt: "Löpning är enkelt och effektivt, men också förknippat med skador. I den här artikeln går vi igenom de vanligaste löparskadorna – och hur du förebygger dem med rätt träning, belastning och återhämtning.",
         category: "GUIDE",
@@ -85,7 +154,7 @@ export const blogPosts = processAllArticlesSequential([
         date: "2025-07-28",
         image: runner,
         featured: true,
-        latest: true,
+        latest: false,
         tags: ["löparskador", "skadeförebyggande", "löpning", "rehabilitering"],
         content: `
           <h1>Löparskador – de vanligaste och hur du undviker dem</h1>
@@ -168,8 +237,9 @@ export const blogPosts = processAllArticlesSequential([
         `
       },
 
+
 {
-    id: 2,
+    id: 3,
     title: "Myter och fakta om stretching vid löpning",
     excerpt: "Behöver man verkligen stretcha före löpning? I den här artikeln reder vi ut vanliga myter och vad forskningen säger om stretching, uppvärmning och skaderisk.",
     category: "ARTIKEL",
@@ -236,8 +306,9 @@ export const blogPosts = processAllArticlesSequential([
 },
     
 
+
 {
-    id: 3,
+    id: 4,
     title: "Hur du rehabiliterar hälseneinflammation med träning och stöd",
     excerpt: "Hälseneinflammation, eller tendinopati, är en vanlig åkomma hos aktiva personer. I den här artikeln går vi igenom hur du med rätt träning, tålamod och ibland inlägg kan återhämta dig och minska smärta.",
     category: "GUIDE",
@@ -312,8 +383,9 @@ export const blogPosts = processAllArticlesSequential([
     },
   
 
+
 {
-    id: 4,
+    id: 5,
     title: "Hamstringsskador – varför de uppstår och hur du återhämtar dig",
     excerpt: "Hamstringsskador är vanliga, särskilt bland löpare och explosiva idrotter. I den här artikeln förklarar vi varför de uppstår, hur du rehabiliterar dem effektivt och vad du kan göra för att förebygga återfall.",
     category: "ARTIKEL",
@@ -397,8 +469,9 @@ export const blogPosts = processAllArticlesSequential([
   },
   
 
+
 {
-    id: 5,
+    id: 6,
     title: "Är kettlebellträning lika effektivt som traditionell styrketräning?",
     excerpt: "Kettlebellträning har blivit populärt – men kan det verkligen ersätta klassisk styrketräning med skivstång och maskiner? I den här artikeln jämför vi träningsformerna och går igenom för- och nackdelar.",
     category: "ARTIKEL",
@@ -476,8 +549,9 @@ export const blogPosts = processAllArticlesSequential([
   },
   
 
+
 {
-    id: 6,
+    id: 7,
     title: "Hur mycket bör vi röra på oss enligt rekommendationer?",
     excerpt: "Hur mycket fysisk aktivitet behöver du egentligen för att må bra? Vi går igenom de svenska och internationella rörelseriktlinjerna och vad de innebär i praktiken – oavsett om du är nybörjare eller redan tränar regelbundet.",
     category: "GUIDE",
@@ -560,8 +634,9 @@ export const blogPosts = processAllArticlesSequential([
   },
   
 
+
 {
-    id: 7,
+    id: 8,
     title: "MR-fynd hos friska personer – vad betyder det egentligen?",
     excerpt: "Många oroar sig för oväntade fynd vid MR-undersökningar, men vad betyder dessa egentligen om man inte har några symtom? Här reder vi ut begreppen och förklarar varför bilddiagnostik på friska personer kräver eftertanke.",
     category: "ARTIKEL",
@@ -626,8 +701,9 @@ export const blogPosts = processAllArticlesSequential([
   },
   
 
+
 {
-    id: 8,
+    id: 9,
     title: "Artros i knä och höft – vad hjälper enligt forskningen?",
     excerpt: "Vad säger forskningen om vad som verkligen hjälper vid artros i knä och höft? I denna artikel går vi igenom evidensläget kring träning, viktnedgång, kirurgi, kosttillskott och mer.",
     category: "ARTIKEL",
@@ -719,8 +795,9 @@ export const blogPosts = processAllArticlesSequential([
   },
   
 
+
 {
-    id: 9,
+    id: 10,
     title: "Kan styrketräning förbättra prestationen hos löpare?",
     excerpt: "Många löpare undviker styrketräning i rädsla för att bli långsammare eller tyngre. Men vad säger forskningen om styrketräningens effekt på löpprestation och skaderisk?",
     category: "ARTIKEL",
@@ -786,8 +863,9 @@ export const blogPosts = processAllArticlesSequential([
   },
   
 
+
 {
-    id: 10,
+    id: 11,
     title: "Vanliga orsaker till smärta i rotatorcuffen och hur det kan behandlas",
     excerpt: "Rotatorcuffen är en vanlig källa till axelsmärta. I denna artikel går vi igenom vad rotatorcuffen är, vanliga orsaker till smärta och hur fysioterapi och träning kan hjälpa.",
     category: "ARTIKEL",
@@ -860,7 +938,8 @@ export const blogPosts = processAllArticlesSequential([
   }
 
 
-]);;;;;;
+
+]);;;;;;;
 
 // Beräkna lästid för alla artiklar
 export const blogPostsWithReadingTime = blogPosts;
