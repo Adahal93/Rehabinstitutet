@@ -12,6 +12,7 @@ import tjansterHero from '../assets/images/tjanster_hero.png';
 import ergonomi from '../assets/images/ergonomi.png';
 import { Link } from 'react-router-dom';
 import { scrollToContact } from '../utils/scrollToContact';
+import LandingFAQ from './faq/LandingFAQ';
 
 const IntroSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -260,6 +261,9 @@ const IntroSection = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <LandingFAQ />
     </div>
   );
 };

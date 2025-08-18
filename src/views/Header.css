@@ -124,7 +124,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0;
-  height: 80px;
+  height: 70px;
   box-shadow: 0 2px 8px rgba(26, 61, 46, 0.08);
   z-index: 1000;
 }
@@ -136,18 +136,18 @@
 }
 
 .header-logo {
-  height: 48px;
-  width: 48px;
+  height: 42px;
+  width: 42px;
   object-fit: cover;
   border-radius: 8px;
   margin-left: 0;
-  margin-right: 16px;
+  margin-right: 14px;
 }
 
 .header-title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   color: var(--primary-dark-green);
   text-decoration: none;
   display: flex;
@@ -162,7 +162,7 @@
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.2rem;
   margin-right: 20px;
 }
 
@@ -170,7 +170,7 @@
   color: var(--primary-dark-green);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 0.5rem 0;
   position: relative;
   transition: color 0.3s ease;
